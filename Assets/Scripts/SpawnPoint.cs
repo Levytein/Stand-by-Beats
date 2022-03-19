@@ -39,6 +39,11 @@ public class SpawnPoint : MonoBehaviour
                 rand = Random.Range(0, templates.rightRooms.Length);
                 Instantiate(templates.rightRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
             }
+            else if (openingDirection == 5)
+            {
+                rand = Random.Range(0, templates.rightRooms.Length);
+                Instantiate(templates.startingRoom, transform.position, templates.bottomRooms[rand].transform.rotation);
+            }
             spawned = true;
             }
         }
