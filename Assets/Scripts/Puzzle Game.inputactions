@@ -43,7 +43,7 @@
                     "id": "96d9ed24-cdca-4e30-a3ef-bdbf6932c305",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Tap"
                 }
             ],
             "bindings": [
@@ -292,7 +292,7 @@
                 {
                     "name": "",
                     "id": "dd77cc04-66d6-4af0-ba12-1dd925ad06af",
-                    "path": "<Keyboard>/space",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",

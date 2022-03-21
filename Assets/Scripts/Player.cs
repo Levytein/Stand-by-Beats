@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 
     public float speed = 10f;
 
+    public float BeatTimerMargin = .1f;
     public float rollSpeed = 5f;
     Vector2 movementInput = Vector2.zero;
 
@@ -56,10 +57,23 @@ public class Player : MonoBehaviour
         }
     }
     
-    public void OnRoll()
+    public void OnRoll(InputAction.CallbackContext value)
     {
-        rigidBody.AddForce(lastDirection * rollSpeed, ForceMode2D.Impulse);
+        if(value.performed)
+        {
+            rigidBody.AddForce(lastDirection * rollSpeed, ForceMode2D.Impulse);
+            if (Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.NextNoteTime)) <= BeatTimerMargin || Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.LastTick)) <= BeatTimerMargin)
+            {
+                Debug.Log("less pain");
+            }
+            else
+            {
+                Debug.Log("pain");
+            }
 
+            Debug.Log("bruh");
+        }
+     
         //Debug.Log("idk");
     }
     

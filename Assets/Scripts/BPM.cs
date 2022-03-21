@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class BPM : MonoBehaviour
 {
+    public static BPM activeBPM;
+
+
     public double bpm = 140.0F;
     public float gain = 0.5F;
     public int signatureHi = 4;
@@ -16,10 +19,46 @@ public class BPM : MonoBehaviour
     private int accent;
     private bool running = false;
 
+    public float noteSpacing = 800f;
+
+    public GameObject noteMarker;
+
+    public float noteSpawnAhead = 2;
+    private double noteSpawnTime = 0;
+    private double nextNoteTime = 0;
+
+    public double NextNoteTime 
+    {
+        get 
+        {
+            return nextNoteTime;
+        }
+    }
+
+    private double lastTick = 0;
+
+    public double LastTick
+    {
+        get
+        {
+            return lastTick;
+        }
+    }
     public MusicData currentSong;
     public AudioSource audioSource;
+
+
+    public Transform BPMImages;
+
+
+    private void Awake()
+    {
+        activeBPM = this;
+    }
     void Start()
     {
+
+
         accent = signatureHi;
         double startTick = AudioSettings.dspTime;
         sampleRate = AudioSettings.outputSampleRate;
@@ -30,13 +69,38 @@ public class BPM : MonoBehaviour
         audioSource.clip = currentSong.song;
         bpm = currentSong.songBPM;
 
-        audioSource.PlayScheduled(startTick + currentSong.startDelay);
+
+        noteSpawnTime = 60f / bpm * noteSpawnAhead ;
+        audioSource.PlayScheduled(startTick + currentSong.startDelay + noteSpawnTime);
 
 
-
+  
 
     }
 
+    void Update()
+    {
+       if(AudioSettings.dspTime >= nextNoteTime)
+        {
+            NoteMarker temp = Instantiate(noteMarker, BPMImages.transform ).GetComponent<NoteMarker>();
+            temp.leftNut = true;
+            temp.timeOffset = (lastTick / sampleRate + noteSpawnTime ) ;
+            temp.timeStart = (lastTick / sampleRate - 60f / bpm) ;
+
+
+            temp = Instantiate(noteMarker, BPMImages.transform).GetComponent<NoteMarker>();
+            temp.timeOffset = (lastTick / sampleRate + noteSpawnTime) ;
+            temp.leftNut = false;
+            temp.timeStart = (lastTick / sampleRate - 60f / bpm);
+
+
+            lastTick = nextTick - (60d / bpm * sampleRate);
+            nextNoteTime = nextTick / sampleRate;
+          
+        }
+
+        
+    }
     void OnAudioFilterRead(float[] data, int channels)
     {
         if (!running)
