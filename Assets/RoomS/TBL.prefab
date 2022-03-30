@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6814603554187840414}
   - component: {fileID: 5602914440568872488}
+  - component: {fileID: 2320501424129314560}
   m_Layer: 0
   m_Name: TBL
   m_TagString: Untagged
@@ -85,6 +86,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2320501424129314560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329835186296561122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433ec529fde59544281475d6b84cdca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4789415910761167632
 GameObject:
   m_ObjectHideFlags: 0

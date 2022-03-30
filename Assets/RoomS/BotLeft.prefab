@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4823698131058244710}
   - component: {fileID: 3653807145744967192}
+  - component: {fileID: 7142031987524736737}
+  - component: {fileID: -1241947408324783921}
   m_Layer: 0
   m_Name: BotLeft
   m_TagString: Untagged
@@ -84,6 +86,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7142031987524736737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4554578354700426821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc175c2d496ad04e8b66c2beb72cb53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1241947408324783921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4554578354700426821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433ec529fde59544281475d6b84cdca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5507039323759999217
 GameObject:
   m_ObjectHideFlags: 0
