@@ -338,7 +338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -242}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &507699701
@@ -393,11 +393,8 @@ MonoBehaviour:
   startingRoom: {fileID: 747724837412314710, guid: 35dbfbcc76adcfe4b8ee0c0b3a824bd8, type: 3}
   closedRoom: {fileID: 0}
   rooms: []
-<<<<<<< HEAD
-  waitTime: 3
-  boss: {fileID: 937662326092499287, guid: 3a192e91077cfa34aadf0454c9295ae2, type: 3}
-=======
->>>>>>> parent of 7658b81 (Boss room added)
+  waitTime: 4
+  boss: {fileID: 594089611590552533, guid: abdf0a7081372214ca725d355390ce40, type: 3}
 --- !u!4 &507699703
 Transform:
   m_ObjectHideFlags: 0
@@ -1176,7 +1173,7 @@ MonoBehaviour:
   signatureLo: 4
   noteSpacing: 1000
   noteMarker: {fileID: 8452922815705596668, guid: 47a021d7aae39d442af07aecc113d51a, type: 3}
-  noteSpawnAhead: 2
+  noteSpawnAhead: 3
   currentSong: {fileID: 11400000, guid: 2bfae08c57e92c0428cd19bdac7c7ad6, type: 2}
   audioSource: {fileID: 1543925278}
   BPMImages: {fileID: 424596071}

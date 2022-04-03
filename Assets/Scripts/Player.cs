@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
                 Debug.Log("pain");
             }
 
-            Debug.Log("bruh");
+          
         }
      
         //Debug.Log("idk");

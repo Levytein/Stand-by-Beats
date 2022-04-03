@@ -116,7 +116,7 @@ public class BPM : MonoBehaviour
             int i = 0;
             while (i < channels)
             {
-                data[n * channels + i] += x;
+               // data[n * channels + i] += x;
                 i++;
             }
             while (sample + n >= nextTick)
@@ -128,7 +128,7 @@ public class BPM : MonoBehaviour
                     accent = 1;
                     amp *= 2.0F;
                 }
-                Debug.Log("Tick: " + accent + "/" + signatureHi);
+                //Debug.Log("Tick: " + accent + "/" + signatureHi);
             }
             phase += amp * 0.3F;
             amp *= 0.993F;
