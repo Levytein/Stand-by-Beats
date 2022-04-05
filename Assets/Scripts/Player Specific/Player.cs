@@ -10,14 +10,24 @@ public class Player : MonoBehaviour
     private Vector3 moveDelta;
     Rigidbody2D rigidBody;
 
-    public float speed = 10f;
+    
 
     public float BeatTimerMargin = .1f;
     public float rollSpeed = 5f;
-    Vector2 movementInput = Vector2.zero;
 
+    //Movement
+    Vector2 movementInput = Vector2.zero;
+    public float speed = 10f;
     Vector2 lastDirection = Vector2.down;
-    private void Start()
+    public LayerMask enemyLayers;
+    //Animator
+    public Animator controller;
+
+    //Attack Parameters
+    public Transform attackPoint;
+    public float attackRange ;
+    
+    public void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
@@ -28,8 +38,10 @@ public class Player : MonoBehaviour
 
         Vector2 movement = movementInput * speed;
 
+        
+
         //Reset MoveDelta
-     
+        
 
         if(moveDelta.x > 0)
         {
@@ -40,6 +52,18 @@ public class Player : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
+
+
+        //Animator
+        if (movement == Vector2.zero)
+        {
+            controller.SetBool("IsMoving", false);
+        }
+        else
+        {
+            controller.SetBool("IsMoving", true);
+        }
+
 
         //Make this thing move
 
@@ -76,5 +100,34 @@ public class Player : MonoBehaviour
      
         //Debug.Log("idk");
     }
+
+    public void OnMelee(InputAction.CallbackContext value)
+    {
+        if(value.started)
+        {
+            Attack();
+        }
+        
+    }
     
+
+    void Attack()
+    {
+        //Play an attack animation
+        controller.SetTrigger("IsAttacking");
+        //Detect enemies in range
+        Physics2D.OverlapCircleAll(attackPoint.position,attackRange,enemyLayers);
+        //Damage them
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if(attackPoint == null)
+        {
+            return;
+        }
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+     
+    }
 }
