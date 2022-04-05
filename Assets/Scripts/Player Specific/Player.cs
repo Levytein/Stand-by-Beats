@@ -53,6 +53,16 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
+        //Temp rotates player
+
+        if(movement.x > 0 )
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        }
 
         //Animator
         if (movement == Vector2.zero)
