@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     //Attack Parameters
     public Transform attackPoint;
     public float attackRange ;
+    public int attackDamage = 20;
     
     public void Start()
     {
@@ -55,14 +56,14 @@ public class Player : MonoBehaviour
 
         //Temp rotates player
 
-        if(movement.x > 0 )
+        /*if(movement.x > 0 )
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
         }
         else
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-        }
+        }*/
 
         //Animator
         if (movement == Vector2.zero)
@@ -83,12 +84,25 @@ public class Player : MonoBehaviour
     public void OnMove(InputAction.CallbackContext value)
     {
 
+        Keyboard keyboard = Keyboard.current;
+
+        if(keyboard.aKey.isPressed)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            Debug.Log("Testing");
+        }
+        if(keyboard.dKey.isPressed )
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        }
         movementInput = value.ReadValue<Vector2>();
 
         if(movementInput != Vector2.zero)
         {
             lastDirection = movementInput;
         }
+
+       
     }
     
     public void OnRoll(InputAction.CallbackContext value)
@@ -116,6 +130,8 @@ public class Player : MonoBehaviour
         if(value.started)
         {
             Attack();
+
+
         }
         
     }
@@ -126,8 +142,13 @@ public class Player : MonoBehaviour
         //Play an attack animation
         controller.SetTrigger("IsAttacking");
         //Detect enemies in range
-        Physics2D.OverlapCircleAll(attackPoint.position,attackRange,enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position,attackRange,enemyLayers);
         //Damage them
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+        }
+
     }
 
     void OnDrawGizmosSelected()
