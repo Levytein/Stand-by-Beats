@@ -374,7 +374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -242}
+  m_AnchoredPosition: {x: 0, y: -375}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &507699701
@@ -533,7 +533,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.5
+  orthographic size: 4.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1543925276}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 3.5
+    OrthographicSize: 4.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1009,14 +1009,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BeatTimerMargin: 0.3
   rollSpeed: 3
-  speed: 200
+  speed: 90
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
   controller: {fileID: 1543925280}
   attackPoint: {fileID: 1739732345}
   attackRange: 0.32
-  attackDamage: 20
+  attackDamage: 10
 --- !u!212 &1543925275
 SpriteRenderer:
   m_ObjectHideFlags: 0
