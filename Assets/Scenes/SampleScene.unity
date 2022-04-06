@@ -429,7 +429,7 @@ MonoBehaviour:
   startingRoom: {fileID: 747724837412314710, guid: 35dbfbcc76adcfe4b8ee0c0b3a824bd8, type: 3}
   closedRoom: {fileID: 0}
   rooms: []
-  waitTime: 4
+  waitTime: 6
   boss: {fileID: 594089611590552533, guid: abdf0a7081372214ca725d355390ce40, type: 3}
 --- !u!4 &507699703
 Transform:
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BeatTimerMargin: 0.3
   rollSpeed: 3
-  speed: 30
+  speed: 200
   enemyLayers:
     serializedVersion: 2
     m_Bits: 0
