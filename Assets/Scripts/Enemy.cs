@@ -6,15 +6,36 @@ public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public GameObject target;
+    public float speed;
     public int maxHealth = 100;
-
+    public float countDown = 1;
     int currentHealth;
     void Start()
     {
         currentHealth = maxHealth;
     }
 
-   public void TakeDamage(int damage)
+    void Update()
+    {
+        if(countDown > 0 )
+        {
+            countDown = countDown - Time.deltaTime;
+        }
+        else
+        {
+            FollowPlayer();
+        }
+       
+    }
+
+
+
+    public void FollowPlayer()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+    }
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 

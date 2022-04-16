@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
         if(keyboard.aKey.isPressed)
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            Debug.Log("Testing");
+          
         }
         if(keyboard.dKey.isPressed )
         {
