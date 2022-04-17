@@ -17,11 +17,13 @@ public class Player : MonoBehaviour
 
     //Movement
     Vector2 movementInput = Vector2.zero;
+   
     public float speed = 10f;
     Vector2 lastDirection = Vector2.down;
     public LayerMask enemyLayers;
     //Animator
     public Animator controller;
+    SpriteRenderer p_spriteRenderer;
 
     //Attack Parameters
     public Transform attackPoint;
@@ -32,6 +34,7 @@ public class Player : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
+        p_spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -39,41 +42,12 @@ public class Player : MonoBehaviour
 
         Vector2 movement = movementInput * speed;
 
-        
+        controller.SetFloat("Horizontal", movement.x);
+        controller.SetFloat("Vertical", movement.y);
+        controller.SetFloat("Speed", movement.sqrMagnitude);
 
-        //Reset MoveDelta
-        
 
-        if(moveDelta.x > 0)
-        {
-            transform.localScale = Vector3.one;
 
-        }
-        else if(moveDelta.x < 0 )
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-
-        //Temp rotates player
-
-        /*if(movement.x > 0 )
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-        }*/
-
-        //Animator
-        if (movement == Vector2.zero)
-        {
-            controller.SetBool("IsMoving", false);
-        }
-        else
-        {
-            controller.SetBool("IsMoving", true);
-        }
 
 
         //Make this thing move
@@ -83,18 +57,20 @@ public class Player : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext value)
     {
-
+        // Old way of flipping
         Keyboard keyboard = Keyboard.current;
 
         if(keyboard.aKey.isPressed)
         {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-          
+            p_spriteRenderer.flipX = true;
+
         }
         if(keyboard.dKey.isPressed )
         {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+
+            p_spriteRenderer.flipX = false;
         }
+      
         movementInput = value.ReadValue<Vector2>();
 
         if(movementInput != Vector2.zero)
