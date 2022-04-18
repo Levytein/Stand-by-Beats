@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,7 +11,17 @@ public class Player : MonoBehaviour
     private Vector3 moveDelta;
     Rigidbody2D rigidBody;
 
-    
+
+
+    //Canvas
+    public string Great = "Great";
+    public string Miss = "Miss";
+    public Color goodHit;
+    public Color badHit;
+    public CanvasGroup judgeGroup;
+    public float judgeFadetime = .3f;
+    public Text judgeText;
+
 
     public float BeatTimerMargin = .1f;
     public float rollSpeed = 5f;
@@ -35,6 +46,7 @@ public class Player : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
         p_spriteRenderer = GetComponent<SpriteRenderer>();
+ 
     }
 
     private void FixedUpdate()
@@ -42,12 +54,13 @@ public class Player : MonoBehaviour
 
         Vector2 movement = movementInput * speed;
 
+        //Animation variables
         controller.SetFloat("Horizontal", movement.x);
         controller.SetFloat("Vertical", movement.y);
         controller.SetFloat("Speed", movement.sqrMagnitude);
 
 
-
+        judgeGroup.alpha = Mathf.Lerp(judgeGroup.alpha, 0f, Time.fixedDeltaTime / judgeFadetime);
 
 
         //Make this thing move
@@ -88,11 +101,15 @@ public class Player : MonoBehaviour
             rigidBody.AddForce(lastDirection * rollSpeed, ForceMode2D.Impulse);
             if (Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.NextNoteTime)) <= BeatTimerMargin || Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.LastTick)) <= BeatTimerMargin)
             {
-                Debug.Log("less pain");
+                judgeText.text = Great;
+                judgeText.color = goodHit;
+                judgeGroup.alpha = 1;
             }
             else
             {
-                Debug.Log("pain");
+                judgeText.text = Miss;
+                judgeText.color = badHit;
+                judgeGroup.alpha = 1;
             }
 
           

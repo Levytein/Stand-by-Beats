@@ -21,27 +21,27 @@ public class SpawnPoint : MonoBehaviour
         {
             if (openingDirection == 1)
             {
-                rand = Random.Range(0, templates.bottomRooms.Length);
+                rand = Random.Range(0, templates.bottomRooms.Length-1);
                 Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
             }
             else if (openingDirection == 2)
             {
-                rand = Random.Range(0, templates.topRooms.Length);
+                rand = Random.Range(0, templates.topRooms.Length-1);
                 Instantiate(templates.topRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
             }
             else if (openingDirection == 3)
             {
-                rand = Random.Range(0, templates.leftRooms.Length);
+                rand = Random.Range(0, templates.leftRooms.Length-1);
                 Instantiate(templates.leftRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
             }
             else if (openingDirection == 4)
             {
-                rand = Random.Range(0, templates.rightRooms.Length);
+                rand = Random.Range(0, templates.rightRooms.Length-1);
                 Instantiate(templates.rightRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
             }
             else if (openingDirection == 5)
             {
-                rand = Random.Range(0, templates.rightRooms.Length);
+                rand = Random.Range(0, templates.rightRooms.Length-1);
                 Instantiate(templates.startingRoom, transform.position, templates.bottomRooms[rand].transform.rotation);
             }
             spawned = true;
@@ -56,7 +56,7 @@ public class SpawnPoint : MonoBehaviour
             if(other.GetComponent<SpawnPoint>().spawned == false && spawned == false)
             {
                 Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
-               
+                Debug.Log("I spawned a closed room");
             }
             spawned = true;
         }
