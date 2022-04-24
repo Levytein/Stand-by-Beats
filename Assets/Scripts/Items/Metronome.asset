@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1bede6dc6ef954c8dd0a5d47275f2f, type: 3}
   m_Name: Metronome
   m_EditorClassIdentifier: 
-  itemName: 
-  itemIcon: {fileID: 0}
+  itemName: Metronome
+  itemIcon: {fileID: 21300000, guid: b21e9ff39980ccf4b91140407a5cfb79, type: 3}
+  attackSpeed: 0
+  coolDownReduction: 0
+  permHealth: 0
