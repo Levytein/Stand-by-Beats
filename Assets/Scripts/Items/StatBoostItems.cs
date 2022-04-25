@@ -5,9 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "new Stat Boost class" , menuName = "Item/StatBoosters")]
 public class StatBoostItems : ItemClass
 {
-    public float attackSpeed;
+    public float Damage;
+    public float Knockback;
     public float coolDownReduction;
     public float permHealth;
+
+
 
 
     public override ItemClass GetItem() { return this; }
