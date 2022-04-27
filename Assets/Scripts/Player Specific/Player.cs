@@ -40,6 +40,9 @@ public class Player : MonoBehaviour
     public Transform attackPoint;
     public float attackRange ;
     public int attackDamage = 20;
+    public float knockBack = 50;
+
+    public float knockBacktime;
     
     public void Start()
     {
@@ -136,14 +139,34 @@ public class Player : MonoBehaviour
         controller.SetTrigger("IsAttacking");
         //Detect enemies in range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position,attackRange,enemyLayers);
+        
         //Damage them
-        foreach(Collider2D enemy in hitEnemies)
+        foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+
+            enemy.GetComponent<Rigidbody2D>().isKinematic = false;
+            Vector2 difference = enemy.transform.position - transform.position;
+
+            difference = difference.normalized * knockBack;
+
+            enemy.GetComponent<Rigidbody2D>().AddForce(difference, ForceMode2D.Impulse);
+            StartCoroutine(KnockbackCo(enemy.GetComponent<Rigidbody2D>()));
+
+
         }
 
     }
 
+    private IEnumerator  KnockbackCo(Rigidbody2D enemy)
+    {
+        if(enemy !=null)
+        {
+            yield return new WaitForSeconds(knockBacktime);
+            enemy.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            enemy.GetComponent<Rigidbody2D>().isKinematic = true;
+        }
+    }
     void OnDrawGizmosSelected()
     {
         if(attackPoint == null)

@@ -11,6 +11,12 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     public float countDown = 1;
     int currentHealth;
+
+
+
+    [SerializeField] private int damageDone;
+
+    [SerializeField] private HealthController healthController;
     void Start()
     {
         currentHealth = maxHealth;
@@ -47,7 +53,21 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Damage();
+        }
+    }
 
+    void Damage()
+    {
+
+        healthController.playerHealth = healthController.playerHealth - damageDone;
+        healthController.UpdateHealth();
+
+    }
     void Die()
     {
 
