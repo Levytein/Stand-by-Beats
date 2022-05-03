@@ -8,13 +8,16 @@ public class HealthController : MonoBehaviour
     public int playerHealth;
 
     [SerializeField] private Image[] hearts;
+    public int healthCounter;
 
+    bool gameHasEnded = false;
 
+    public GameObject player;
 
-
+    public GameObject gameOver;
      private void Start()
     {
-
+        gameOver.gameObject.SetActive(false);
 
     }
 
@@ -33,7 +36,21 @@ public class HealthController : MonoBehaviour
             }
         }
 
+        if(playerHealth == 0)
+        {
+            EndGame();
+            gameOver.gameObject.SetActive(true);
+        }
 
+    }
 
+    public void EndGame()
+    {
+        if(gameHasEnded == false)
+        {
+            gameHasEnded = true;
+            Debug.Log("GAME OVER");
+            Destroy(player);
+        }
     }
 }

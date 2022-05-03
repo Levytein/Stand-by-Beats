@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     public Color goodHit;
     public Color badHit;
     public CanvasGroup judgeGroup;
+
+
     public float judgeFadetime = .3f;
     public Text judgeText;
 
@@ -43,6 +45,8 @@ public class Player : MonoBehaviour
     public float knockBack = 50;
 
     public float knockBacktime;
+
+    private bool facingLeft = false;
     
     public void Start()
     {
@@ -69,6 +73,7 @@ public class Player : MonoBehaviour
         //Make this thing move
 
         rigidBody.AddForce(movement);
+       
     }
 
     public void OnMove(InputAction.CallbackContext value)
@@ -76,15 +81,21 @@ public class Player : MonoBehaviour
         // Old way of flipping
         Keyboard keyboard = Keyboard.current;
 
-        if(keyboard.aKey.isPressed)
+      
+        if (keyboard.aKey.isPressed)
         {
             p_spriteRenderer.flipX = true;
 
+      
         }
+
+            
         if(keyboard.dKey.isPressed )
         {
 
             p_spriteRenderer.flipX = false;
+
+    
         }
       
         movementInput = value.ReadValue<Vector2>();
@@ -127,6 +138,18 @@ public class Player : MonoBehaviour
         {
             Attack();
 
+            if (Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.NextNoteTime)) <= BeatTimerMargin || Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.LastTick)) <= BeatTimerMargin)
+            {
+                judgeText.text = Great;
+                judgeText.color = goodHit;
+                judgeGroup.alpha = 1;
+            }
+            else
+            {
+                judgeText.text = Miss;
+                judgeText.color = badHit;
+                judgeGroup.alpha = 1;
+            }
 
         }
         

@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public float countDown = 1;
     int currentHealth;
 
+    private GameObject GameManager;
 
 
     [SerializeField] private int damageDone;
@@ -20,6 +21,11 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        target = GameObject.FindGameObjectWithTag("Player");
+        GameManager = GameObject.FindGameObjectWithTag("GameManager");
+
+        healthController = (HealthController)GameManager.GetComponent(typeof(HealthController));
+        
     }
 
     void Update()
@@ -65,6 +71,7 @@ public class Enemy : MonoBehaviour
     {
 
         healthController.playerHealth = healthController.playerHealth - damageDone;
+
         healthController.UpdateHealth();
 
     }
