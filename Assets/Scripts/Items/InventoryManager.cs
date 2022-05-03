@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class InventoryManager : MonoBehaviour
 
     private GameObject[] slots;
 
+   
     public void Start()
     {
         slots = new GameObject[slotHolder.transform.childCount];
@@ -30,6 +32,7 @@ public class InventoryManager : MonoBehaviour
         Remove(itemToRemove);
     }
 
+  
     public void RefreshUI()
     {
         for (int i = 0; i < slots.Length; i++)

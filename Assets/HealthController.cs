@@ -15,6 +15,7 @@ public class HealthController : MonoBehaviour
     public GameObject player;
 
     public GameObject gameOver;
+
      private void Start()
     {
         gameOver.gameObject.SetActive(false);

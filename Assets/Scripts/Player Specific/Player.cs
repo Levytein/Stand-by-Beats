@@ -47,6 +47,10 @@ public class Player : MonoBehaviour
     public float knockBacktime;
 
     private bool facingLeft = false;
+
+
+    public GameObject InventoryMenu;
+    private bool isInventoryOpen = false;
     
     public void Start()
     {
@@ -152,6 +156,28 @@ public class Player : MonoBehaviour
             }
 
         }
+        
+    }
+
+    public void OnOpenInventory(InputAction.CallbackContext value)
+    {
+        if(value.started)
+        {
+            if (isInventoryOpen == false)
+            {
+                InventoryMenu.gameObject.SetActive(true);
+                isInventoryOpen = true;
+            }
+            else
+            {
+                InventoryMenu.gameObject.SetActive(false);
+                isInventoryOpen = false;
+            }
+
+
+           
+        }
+
         
     }
     
