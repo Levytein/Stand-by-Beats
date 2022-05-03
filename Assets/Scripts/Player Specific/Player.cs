@@ -51,7 +51,11 @@ public class Player : MonoBehaviour
 
     public GameObject InventoryMenu;
     private bool isInventoryOpen = false;
-    
+
+    public GameObject MainMenu;
+    private bool isMenuOpen = false;
+
+
     public void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
@@ -62,7 +66,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        
+    
         Vector2 movement = movementInput * speed;
 
         //Animation variables
@@ -161,18 +166,23 @@ public class Player : MonoBehaviour
 
     public void OnOpenInventory(InputAction.CallbackContext value)
     {
-        if(value.started)
+        if (value.started)
         {
-            if (isInventoryOpen == false)
-            {
-                InventoryMenu.gameObject.SetActive(true);
-                isInventoryOpen = true;
-            }
-            else
-            {
-                InventoryMenu.gameObject.SetActive(false);
-                isInventoryOpen = false;
-            }
+            
+                if (isInventoryOpen == false)
+                {
+                    InventoryMenu.gameObject.SetActive(true);
+                    isInventoryOpen = true;
+                    
+                }
+                else
+                {
+                    InventoryMenu.gameObject.SetActive(false);
+                  
+                    isInventoryOpen = false;
+                }
+
+          
 
 
            
@@ -180,8 +190,30 @@ public class Player : MonoBehaviour
 
         
     }
-    
 
+    public void OpenMenu(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            
+            if(isMenuOpen == false)
+            {
+                MainMenu.gameObject.SetActive(true);
+                isMenuOpen = true;
+            }
+            else
+            {
+                MainMenu.gameObject.SetActive(false);
+                isMenuOpen = false;
+            }
+           
+
+        }
+
+
+
+
+    }
     void Attack()
     {
         //Play an attack animation
@@ -207,6 +239,8 @@ public class Player : MonoBehaviour
 
     }
 
+
+  
     private IEnumerator  KnockbackCo(Rigidbody2D enemy)
     {
         if(enemy !=null)
@@ -216,6 +250,7 @@ public class Player : MonoBehaviour
             enemy.GetComponent<Rigidbody2D>().isKinematic = true;
         }
     }
+
     void OnDrawGizmosSelected()
     {
         if(attackPoint == null)
