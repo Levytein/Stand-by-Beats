@@ -2577,7 +2577,6 @@ Transform:
   - {fileID: 5160412235607876153}
   - {fileID: 1409788644583004980}
   - {fileID: 781308820531017443}
-  - {fileID: 4308580245295025302}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13968,65 +13967,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &7179159027783733079
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4454367383153198155}
-    m_Modifications:
-    - target: {fileID: 6371003574251799489, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
-      propertyPath: m_RootOrder
-      value: 166
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371003574251799489, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.580379
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371003574251799489, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.3300025
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371003574251799489, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.1107175
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371003574251799489, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371003574251799489, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371003574251799489, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371003574251799489, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371003574251799489, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371003574251799489, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371003574251799489, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371003574251799495, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
-      propertyPath: m_Name
-      value: SlimeSharkEnemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
---- !u!4 &4308580245295025302 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6371003574251799489, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
-  m_PrefabInstance: {fileID: 7179159027783733079}
-  m_PrefabAsset: {fileID: 0}

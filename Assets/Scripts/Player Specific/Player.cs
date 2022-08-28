@@ -82,6 +82,7 @@ public class Player : MonoBehaviour
         //Make this thing move
 
         rigidBody.AddForce(movement);
+        Debug.Log("Movement:" + movement);
        
     }
 
@@ -109,11 +110,13 @@ public class Player : MonoBehaviour
       
         movementInput = value.ReadValue<Vector2>();
 
+        Debug.Log("Movement Input:" + movementInput);
         if(movementInput != Vector2.zero)
         {
             lastDirection = movementInput;
         }
 
+        Debug.Log("Moving");
        
     }
     
@@ -138,7 +141,7 @@ public class Player : MonoBehaviour
           
         }
      
-        //Debug.Log("idk");
+      
     }
 
     public void OnMelee(InputAction.CallbackContext value)
