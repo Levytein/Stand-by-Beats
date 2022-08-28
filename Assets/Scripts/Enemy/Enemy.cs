@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
 
     private GameObject GameManager;
 
+    public GameObject damageText;
 
     [SerializeField] private int damageDone;
 
@@ -57,6 +58,8 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+
+        TrainingDummy indicator = Instantiate(damageText, transform.position, Quaternion.identity).GetComponent<TrainingDummy>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

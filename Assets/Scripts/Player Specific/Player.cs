@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
         
     
         Vector2 movement = movementInput * speed;
-
+        Debug.Log("Movement:" + movement);
         //Animation variables
         controller.SetFloat("Horizontal", movement.x);
         controller.SetFloat("Vertical", movement.y);
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
         //Make this thing move
 
         rigidBody.AddForce(movement);
-        Debug.Log("Movement:" + movement);
+        
        
     }
 
@@ -239,8 +239,10 @@ public class Player : MonoBehaviour
 
 
         }
+       
 
-    }
+        }
+    
 
 
   
