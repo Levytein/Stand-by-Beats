@@ -21934,11 +21934,35 @@ MonoBehaviour:
     m_ActionId: 2fcced44-d717-45ad-a3e5-99770b84ad6a
     m_ActionName: Player/Melee[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 738612640}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnOpenInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 3f6de944-63bd-4009-8418-e4c637045060
     m_ActionName: Player/OpenInventory[/Keyboard/i]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 738612640}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OpenMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 005e51d2-03c1-4fe5-8a2e-d1f36c46f221
     m_ActionName: Player/OpenMenu[/Keyboard/p]
   - m_PersistentCalls:
@@ -21982,7 +22006,7 @@ MonoBehaviour:
     m_ActionId: 4a164758-2ee0-41bc-a59c-bcfc0051aebe
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -24293,6 +24317,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2846557131659931520, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2846557131659931576, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: m_Name
       value: Player
@@ -24344,6 +24372,10 @@ PrefabInstance:
     - target: {fileID: 2846557131659931580, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846557131659931581, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: m_Simulated
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}

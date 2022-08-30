@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private BoxCollider2D boxCollider;
 
     private Vector3 moveDelta;
-    Rigidbody2D rigidBody;
+    private Rigidbody2D rigidBody;
 
 
 
@@ -75,14 +75,20 @@ public class Player : MonoBehaviour
         controller.SetFloat("Vertical", movement.y);
         controller.SetFloat("Speed", movement.sqrMagnitude);
 
+        if(judgeGroup != null)
+        {
+            judgeGroup.alpha = Mathf.Lerp(judgeGroup.alpha, 0f, Time.fixedDeltaTime / judgeFadetime);
 
-        judgeGroup.alpha = Mathf.Lerp(judgeGroup.alpha, 0f, Time.fixedDeltaTime / judgeFadetime);
+        }
 
 
         //Make this thing move
 
-        rigidBody.AddForce(movement);
-        
+        rigidBody.AddForce(movement,ForceMode2D.Force);
+
+        //rigidBody.velocity = new Vector2(movement.x * speed, movement.y * speed);
+
+        Debug.Log("Rigidbody Velocity : " + rigidBody.velocity);
        
     }
 
@@ -116,7 +122,7 @@ public class Player : MonoBehaviour
             lastDirection = movementInput;
         }
 
-        Debug.Log("Moving");
+        //Debug.Log("Moving");
        
     }
     
