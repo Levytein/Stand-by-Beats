@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
         
     
         Vector2 movement = movementInput * speed;
-        Debug.Log("Movement:" + movement);
+       
         //Animation variables
         controller.SetFloat("Horizontal", movement.x);
         controller.SetFloat("Vertical", movement.y);
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
 
         //rigidBody.velocity = new Vector2(movement.x * speed, movement.y * speed);
 
-        Debug.Log("Rigidbody Velocity : " + rigidBody.velocity);
+       
        
     }
 
@@ -116,7 +116,7 @@ public class Player : MonoBehaviour
       
         movementInput = value.ReadValue<Vector2>();
 
-        Debug.Log("Movement Input:" + movementInput);
+    
         if(movementInput != Vector2.zero)
         {
             lastDirection = movementInput;

@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int damageDone;
 
     [SerializeField] private HealthController healthController;
+
+    EnemySpawner enemyManagement;
     void Start()
     {
         currentHealth = maxHealth;
@@ -80,6 +82,8 @@ public class Enemy : MonoBehaviour
     }
     void Die()
     {
+
+        enemyManagement.EnemyCount--;
 
         Destroy(this.gameObject);
 
