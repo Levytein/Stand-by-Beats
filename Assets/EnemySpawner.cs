@@ -21,6 +21,8 @@ public class EnemySpawner : MonoBehaviour
     private float ShrimpInterval = 1f;
 
     public bool EnemiesSpawned = false;
+
+    Coroutine enemyManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,13 +34,16 @@ public class EnemySpawner : MonoBehaviour
     {
       if(EnemiesSpawned == true)
         {
-            
-            StartCoroutine(spawnEnemy(ShrimpInterval, Shrimp));
+            if(enemyManager == null)
+            {
+                enemyManager = StartCoroutine(spawnEnemy(ShrimpInterval, Shrimp));
+            }
+         
             Debug.Log("Spawning Enemies");
         }
 
-     
-       
+
+        timer--;
     }
 
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
@@ -52,8 +57,8 @@ public class EnemySpawner : MonoBehaviour
                 NumWave++;
             }
         }
-    
-        
-        
+
+
+        enemyManager = null;
     }
 }
