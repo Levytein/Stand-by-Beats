@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
 
         healthController = (HealthController)GameManager.GetComponent(typeof(HealthController));
 
-        EM = gameObject.GetComponent<EnemySpawner>();
+        EM = enemyManagement.GetComponent<EnemySpawner>();
     }
 
     void Update()
