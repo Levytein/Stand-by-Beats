@@ -20,19 +20,26 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private HealthController healthController;
 
-    EnemySpawner enemyManagement;
+    public GameObject enemyManagement;
+    EnemySpawner EM;
     void Start()
     {
         currentHealth = maxHealth;
         target = GameObject.FindGameObjectWithTag("Player");
         GameManager = GameObject.FindGameObjectWithTag("GameManager");
+        enemyManagement = GameObject.FindGameObjectWithTag("EnemySpawner");
 
         healthController = (HealthController)GameManager.GetComponent(typeof(HealthController));
-        
+
+        EM = gameObject.GetComponent<EnemySpawner>();
     }
 
     void Update()
     {
+        if(EM == null)
+        {
+            Debug.Log("Null");
+        }
         if(countDown > 0 )
         {
             countDown = countDown - Time.deltaTime;
@@ -58,10 +65,15 @@ public class Enemy : MonoBehaviour
 
         if(currentHealth <= 0)
         {
+            
             Die();
+            
         }
+        if(damageText != null)
+        {
+            TrainingDummy indicator = Instantiate(damageText, transform.position, Quaternion.identity).GetComponent<TrainingDummy>();
 
-        TrainingDummy indicator = Instantiate(damageText, transform.position, Quaternion.identity).GetComponent<TrainingDummy>();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -78,16 +90,16 @@ public class Enemy : MonoBehaviour
         healthController.playerHealth = healthController.playerHealth - damageDone;
 
         healthController.UpdateHealth();
-
+        
+        
     }
     void Die()
     {
-
-        enemyManagement.EnemyCount--;
-
-        Destroy(this.gameObject);
-
+        EM.EnemyCount--;
         Debug.Log("enemy died");
+        Destroy(this.gameObject);
+        
+        
         //GetComponent<Collider2D>.enabled = false;
         //this.enabled = false;
         

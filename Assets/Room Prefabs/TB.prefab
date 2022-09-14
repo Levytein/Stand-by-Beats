@@ -15770,6 +15770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shrimp: {fileID: 6371003574251799495, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
   TotalAmountWaves: 4
+  EnemyCount: 0
   timer: 2
   EnemiesSpawned: 0
 --- !u!114 &8531269765608589211
@@ -15787,6 +15788,7 @@ MonoBehaviour:
   doorTile:
   - {fileID: 1127811591168073645}
   - {fileID: 1764549482219930024}
+  enemyManagement: {fileID: 0}
 --- !u!61 &8928698004098040625
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15826,7 +15828,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -18.06}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}

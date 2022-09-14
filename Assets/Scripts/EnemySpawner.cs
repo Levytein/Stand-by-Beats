@@ -14,13 +14,15 @@ public class EnemySpawner : MonoBehaviour
     public int TotalAmountWaves;
 
     public int EnemyCount;
-    [SerializeField]
+    
     private float timer = 2.0f;
 
   
     private float ShrimpInterval = 1f;
 
     public bool EnemiesSpawned = false;
+
+  
 
     Coroutine enemyManager;
     // Start is called before the first frame update
@@ -39,10 +41,10 @@ public class EnemySpawner : MonoBehaviour
                 enemyManager = StartCoroutine(spawnEnemy(ShrimpInterval, Shrimp));
             }
          
-            Debug.Log("Spawning Enemies");
+            
         }
 
-
+        Debug.Log(EnemyCount);
         timer--;
     }
 
@@ -53,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
             while (NumWave < TotalAmountWaves)
             {
                 yield return new WaitForSeconds(interval);
-                GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0), Quaternion.identity);
+                GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-10f, 10), Random.Range(-2f, 18f), 0), Quaternion.identity);
                 NumWave++;
             }
         }
