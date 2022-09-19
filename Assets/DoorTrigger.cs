@@ -10,6 +10,7 @@ public class DoorTrigger : MonoBehaviour
 
     public EnemySpawner enemyManagement;
 
+    public GameObject enemySpawner;
     private bool doorClosed = false;
 
   
@@ -20,7 +21,10 @@ public class DoorTrigger : MonoBehaviour
         {
             doorTile[i].SetActive(true);
             
+
         }
+        enemySpawner.SetActive(true);
+        
         enemyManagement.EnemiesSpawned = true;
         doorClosed = true;
 
@@ -43,6 +47,7 @@ public class DoorTrigger : MonoBehaviour
             for(int i = 0; i < doorTile.Length; i++)
             {
                 doorTile[i].SetActive(false);
+                enemySpawner.SetActive(false);
             }
         }
 

@@ -55,7 +55,10 @@ public class EnemySpawner : MonoBehaviour
             while (NumWave < TotalAmountWaves)
             {
                 yield return new WaitForSeconds(interval);
-                GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-10f, 10), Random.Range(-2f, 18f), 0), Quaternion.identity);
+                //GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-10f, 10), Random.Range(-2f, 18f), 0), Quaternion.identity);
+                float newXPos = Random.Range(-10f, 10);
+                float newYPos = Random.Range(-2f, 10f);
+                GameObject newEnemy = Instantiate(enemy, new Vector3(transform.position.x + newXPos , transform.position.y + newYPos, 0), Quaternion.identity);
                 NumWave++;
             }
         }
