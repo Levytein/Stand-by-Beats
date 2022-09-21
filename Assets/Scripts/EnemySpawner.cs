@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EnemyCount = TotalAmountWaves * 2;
+        EnemyCount = TotalAmountWaves;
     }
 
     // Update is called once per frame

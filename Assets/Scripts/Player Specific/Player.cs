@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class Player : MonoBehaviour
     public Color goodHit;
     public Color badHit;
     public CanvasGroup judgeGroup;
+
+    public TextMeshProUGUI attackDisplay;
+    public TextMeshProUGUI ComboCount;
+
+    private int comboCounter;
 
 
     public float judgeFadetime = .3f;
@@ -81,6 +87,16 @@ public class Player : MonoBehaviour
 
         }
 
+        //Canvas Stuff
+        if(attackDisplay!= null)
+        {
+            attackDisplay.text = "ATK: " + attackDamage.ToString();
+        }
+
+        if (ComboCount != null)
+        {
+            ComboCount.text = "x" + comboCounter.ToString();
+        }
 
         //Make this thing move
 
@@ -136,12 +152,16 @@ public class Player : MonoBehaviour
                 judgeText.text = Great;
                 judgeText.color = goodHit;
                 judgeGroup.alpha = 1;
+                attackDamage = 20;
+                comboCounter++;
             }
             else
             {
                 judgeText.text = Miss;
                 judgeText.color = badHit;
                 judgeGroup.alpha = 1;
+                attackDamage = 10;
+                comboCounter = 0;
             }
 
           
@@ -161,12 +181,16 @@ public class Player : MonoBehaviour
                 judgeText.text = Great;
                 judgeText.color = goodHit;
                 judgeGroup.alpha = 1;
+                attackDamage = 20;
+                comboCounter++;
             }
             else
             {
                 judgeText.text = Miss;
                 judgeText.color = badHit;
                 judgeGroup.alpha = 1;
+                attackDamage = 10;
+                comboCounter = 0;
             }
 
         }
