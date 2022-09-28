@@ -7,7 +7,29 @@ public class Martini : MonoBehaviour
     public Transform player;
     public bool isFlipped = false;
 
+    public float MaxHealth = 300f;
+    private float currentHealth;
 
+
+   
+    void Start()
+    {
+        currentHealth = MaxHealth;
+    }
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        Debug.Log("Took damage");
+
+        if (currentHealth <= 0)
+        {
+
+            Die();
+
+        }
+       
+    }
     public void LookAtPlayer()
     {
 
@@ -31,6 +53,16 @@ public class Martini : MonoBehaviour
         }
 
     }
+    void Die()
+    {
+        
+        Debug.Log("enemy died");
+        Destroy(this.gameObject);
 
+
+        //GetComponent<Collider2D>.enabled = false;
+        //this.enabled = false;
+
+    }
 
 }

@@ -257,8 +257,12 @@ public class Player : MonoBehaviour
         //Damage them
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
-
+            if (enemy.GetComponent<Enemy>() != null)
+            {
+                enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            }
+            
+            enemy.GetComponent<Martini>().TakeDamage(attackDamage);
             enemy.GetComponent<Rigidbody2D>().isKinematic = false;
             Vector2 difference = enemy.transform.position - transform.position;
 
