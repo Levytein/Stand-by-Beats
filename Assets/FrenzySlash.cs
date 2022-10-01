@@ -7,10 +7,14 @@ public class FrenzySlash : MonoBehaviour
 
     public float moveSpeed = 10f;
     private Vector2 moveDirection;
+    Rigidbody2D rb;
 
-    
     // Start is called before the first frame update
-  
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     private void OnEnable()
     {
         Invoke("Destroy", 2f);
@@ -18,7 +22,7 @@ public class FrenzySlash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(moveDirection * moveSpeed * Time.fixedDeltaTime);
+        rb.velocity = (-transform.up * moveSpeed * Time.fixedDeltaTime);
     }
 
     public void SetMoveDirection(Vector2 dir)
