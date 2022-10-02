@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 
-    [SerializeField]
-    private GameObject Shrimp;
+   
+    public GameObject[] Shrimp;
 
     private int NumWave = 0;
 
@@ -34,11 +34,12 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if(EnemiesSpawned == true)
+       
+        if(EnemiesSpawned == true)
         {
             if(enemyManager == null)
             {
-                enemyManager = StartCoroutine(spawnEnemy(ShrimpInterval, Shrimp));
+                enemyManager = StartCoroutine(spawnEnemy(ShrimpInterval));
             }
          
             
@@ -48,17 +49,18 @@ public class EnemySpawner : MonoBehaviour
         timer--;
     }
 
-    private IEnumerator spawnEnemy(float interval, GameObject enemy)
+    private IEnumerator spawnEnemy(float interval)
     {
         if(timer<=0)
         {
             while (NumWave < TotalAmountWaves)
             {
+                int randomNumber = Random.Range(0, Shrimp.Length);
                 yield return new WaitForSeconds(interval);
                 //GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-10f, 10), Random.Range(-2f, 18f), 0), Quaternion.identity);
                 float newXPos = Random.Range(-10f, 10);
                 float newYPos = Random.Range(-2f, 10f);
-                GameObject newEnemy = Instantiate(enemy, new Vector3(transform.position.x + newXPos , transform.position.y + newYPos, 0), Quaternion.identity);
+                GameObject newEnemy = Instantiate(Shrimp[randomNumber], new Vector3(transform.position.x + newXPos , transform.position.y + newYPos, 0), Quaternion.identity);
                 NumWave++;
             }
         }

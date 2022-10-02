@@ -29,16 +29,15 @@ public class Enemy : MonoBehaviour
         GameManager = GameObject.FindGameObjectWithTag("GameManager");
         enemyManagement = GameObject.FindGameObjectWithTag("EnemySpawner");
 
-        if(healthController != null)
-        {
-            healthController = (HealthController)GameManager.GetComponent(typeof(HealthController));
+        
+        healthController = (HealthController)GameManager.GetComponent(typeof(HealthController));
 
-        }
-        if(EM != null)
-        {
-            EM = enemyManagement.GetComponent<EnemySpawner>();
+        
+      
+       
+        EM = enemyManagement.GetComponent<EnemySpawner>();
 
-        }
+      
     }
 
     void Update()

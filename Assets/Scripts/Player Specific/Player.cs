@@ -261,8 +261,11 @@ public class Player : MonoBehaviour
             {
                 enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
             }
-            
-            enemy.GetComponent<Martini>().TakeDamage(attackDamage);
+            else
+            {
+                enemy.GetComponent<Martini>().TakeDamage(attackDamage);
+            }
+           
             enemy.GetComponent<Rigidbody2D>().isKinematic = false;
             Vector2 difference = enemy.transform.position - transform.position;
 

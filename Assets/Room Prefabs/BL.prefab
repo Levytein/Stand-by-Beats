@@ -7367,7 +7367,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1787956349
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -5832726028643584500, guid: cb8da5cea4976f14f8274f0b2dbfa2fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14010,7 +14010,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdda4c2d26de1af4c9b61dfe9193324c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shrimp: {fileID: 5956631492651812450, guid: 073ca2a7a0648c64f86d74b0c00b8390, type: 3}
+  Shrimp:
+  - {fileID: 5956631492651812450, guid: 073ca2a7a0648c64f86d74b0c00b8390, type: 3}
+  - {fileID: 6937646973846346176, guid: 4e76d025b3c412b4a956f567c055064e, type: 3}
   TotalAmountWaves: 4
   EnemyCount: 4
   EnemiesSpawned: 0
