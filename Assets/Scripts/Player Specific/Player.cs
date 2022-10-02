@@ -223,8 +223,15 @@ public class Player : MonoBehaviour
 
         
     }
+    public void DialogueNext(InputAction.CallbackContext value)
+    {
+        if(value.started)
+        {
+            FindObjectOfType<DialogueManager>().DisplayNextSentence();
+        }
 
-    public void OpenMenu(InputAction.CallbackContext value)
+    }
+        public void OpenMenu(InputAction.CallbackContext value)
     {
         if (value.started)
         {
