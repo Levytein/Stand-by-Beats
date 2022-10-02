@@ -29,9 +29,16 @@ public class Enemy : MonoBehaviour
         GameManager = GameObject.FindGameObjectWithTag("GameManager");
         enemyManagement = GameObject.FindGameObjectWithTag("EnemySpawner");
 
-        healthController = (HealthController)GameManager.GetComponent(typeof(HealthController));
+        if(healthController != null)
+        {
+            healthController = (HealthController)GameManager.GetComponent(typeof(HealthController));
 
-        EM = enemyManagement.GetComponent<EnemySpawner>();
+        }
+        if(EM != null)
+        {
+            EM = enemyManagement.GetComponent<EnemySpawner>();
+
+        }
     }
 
     void Update()
@@ -46,7 +53,11 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            FollowPlayer();
+            if(target != null)
+            {
+                FollowPlayer();
+            }
+         
         }
        
     }
@@ -86,18 +97,30 @@ public class Enemy : MonoBehaviour
 
     void Damage()
     {
+        if(healthController != null)
+        {
 
+        
         healthController.playerHealth = healthController.playerHealth - damageDone;
 
         healthController.UpdateHealth();
-        
-        
+        }
+        else
+        {
+            Debug.Log("Health Controller is not assigned!");
+        }
+
+
     }
     void Die()
     {
-        EM.EnemyCount--;
-        Debug.Log("enemy died");
-        Destroy(this.gameObject);
+        if(EM != null)
+        {
+            EM.EnemyCount--;
+            Debug.Log("enemy died");
+            Destroy(this.gameObject);
+        }
+       
         
         
         //GetComponent<Collider2D>.enabled = false;

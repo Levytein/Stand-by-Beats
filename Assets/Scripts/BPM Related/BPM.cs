@@ -80,7 +80,7 @@ public class BPM : MonoBehaviour
 
     void Update()
     {
-       if(AudioSettings.dspTime >= nextNoteTime)
+       if(AudioSettings.dspTime >= nextNoteTime && BPMImages != null)
         {
             NoteMarker temp = Instantiate(noteMarker, BPMImages.transform ).GetComponent<NoteMarker>();
             temp.leftNut = true;
