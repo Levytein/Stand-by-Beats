@@ -118,21 +118,11 @@ public class Player : MonoBehaviour
         Keyboard keyboard = Keyboard.current;
 
       
-        if (keyboard.aKey.isPressed)
-        {
-            p_spriteRenderer.flipX = true;
+       
 
       
-        }
 
-            
-        if(keyboard.dKey.isPressed )
-        {
-
-            p_spriteRenderer.flipX = false;
-
-    
-        }
+       
       
         movementInput = value.ReadValue<Vector2>();
 
