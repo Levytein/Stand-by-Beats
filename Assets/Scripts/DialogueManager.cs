@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI sentenceText;
+    public Image characterTalking;
+    public GameObject UIObject;
     private Queue<string> sentences;
     // Start is called before the first frame update
     void Start()
@@ -12,10 +17,12 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
     
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue (Dialogue dialogue, Sprite character)
     {
-        Debug.Log("Starting conversation with " + dialogue.name);
-
+        Time.timeScale = 0;
+        UIObject.SetActive(true);
+        characterTalking.sprite = character;
+        nameText.text = dialogue.name;
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)
@@ -36,11 +43,13 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
+        sentenceText.text = sentence;
     }
 
     void EndDialogue()
     {
         Debug.Log("End conversation");
+        Time.timeScale = 1;
+        UIObject.SetActive(false);
     }
 }

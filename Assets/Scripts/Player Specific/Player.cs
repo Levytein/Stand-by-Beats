@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
     public float attackRange ;
     public int attackDamage = 20;
     public float knockBack = 50;
+    private float RollTimer;
 
     public float knockBacktime;
 
@@ -72,8 +73,11 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
-    
+        Debug.Log("Roll Cooldown: " + RollTimer);
+        if(RollTimer>0)
+        {
+            RollTimer--;
+        }
         Vector2 movement = movementInput * speed;
        
         //Animation variables
@@ -144,7 +148,7 @@ public class Player : MonoBehaviour
     
     public void OnRoll(InputAction.CallbackContext value)
     {
-        if(value.performed)
+        if(value.performed && RollTimer <= 0)
         {
             rigidBody.AddForce(lastDirection * rollSpeed, ForceMode2D.Impulse);
             if (Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.NextNoteTime)) <= BeatTimerMargin || Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.LastTick)) <= BeatTimerMargin)
@@ -164,7 +168,7 @@ public class Player : MonoBehaviour
                 comboCounter = 0;
             }
 
-          
+            RollTimer += 30f;
         }
      
       
