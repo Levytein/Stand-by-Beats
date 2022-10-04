@@ -7,6 +7,16 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
+    private static Player activePlayer;
+    public static Player ActivePlayer
+    {
+        get
+        {
+            return activePlayer;
+        }
+
+
+    }
     private BoxCollider2D boxCollider;
 
     private Vector3 moveDelta;
@@ -36,7 +46,7 @@ public class Player : MonoBehaviour
 
     //Movement
     Vector2 movementInput = Vector2.zero;
-   
+
     public float speed = 10f;
     Vector2 lastDirection = Vector2.down;
     public LayerMask enemyLayers;
@@ -44,9 +54,25 @@ public class Player : MonoBehaviour
     public Animator controller;
     SpriteRenderer p_spriteRenderer;
 
+    //Cursor
+    public Vector2 cursorPos;
+    public Camera mainCam;
+
+
+    //Hands
+    public Transform leftHand;
+    public Transform rightHand;
+    public AnimationCurve punchCurve;
+    public float punchDistance = 3f;
+    public float punchTime = 1f;
+    private Coroutine punchRoutine;
+    private bool isRight;
+    public float attackRange;
+
+
     //Attack Parameters
     public Transform attackPoint;
-    public float attackRange ;
+    public float attackRadius;
     public int attackDamage = 20;
     public float knockBack = 50;
     private float RollTimer;
@@ -54,6 +80,11 @@ public class Player : MonoBehaviour
     public float knockBacktime;
 
     private bool facingLeft = false;
+
+    //Events
+    public delegate void PlayerMovement(Vector2 mov);
+    public event PlayerMovement OnPlayerMov;
+       
 
 
     public GameObject InventoryMenu;
@@ -63,21 +94,32 @@ public class Player : MonoBehaviour
     private bool isMenuOpen = false;
 
 
+
+
+    public void Awake()
+    {
+        activePlayer = this;
+    }
     public void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
         p_spriteRenderer = GetComponent<SpriteRenderer>();
+        mainCam = Camera.main;
  
     }
 
+    
     private void FixedUpdate()
     {
-        Debug.Log("Roll Cooldown: " + RollTimer);
+        
+
+        
         if(RollTimer>0)
         {
             RollTimer--;
         }
+
         Vector2 movement = movementInput * speed;
        
         //Animation variables
@@ -133,7 +175,10 @@ public class Player : MonoBehaviour
         }
 
         //Debug.Log("Moving");
-       
+        PlayerMovement handler = OnPlayerMov;
+        handler?.Invoke(movementInput);
+
+
     }
     
     public void OnRoll(InputAction.CallbackContext value)
@@ -164,6 +209,15 @@ public class Player : MonoBehaviour
       
     }
 
+    public void OnCursor(InputAction.CallbackContext value)
+    {
+
+
+        cursorPos = mainCam.ScreenToWorldPoint(value.ReadValue<Vector2>());
+
+
+
+    }
     public void OnMelee(InputAction.CallbackContext value)
     {
         if(value.started)
@@ -251,10 +305,22 @@ public class Player : MonoBehaviour
     void Attack()
     {
         //Play an attack animation
-        controller.SetTrigger("IsAttacking");
+        //controller.SetTrigger("IsAttacking");
         //Detect enemies in range
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position,attackRange,enemyLayers);
+
+        if (punchRoutine != null)
+        {
+            return;
+        }
+        isRight = !isRight;
+
+        punchRoutine = StartCoroutine(Punch(isRight ? rightHand : leftHand));
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position + ((Vector3)cursorPos - attackPoint.position).normalized * attackRange,attackRadius,enemyLayers);
+
         
+        //Start punch coroutine
+       
         //Damage them
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -280,10 +346,28 @@ public class Player : MonoBehaviour
        
 
         }
-    
+
+    private IEnumerator Punch(Transform handy)
+    {
+        float progress = 0f;
+
+        Vector2 targetPos = (cursorPos - (Vector2)handy.parent.position ).normalized * punchDistance;
+        while(progress < punchTime)
+        {
+            handy.localPosition = Vector2.LerpUnclamped(Vector2.zero, targetPos,punchCurve.Evaluate(Mathf.Clamp01(progress/punchTime)));
+            progress += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
 
 
-  
+        }
+        handy.localPosition = Vector2.zero;
+        punchRoutine = null;
+
+    }
+
+
+
+
     private IEnumerator  KnockbackCo(Rigidbody2D enemy)
     {
         if(enemy !=null)
@@ -301,7 +385,10 @@ public class Player : MonoBehaviour
             return;
         }
 
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-     
+        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        if(Application.isPlaying)
+        {
+            Gizmos.DrawWireSphere(attackPoint.position + ((Vector3)cursorPos - attackPoint.position).normalized * attackRange, attackRadius);
+        }
     }
 }

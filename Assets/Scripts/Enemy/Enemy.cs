@@ -25,7 +25,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        target = GameObject.FindGameObjectWithTag("Player");
+        //Visit for later 10/3/2022
+        target = Player.ActivePlayer.gameObject;
         GameManager = GameObject.FindGameObjectWithTag("GameManager");
         enemyManagement = GameObject.FindGameObjectWithTag("EnemySpawner");
 
