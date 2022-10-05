@@ -18,6 +18,7 @@ public class RoomTemplates : MonoBehaviour
     public float waitTime;
     private bool spawnedBoss;
     public GameObject boss;
+    public GameObject ventSus;
 
 
      void Update()
@@ -29,6 +30,7 @@ public class RoomTemplates : MonoBehaviour
                 if(i == rooms.Count-1)
                 {
                     Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
+                    Instantiate(ventSus, rooms[i].transform.position, Quaternion.identity);
                     spawnedBoss = true;
                 }
             }

@@ -8,12 +8,15 @@ public class FrenzySlash : MonoBehaviour
     public float moveSpeed = 10f;
     private Vector2 moveDirection;
     Rigidbody2D rb;
-
+    [SerializeField] private int damageDone;
     // Start is called before the first frame update
-
+    private GameObject GameManager;
+    HealthController healthController;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GameManager = GameObject.FindGameObjectWithTag("GameManager");
+        healthController = (HealthController)GameManager.GetComponent(typeof(HealthController));
     }
     private void OnEnable()
     {
@@ -29,7 +32,18 @@ public class FrenzySlash : MonoBehaviour
     {
         moveDirection = dir;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
 
+            healthController.playerHealth = healthController.playerHealth - damageDone;
+
+
+            healthController.UpdateHealth();
+        }
+       
+    }
     private void Destroy()
     {
         gameObject.SetActive(false);

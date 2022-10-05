@@ -21,6 +21,6 @@ public class Menu : MonoBehaviour
     
     public void Reload()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

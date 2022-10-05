@@ -12,13 +12,13 @@ public class SpawnFrenzySlash : MonoBehaviour
     private float arc = 180;
     [SerializeField]
     private float aimAngle = 0;
-
+    private int counter = 0;
     private bool increment = false;
 
     private Vector2 bulletmoveDirection;
     void Start()
     {
-        InvokeRepeating("Fire", 0f, 1.5f);
+        
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class SpawnFrenzySlash : MonoBehaviour
         {
             GameObject slas = FrenzyPool.FrenzyPoolIntense.GetSlash();
             slas.transform.position = transform.position;
-            slas.transform.rotation = Quaternion.identity * Quaternion.AngleAxis(((2f * i / (slashAmount + (increment ? 1 : 0) - 1f))- 1f)* arc , Vector3.forward);
+            slas.transform.rotation = Quaternion.identity * Quaternion.AngleAxis(((2f * i / (slashAmount + (increment ? 2 : 1) - 1f))- 1f)* arc , Vector3.forward);
             slas.transform.rotation *= Quaternion.AngleAxis(aimAngle, Vector3.forward);
 
 
@@ -40,7 +40,7 @@ public class SpawnFrenzySlash : MonoBehaviour
             //slas.transform.rotation = Quaternion.identity * Quaternion.AngleAxis(-(arc/2) + (i * (arc / 2)/(slashAmount-1)) + 180 , Vector3.forward);
             //slas.transform.rotation *= Quaternion.AngleAxis(aimAngle, Vector3.forward);
             slas.SetActive(true);
-            Debug.Log(-(arc / 2) + (i * arc / (slashAmount - 1)) + 180);
+            //Debug.Log(-(arc / 2) + (i * arc / (slashAmount - 1)) + 180);
             //Old way of handling slash directions
             /*float bulDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
             float bulDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
@@ -61,5 +61,33 @@ public class SpawnFrenzySlash : MonoBehaviour
 
 
         }
+        if(!GetComponent<Animator>().GetBool("EnragedSlash")) 
+        {
+            GetComponent<Animator>().SetBool("EnragedSlash", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("EnragedSlash", false);
+
+        }
+        counter++;
+        Debug.Log(counter);
+        if(counter >= 10)
+        {
+            GetComponent<Animator>().SetBool("Exhausted", true);
+        }
+        
+    }
+
+    private void CountDown()
+    {
+        counter -= 4;
+        if (counter <= 0)
+        {
+            GetComponent<Animator>().SetBool("Exhausted", false);
+            GetComponent<Animator>().SetBool("EnragedSlash", false);
+
+        }
+        Debug.Log(counter);
     }
 }

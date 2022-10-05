@@ -5,6 +5,16 @@ using UnityEngine.UI;
 public class HealthController : MonoBehaviour
 {
     // Start is called before the first frame update
+    private static HealthController activeHealthController;
+    public static HealthController ActiveHealthController
+    {
+        get
+        {
+            return activeHealthController;
+        }
+
+
+    }
     public int playerHealth;
 
     [SerializeField] private Image[] hearts;

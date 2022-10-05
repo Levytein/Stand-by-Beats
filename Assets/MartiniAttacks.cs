@@ -17,8 +17,13 @@ public class MartiniAttacks : MonoBehaviour
     public LayerMask attackMask;
     private GameObject playerPos;
     public Martini MartiniControl;
+    Animator MartiniAnimator;
     // Start is called before the first frame update
 
+    void Start ()
+    {
+        MartiniAnimator = GetComponent<Animator>();
+    }
    
     public void Attack()
     { 
@@ -50,6 +55,13 @@ public class MartiniAttacks : MonoBehaviour
             HealthManager.playerHealth = HealthManager.playerHealth - attackDamage;
             HealthManager.UpdateHealth();
         }
+    }
+    public void enragedSlashes()
+    {
+        if(MartiniAnimator.GetBool("EnragedSlash") == true)
+        {
+
+        }    
     }
 
     // Update is called once per frame

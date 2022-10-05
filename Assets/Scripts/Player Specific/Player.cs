@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -279,7 +280,7 @@ public class Player : MonoBehaviour
         }
 
     }
-        public void OpenMenu(InputAction.CallbackContext value)
+    public void OpenMenu(InputAction.CallbackContext value)
     {
         if (value.started)
         {
@@ -324,15 +325,17 @@ public class Player : MonoBehaviour
         //Damage them
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (enemy.GetComponent<Enemy>() != null)
+
+            if(SceneManager.GetActiveScene().buildIndex != 4)
             {
                 enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
             }
             else
             {
                 enemy.GetComponent<Martini>().TakeDamage(attackDamage);
+
             }
-           
+
             enemy.GetComponent<Rigidbody2D>().isKinematic = false;
             Vector2 difference = enemy.transform.position - transform.position;
 

@@ -16,18 +16,22 @@ public class DoorTrigger : MonoBehaviour
   
     void OnTriggerEnter2D(Collider2D other)
     {
-       
-        for (int i = 0; i < doorTile.Length; i++)
+
+        if (other.CompareTag("Player"))
         {
-            doorTile[i].SetActive(true);
-            
 
+
+            for (int i = 0; i < doorTile.Length; i++)
+            {
+                doorTile[i].SetActive(true);
+
+
+            }
+            enemySpawner.SetActive(true);
+
+            enemyManagement.EnemiesSpawned = true;
+            doorClosed = true;
         }
-        enemySpawner.SetActive(true);
-        
-        enemyManagement.EnemiesSpawned = true;
-        doorClosed = true;
-
         
 
         

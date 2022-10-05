@@ -7,14 +7,20 @@ public class Martini : MonoBehaviour
     public Transform player;
     public bool isFlipped = false;
 
-    public float MaxHealth = 300f;
+    public float MaxHealth = 120f;
     private float currentHealth;
 
+    public Transform enragedSpot;
 
+    private bool hasTransitioned = false;
+    public float speed = 100f;
+
+    Rigidbody2D rb;
    
     void Start()
     {
         currentHealth = MaxHealth;
+        rb = GetComponent<Rigidbody2D>();
     }
     public void TakeDamage(int damage)
     {
@@ -22,6 +28,15 @@ public class Martini : MonoBehaviour
 
         Debug.Log("Took damage");
 
+        if(currentHealth <= 100)
+        {
+            GetComponent<Animator>().SetBool("isEnraged", true);
+            if(hasTransitioned == false)
+            {
+                Transition();
+
+            }
+        }
         if (currentHealth <= 0)
         {
 
@@ -52,6 +67,13 @@ public class Martini : MonoBehaviour
 
         }
 
+    }
+    public void Transition()
+    {
+
+        gameObject.transform.position = enragedSpot.position;
+        rb.mass = 100000;
+        hasTransitioned = true;
     }
     void Die()
     {
