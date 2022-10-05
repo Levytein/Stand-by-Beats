@@ -24312,6 +24312,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1054469294663231644, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054469294663231644, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1787956349
+      objectReference: {fileID: 0}
     - target: {fileID: 2846557131659931520, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -24332,6 +24340,14 @@ PrefabInstance:
       propertyPath: speed
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: eddySounds.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: eddySounds.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: ec4cf8ab198e0a34b98603ed52557920, type: 3}
     - target: {fileID: 2846557131659931579, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -24387,6 +24403,14 @@ PrefabInstance:
     - target: {fileID: 2846557131659931581, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: m_Simulated
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698980999515106668, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698980999515106668, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1787956349
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}

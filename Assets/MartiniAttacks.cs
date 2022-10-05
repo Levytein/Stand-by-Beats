@@ -18,11 +18,15 @@ public class MartiniAttacks : MonoBehaviour
     private GameObject playerPos;
     public Martini MartiniControl;
     Animator MartiniAnimator;
-    // Start is called before the first frame update
 
+    [SerializeField] AudioClip[] sounds;
+    // Start is called before the first frame update
+    AudioSource speaker;
+    public AudioClip slashSFX;
     void Start ()
     {
         MartiniAnimator = GetComponent<Animator>();
+        speaker = GetComponent<AudioSource>();
     }
    
     public void Attack()
@@ -35,7 +39,7 @@ public class MartiniAttacks : MonoBehaviour
         playerPos = GameObject.FindGameObjectWithTag("Player");
         Vector3 playerPosition = playerPos.transform.position;
         Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-      
+        speaker.PlayOneShot(slashSFX);
         if(MartiniControl.isFlipped == true)
         {
             Instantiate(Slash, pos, new Quaternion(0, 0, 0, 0));
@@ -56,13 +60,7 @@ public class MartiniAttacks : MonoBehaviour
             HealthManager.UpdateHealth();
         }
     }
-    public void enragedSlashes()
-    {
-        if(MartiniAnimator.GetBool("EnragedSlash") == true)
-        {
-
-        }    
-    }
+ 
 
     // Update is called once per frame
     void Update()

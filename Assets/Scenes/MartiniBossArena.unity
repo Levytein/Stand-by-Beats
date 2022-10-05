@@ -357,6 +357,7 @@ GameObject:
   - component: {fileID: 5342321}
   - component: {fileID: 5342322}
   - component: {fileID: 5342323}
+  - component: {fileID: 5342324}
   m_Layer: 6
   m_Name: Martini
   m_TagString: Untagged
@@ -534,6 +535,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   MartiniControl: {fileID: 5342321}
+  sounds: []
+  slashSFX: {fileID: 8300000, guid: 6670e5e948ffdfa41b40a50ef664e22e, type: 3}
 --- !u!114 &5342323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,7 +551,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slashAmount: 4
   arc: 180
-  aimAngle: 0
+  aimAngle: 75
+--- !u!82 &5342324
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5342315}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &27355091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,7 +1614,6 @@ GameObject:
   m_Component:
   - component: {fileID: 197629244}
   - component: {fileID: 197629243}
-  - component: {fileID: 197629247}
   m_Layer: 0
   m_Name: MartiniEnragedSpot
   m_TagString: MartiniEnraged
@@ -1588,21 +1686,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &197629247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197629242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f62031c15a4b6d43bae240396524d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slashAmount: 4
-  arc: 45
-  aimAngle: 0
 --- !u!1 &206872128
 GameObject:
   m_ObjectHideFlags: 0
@@ -17490,6 +17573,14 @@ PrefabInstance:
       propertyPath: punchDistance
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: eddySounds.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: eddySounds.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: ec4cf8ab198e0a34b98603ed52557920, type: 3}
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: punchCurve.m_PostInfinity
       value: 2

@@ -12,13 +12,15 @@ public class MartiniTransition : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         EnragedPosition = GameObject.FindGameObjectWithTag("MartiniEnraged").transform;
-
+        rb = animator.GetComponent<Rigidbody2D>();
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //boss.Transition();
+        rb.transform.position = EnragedPosition.position;
+        rb.mass = 100000;
+        
 
     }
 

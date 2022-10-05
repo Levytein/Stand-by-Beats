@@ -12,7 +12,7 @@ public class MartiniRun : StateMachineBehaviour
     Rigidbody2D rb;
 
     Martini boss;
-   
+    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -35,6 +35,7 @@ public class MartiniRun : StateMachineBehaviour
         if(Vector2.Distance(player.position, rb.position) <= attackRange)
         {
             animator.SetTrigger("Attack");
+           
 
         }
     }

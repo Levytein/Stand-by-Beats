@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     private static Player activePlayer;
+    [SerializeField] AudioClip[] eddySounds;
     public static Player ActivePlayer
     {
         get
@@ -94,6 +95,8 @@ public class Player : MonoBehaviour
     public GameObject MainMenu;
     private bool isMenuOpen = false;
 
+    //Sound Related
+    
 
 
 
@@ -107,7 +110,8 @@ public class Player : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         p_spriteRenderer = GetComponent<SpriteRenderer>();
         mainCam = Camera.main;
- 
+        
+
     }
 
     
@@ -184,7 +188,8 @@ public class Player : MonoBehaviour
     
     public void OnRoll(InputAction.CallbackContext value)
     {
-        if(value.performed && RollTimer <= 0)
+        AudioSource speaker = this.gameObject.GetComponent<AudioSource>();
+        if (value.performed && RollTimer <= 0)
         {
             rigidBody.AddForce(lastDirection * rollSpeed, ForceMode2D.Impulse);
             if (Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.NextNoteTime)) <= BeatTimerMargin || Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.LastTick)) <= BeatTimerMargin)
@@ -194,6 +199,8 @@ public class Player : MonoBehaviour
                 judgeGroup.alpha = 1;
                 attackDamage = 20;
                 comboCounter++;
+                
+                speaker.PlayOneShot(eddySounds[8]);
             }
             else
             {
@@ -202,6 +209,7 @@ public class Player : MonoBehaviour
                 judgeGroup.alpha = 1;
                 attackDamage = 10;
                 comboCounter = 0;
+                speaker.PlayOneShot(eddySounds[7]);
             }
 
             RollTimer += 30f;
@@ -232,6 +240,7 @@ public class Player : MonoBehaviour
                 judgeGroup.alpha = 1;
                 attackDamage = 20;
                 comboCounter++;
+                
             }
             else
             {
@@ -303,11 +312,19 @@ public class Player : MonoBehaviour
 
 
     }
+    void FootSteps()
+    {
+        AudioClip clip = eddySounds[Random.Range(3, 6)];
+        AudioSource speaker = this.gameObject.GetComponent<AudioSource>();
+        speaker.PlayOneShot(clip);
+    }
     void Attack()
     {
         //Play an attack animation
         //controller.SetTrigger("IsAttacking");
         //Detect enemies in range
+        AudioSource speaker = this.gameObject.GetComponent<AudioSource>();
+        speaker.PlayOneShot(eddySounds[9]);
 
         if (punchRoutine != null)
         {
@@ -319,9 +336,10 @@ public class Player : MonoBehaviour
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position + ((Vector3)cursorPos - attackPoint.position).normalized * attackRange,attackRadius,enemyLayers);
 
-        
+
         //Start punch coroutine
-       
+        
+        
         //Damage them
         foreach (Collider2D enemy in hitEnemies)
         {

@@ -31,11 +31,7 @@ public class Martini : MonoBehaviour
         if(currentHealth <= 100)
         {
             GetComponent<Animator>().SetBool("isEnraged", true);
-            if(hasTransitioned == false)
-            {
-                Transition();
-
-            }
+          
         }
         if (currentHealth <= 0)
         {

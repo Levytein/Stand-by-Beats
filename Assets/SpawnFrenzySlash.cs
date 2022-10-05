@@ -32,7 +32,7 @@ public class SpawnFrenzySlash : MonoBehaviour
         {
             GameObject slas = FrenzyPool.FrenzyPoolIntense.GetSlash();
             slas.transform.position = transform.position;
-            slas.transform.rotation = Quaternion.identity * Quaternion.AngleAxis(((2f * i / (slashAmount + (increment ? 2 : 1) - 1f))- 1f)* arc , Vector3.forward);
+            slas.transform.rotation = Quaternion.identity * Quaternion.AngleAxis(((2f * i / (slashAmount + (increment ? 4 : 2) - 1f))- 1f)* arc , Vector3.forward);
             slas.transform.rotation *= Quaternion.AngleAxis(aimAngle, Vector3.forward);
 
 
