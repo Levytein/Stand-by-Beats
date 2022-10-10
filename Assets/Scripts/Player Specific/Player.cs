@@ -86,9 +86,10 @@ public class Player : MonoBehaviour
     //Events
     public delegate void PlayerMovement(Vector2 mov);
     public event PlayerMovement OnPlayerMov;
-       
 
 
+    //
+    public int currency;
     public GameObject InventoryMenu;
     private bool isInventoryOpen = false;
 
