@@ -15,9 +15,12 @@ public class HealthController : MonoBehaviour
 
 
     }
-    public int playerHealth;
 
-    [SerializeField] private Image[] hearts;
+
+    private List<Image>  hearts = new List<Image>();
+    public GameObject heartObject;
+
+    [SerializeField] Transform healthParent;
     public int healthCounter;
 
     bool gameHasEnded = false;
@@ -29,15 +32,15 @@ public class HealthController : MonoBehaviour
      private void Start()
     {
         gameOver.gameObject.SetActive(false);
-
+        RefreshHealth();
     }
 
     // Update is called once per frame
     public void UpdateHealth()
     {
-        for(int i = 0; i < hearts.Length; i++)
+        for(int i = 0; i < hearts.Count; i++)
         {
-            if(i<playerHealth)
+            if(i < Player.ActivePlayer.currentHealth)
             {
                 hearts[i].color = Color.white;
             }
@@ -47,12 +50,27 @@ public class HealthController : MonoBehaviour
             }
         }
 
-        if(playerHealth == 0)
+        if(Player.ActivePlayer.currentHealth == 0)
         {
             EndGame();
             gameOver.gameObject.SetActive(true);
         }
 
+    }
+
+
+    public void RefreshHealth()
+    {
+        foreach(Image img in hearts)
+        {
+            Destroy(img.gameObject);
+        }
+
+        for(int i = 0; i < Player.maxHealth; i ++)
+        {
+            hearts.Add(Instantiate(heartObject,healthParent).GetComponent<Image>());
+
+        }    
     }
 
     public void EndGame()

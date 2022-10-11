@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 888da2b6a993c6c4dbde297d0324b674, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b21e9ff39980ccf4b91140407a5cfb79, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1437,7 +1437,7 @@ RectTransform:
   - {fileID: 1198650050}
   - {fileID: 647100973}
   m_Father: {fileID: 1668745922}
-  m_RootOrder: 14
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1500,7 +1500,7 @@ MonoBehaviour:
   ItemID: 3
   PirceTxt: {fileID: 1828656548}
   ShopManager: {fileID: 1162576858}
-  itemBoost: {fileID: 0}
+  itemBoost: {fileID: 11400000, guid: f4230c80bc485094d9d2a1130dca2977, type: 2}
 --- !u!114 &736562301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2685,6 +2685,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 11e2ecfe-0a50-41b8-9975-bcab6027045e
     m_ActionName: Player/Cursor[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1842708040}
+        m_TargetAssemblyTypeName: ShopkeepParameter, Assembly-CSharp
+        m_MethodName: OnShopkeeper
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 253137b8-2813-4ef3-8856-882d7ab8efdf
+    m_ActionName: Player/Shopkeeper[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -3019,6 +3035,10 @@ PrefabInstance:
       propertyPath: attackDisplay
       value: 
       objectReference: {fileID: 724929919}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: currentHealth
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: eddySounds.Array.size
       value: 10
@@ -3611,7 +3631,7 @@ GameObject:
   - component: {fileID: 1842708041}
   - component: {fileID: 1842708040}
   m_Layer: 0
-  m_Name: HUBPortalst_3
+  m_Name: Shopkeep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

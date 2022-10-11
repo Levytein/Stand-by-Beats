@@ -75,19 +75,27 @@ public class Player : MonoBehaviour
     //Attack Parameters
     public Transform attackPoint;
     public float attackRadius;
-    public int attackDamage = 20;
-    public float knockBack = 50;
+    public static int attackDamage = 20;
+    public static float knockBack = 50;
     private float RollTimer;
 
     public float knockBacktime;
 
     private bool facingLeft = false;
 
+    //Health
+    public static int maxHealth = 5;
+    public int currentHealth;
+    private HealthController HCControl;
     //Events
     public delegate void PlayerMovement(Vector2 mov);
     public event PlayerMovement OnPlayerMov;
 
-
+    //Flashing
+    [SerializeField] private int amountOfFlashes = 10;
+    [SerializeField] private float intervalFlashes = .3f;
+    private Material EddyMaterial;
+    private Coroutine flashRoutine;
     //
     public int currency;
     public GameObject InventoryMenu;
@@ -111,8 +119,9 @@ public class Player : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         p_spriteRenderer = GetComponent<SpriteRenderer>();
         mainCam = Camera.main;
-        
-
+        currentHealth = maxHealth;
+        HCControl = GameObject.FindGameObjectWithTag("GameManager").GetComponent<HealthController>();
+        EddyMaterial = GetComponent<SpriteRenderer>().material;
     }
 
     
@@ -282,12 +291,33 @@ public class Player : MonoBehaviour
 
         
     }
+
+   
     public void DialogueNext(InputAction.CallbackContext value)
     {
         if(value.started)
         {
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
         }
+
+    }
+
+    public void UpdateHealth(int damageDone)
+    {
+        if(damageDone > 0)
+        {
+            currentHealth += damageDone;
+            HCControl.UpdateHealth();
+        }
+        if(flashRoutine != null)
+        {
+            return;
+        }
+
+        flashRoutine = StartCoroutine("HitFlash");
+        currentHealth += damageDone;
+        HCControl.UpdateHealth();
+
 
     }
     public void OpenMenu(InputAction.CallbackContext value)
@@ -387,6 +417,18 @@ public class Player : MonoBehaviour
 
     }
 
+    private IEnumerator HitFlash()
+    {
+        for(int i = 0; i < amountOfFlashes; i++)
+        {
+            yield return new WaitForSeconds(intervalFlashes / 2);
+            EddyMaterial.SetFloat("_HitBlend", 1f);
+            yield return new WaitForSeconds(intervalFlashes / 2);
+            EddyMaterial.SetFloat("_HitBlend", 0f);
+            
+        }
+        flashRoutine = null;
+    }
 
 
 

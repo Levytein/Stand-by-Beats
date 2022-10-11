@@ -18,11 +18,12 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private int damageDone;
 
-    [SerializeField] private HealthController healthController;
 
     public GameObject enemyManagement;
     EnemySpawner EM;
-    void Start()
+    private float coolDown = 0f;
+    [SerializeField] private static float maxCooldown = 100f;
+    protected virtual void Start()
     {
         currentHealth = maxHealth;
         //Visit for later 10/3/2022
@@ -31,7 +32,7 @@ public class Enemy : MonoBehaviour
         enemyManagement = GameObject.FindGameObjectWithTag("EnemySpawner");
 
         
-        healthController = (HealthController)GameManager.GetComponent(typeof(HealthController));
+       
 
         
       
@@ -59,7 +60,7 @@ public class Enemy : MonoBehaviour
             }
          
         }
-       
+        coolDown -= Time.deltaTime;
     }
 
 
@@ -87,29 +88,23 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+   
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if(coolDown <= 0 )
         {
-            Damage();
+            if (collision.CompareTag("Player"))
+            {
+                Damage();
+                coolDown = maxCooldown;
+            }
         }
     }
 
     void Damage()
     {
-        if(healthController != null)
-        {
-
-        
-        healthController.playerHealth = healthController.playerHealth - damageDone;
-
-        healthController.UpdateHealth();
-        }
-        else
-        {
-            Debug.Log("Health Controller is not assigned!");
-        }
-
+    
+            Player.ActivePlayer.UpdateHealth(-damageDone);
 
     }
     void Die()

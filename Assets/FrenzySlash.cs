@@ -37,7 +37,7 @@ public class FrenzySlash : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
 
-            healthController.playerHealth = healthController.playerHealth - damageDone;
+            Player.ActivePlayer.currentHealth = Player.ActivePlayer.currentHealth - damageDone;
 
 
             healthController.UpdateHealth();

@@ -56,7 +56,7 @@ public class MartiniAttacks : MonoBehaviour
         if (colInfo != null)
         {
             Debug.Log("I hit the player");
-            HealthManager.playerHealth = HealthManager.playerHealth - attackDamage;
+            Player.ActivePlayer.currentHealth = Player.ActivePlayer.currentHealth - attackDamage;
             HealthManager.UpdateHealth();
         }
     }

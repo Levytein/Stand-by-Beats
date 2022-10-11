@@ -45,7 +45,8 @@ public class Shopkeep : MonoBehaviour
             shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++;
             currentMoneyDisplay.text = "Gold: " + playerCurrentMoney;
             ButtonRef.GetComponent<ButtonInfo>().PirceTxt.text = "SOLD OUT";
-            Player.ActivePlayer.attackDamage += (int)ButtonRef.GetComponent<ButtonInfo>().itemBoost.Damage;
+            Player.attackDamage += (int)ButtonRef.GetComponent<ButtonInfo>().itemBoost.Damage;
+            Player.maxHealth += (int)ButtonRef.GetComponent<ButtonInfo>().itemBoost.permHealth;
         }
     }
 

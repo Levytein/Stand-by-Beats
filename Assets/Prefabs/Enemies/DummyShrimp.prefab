@@ -51,9 +51,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6371003574251799490, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6371003574251799491, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
       propertyPath: m_Mass
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371003574251799493, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371003574251799493, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
+      propertyPath: maxCooldown
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6371003574251799493, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
       propertyPath: enemyManagement

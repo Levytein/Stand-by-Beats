@@ -6,10 +6,10 @@ public class TutorialChecker : MonoBehaviour
 {
     // Start is called before the first frame update
 
-
-
-
-
+    private bool wKey = false;
+    private bool sKey = false;
+    private bool aKey = false;
+    private bool dKey = false;
     void Start()
     {
         Player.ActivePlayer.OnPlayerMov += GetMovement; 
@@ -26,6 +26,22 @@ public class TutorialChecker : MonoBehaviour
     // Update is called once per frame
     void GetMovement(Vector2 mov)
     {
-        
+        if(mov.x > 0 )
+        {
+            dKey = true;
+        }
+        if (mov.x > 0)
+        {
+            dKey = true;
+        }
+        if (mov.x > 0)
+        {
+            dKey = true;
+        }
+        if (mov.x > 0)
+        {
+            dKey = true;
+        }
+
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1712515543239911537}
   - component: {fileID: 3126080374455425712}
   - component: {fileID: 419263181986467983}
-  - component: {fileID: 4495076118446478159}
+  - component: {fileID: 7604423427352198605}
   m_Layer: 6
   m_Name: BlueSlimeShark
   m_TagString: Enemy
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1493323610465935476, guid: 90ebeedb69675d9439f76128708c9ff3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -119,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.04}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -179,7 +179,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &4495076118446478159
+--- !u!114 &7604423427352198605
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,14 +188,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6937646973846346176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2032bd3440b0ea47a1f91cdcb41e5a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6cb0808badff2334f8d88843e6bff5b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 1
+  speed: 1.5
   maxHealth: 100
   countDown: 1
   damageText: {fileID: 0}
-  damageDone: 0
-  healthController: {fileID: 0}
+  damageDone: 1
   enemyManagement: {fileID: 0}
+  slimeTrail: {fileID: 2115430804350692938, guid: 5adf424d6448300469691dff985d2e51, type: 3}
+  slimeTrailCD: 0.5
