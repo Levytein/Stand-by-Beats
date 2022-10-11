@@ -5,8 +5,17 @@ using UnityEngine;
 
 public class BPM : MonoBehaviour
 {
-    public static BPM activeBPM;
 
+    public static BPM activeBPM;
+    public static BPM ActivePlayer
+    {
+        get
+        {
+            return activeBPM;
+        }
+
+
+    }
 
     public double bpm = 140.0F;
     public float gain = 0.5F;

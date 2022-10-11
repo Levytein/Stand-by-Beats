@@ -921,6 +921,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!224 &51197406 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1644683987673229363, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+  m_PrefabInstance: {fileID: 573296956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &77247795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,6 +1537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 187346102}
   - component: {fileID: 187346103}
+  - component: {fileID: 187346104}
   m_Layer: 0
   m_Name: EDMlvl1TS_6 (166)
   m_TagString: Untagged
@@ -1604,6 +1610,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &187346104
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187346101}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.32}
+  m_EdgeRadius: 0
 --- !u!1 &197629242
 GameObject:
   m_ObjectHideFlags: 0
@@ -2577,17 +2609,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &307147806 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 944786670747579292, guid: 59f707992ed535144893983ada34e7e7, type: 3}
-  m_PrefabInstance: {fileID: 573296956}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &308745346
 GameObject:
   m_ObjectHideFlags: 0
@@ -3641,13 +3662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef07a0f2f7afe1499ea0853e5619323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 5
-  hearts:
-  - {fileID: 1970530132}
-  - {fileID: 1583193341}
-  - {fileID: 2026714028}
-  - {fileID: 629971616}
-  - {fileID: 307147806}
+  heartObject: {fileID: 535134121420300579, guid: cd593ae73b7fb26459ac89f0937b9bec, type: 3}
+  healthParent: {fileID: 51197406}
   healthCounter: 0
   player: {fileID: 731551293}
   gameOver: {fileID: 497341671}
@@ -4362,7 +4378,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500733303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.4108458, y: 0.64960766, z: -10}
+  m_LocalPosition: {x: -12.29, y: -0.24, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5020,6 +5036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 564223886}
   - component: {fileID: 564223887}
+  - component: {fileID: 564223888}
   m_Layer: 0
   m_Name: EDMlvl1TS_6 (164)
   m_TagString: Untagged
@@ -5092,6 +5109,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &564223888
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564223885}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.32}
+  m_EdgeRadius: 0
 --- !u!1 &565106541
 GameObject:
   m_ObjectHideFlags: 0
@@ -6069,17 +6112,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &629971616 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 944786671077562906, guid: 59f707992ed535144893983ada34e7e7, type: 3}
-  m_PrefabInstance: {fileID: 573296956}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &633591445
 GameObject:
   m_ObjectHideFlags: 0
@@ -8088,6 +8120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 816220313}
   - component: {fileID: 816220314}
+  - component: {fileID: 816220315}
   m_Layer: 0
   m_Name: EDMlvl1TS_6 (83)
   m_TagString: Untagged
@@ -8160,6 +8193,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &816220315
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816220312}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.32}
+  m_EdgeRadius: 0
 --- !u!1 &833932486
 GameObject:
   m_ObjectHideFlags: 0
@@ -9292,7 +9351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953675443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.4108458, y: 0.64960766, z: -10}
+  m_LocalPosition: {x: -12.29, y: -0.24, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1517241366}
@@ -14503,17 +14562,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1583193341 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 944786671821043804, guid: 59f707992ed535144893983ada34e7e7, type: 3}
-  m_PrefabInstance: {fileID: 573296956}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1586244021
 GameObject:
   m_ObjectHideFlags: 0
@@ -17397,17 +17445,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1970530132 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 944786672177676425, guid: 59f707992ed535144893983ada34e7e7, type: 3}
-  m_PrefabInstance: {fileID: 573296956}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1997234245
 GameObject:
   m_ObjectHideFlags: 0
@@ -17570,9 +17607,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 861620350}
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: currentHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: punchDistance
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: songs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: songs.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: d5a0a9f02bf048541a3b2d4f91ca9f02, type: 2}
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: eddySounds.Array.size
       value: 10
@@ -17703,11 +17752,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2846557131659931580, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.4108458
+      value: -12.29
       objectReference: {fileID: 0}
     - target: {fileID: 2846557131659931580, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.64960766
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: 2846557131659931580, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17745,6 +17794,10 @@ PrefabInstance:
       propertyPath: BPMImages
       value: 
       objectReference: {fileID: 590535781}
+    - target: {fileID: 2846557131659931583, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: currentSong
+      value: 
+      objectReference: {fileID: 11400000, guid: 3381dd6f85e4560479dde6dbc8cfdc7b, type: 2}
     - target: {fileID: 3161948560290532472, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: m_Name
       value: Lefty
@@ -17767,17 +17820,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
---- !u!114 &2026714028 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 944786671853648863, guid: 59f707992ed535144893983ada34e7e7, type: 3}
-  m_PrefabInstance: {fileID: 573296956}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2033092461
 GameObject:
   m_ObjectHideFlags: 0
@@ -18093,6 +18135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2132811286}
   - component: {fileID: 2132811287}
+  - component: {fileID: 2132811288}
   m_Layer: 0
   m_Name: EDMlvl1TS_6 (165)
   m_TagString: Untagged
@@ -18165,6 +18208,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2132811288
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132811285}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.32}
+  m_EdgeRadius: 0
 --- !u!1 &2132855144
 GameObject:
   m_ObjectHideFlags: 0

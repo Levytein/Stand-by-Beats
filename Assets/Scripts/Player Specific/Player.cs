@@ -105,7 +105,7 @@ public class Player : MonoBehaviour
     private bool isMenuOpen = false;
 
     //Sound Related
-    
+    public MusicData[] songs;
 
 
 

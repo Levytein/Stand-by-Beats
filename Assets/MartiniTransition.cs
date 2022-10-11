@@ -13,6 +13,8 @@ public class MartiniTransition : StateMachineBehaviour
     {
         EnragedPosition = GameObject.FindGameObjectWithTag("MartiniEnraged").transform;
         rb = animator.GetComponent<Rigidbody2D>();
+        BPM.activeBPM.currentSong = Player.ActivePlayer.songs[0];
+
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -20,7 +22,7 @@ public class MartiniTransition : StateMachineBehaviour
     {
         rb.transform.position = EnragedPosition.position;
         rb.mass = 100000;
-        
+
 
     }
 
