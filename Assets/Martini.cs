@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Martini : MonoBehaviour
 {
@@ -73,9 +74,9 @@ public class Martini : MonoBehaviour
     }
     void Die()
     {
-        
-        Debug.Log("enemy died");
-        Destroy(this.gameObject);
+
+        SceneManager.LoadScene(2);
+        //Destroy(this.gameObject);
 
 
         //GetComponent<Collider2D>.enabled = false;

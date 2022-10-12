@@ -79,6 +79,7 @@ public class Player : MonoBehaviour
     public static int attackDamage = 20;
     public static float knockBack = 50;
     private float RollTimer;
+    public int attackDamageItem;
 
     public float knockBacktime;
 
@@ -123,6 +124,16 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         HCControl = GameObject.FindGameObjectWithTag("GameManager").GetComponent<HealthController>();
         EddyMaterial = GetComponent<SpriteRenderer>().material;
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            attackDamage = 20;
+
+        }
+        if (SceneManager.GetActiveScene().buildIndex >= 2)
+        {
+            attackDamageItem = attackDamage;
+
+        }
     }
 
     private void Update()
@@ -212,7 +223,7 @@ public class Player : MonoBehaviour
                 judgeText.text = Great;
                 judgeText.color = goodHit;
                 judgeGroup.alpha = 1;
-                attackDamage = 20;
+                attackDamage = attackDamageItem + 10;
                 comboCounter++;
                 
                 speaker.PlayOneShot(eddySounds[8]);
@@ -222,8 +233,9 @@ public class Player : MonoBehaviour
                 judgeText.text = Miss;
                 judgeText.color = badHit;
                 judgeGroup.alpha = 1;
-                attackDamage = 10;
+                attackDamage = attackDamageItem - 10;
                 comboCounter = 0;
+
                 speaker.PlayOneShot(eddySounds[7]);
             }
 
@@ -252,7 +264,7 @@ public class Player : MonoBehaviour
                 judgeText.text = Great;
                 judgeText.color = goodHit;
                 judgeGroup.alpha = 1;
-                attackDamage = 20;
+                attackDamage = attackDamageItem + 10;
                 comboCounter++;
                 
             }
@@ -261,7 +273,7 @@ public class Player : MonoBehaviour
                 judgeText.text = Miss;
                 judgeText.color = badHit;
                 judgeGroup.alpha = 1;
-                attackDamage = 10;
+                attackDamage = attackDamageItem-10;
                 comboCounter = 0;
             }
 

@@ -1303,6 +1303,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 944786670464074548, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 944786670506660714, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackHub
+      objectReference: {fileID: 0}
+    - target: {fileID: 944786670619214999, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reload
+      objectReference: {fileID: 0}
     - target: {fileID: 944786670710737675, guid: 59f707992ed535144893983ada34e7e7, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -1394,6 +1406,22 @@ PrefabInstance:
     - target: {fileID: 944786670710737783, guid: 59f707992ed535144893983ada34e7e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 944786670821195629, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 944786670938050514, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackHub
+      objectReference: {fileID: 0}
+    - target: {fileID: 944786671979976887, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reload
+      objectReference: {fileID: 0}
+    - target: {fileID: 944786672020756335, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_Text
+      value: Back to Hub
       objectReference: {fileID: 0}
     - target: {fileID: 944786672177676424, guid: 59f707992ed535144893983ada34e7e7, type: 3}
       propertyPath: m_AnchorMax.y
