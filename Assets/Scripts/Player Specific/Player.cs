@@ -59,6 +59,7 @@ public class Player : MonoBehaviour
     //Cursor
     public Vector2 cursorPos;
     public Camera mainCam;
+    private Vector2 newCursorPos;
 
 
     //Hands
@@ -124,7 +125,11 @@ public class Player : MonoBehaviour
         EddyMaterial = GetComponent<SpriteRenderer>().material;
     }
 
-    
+    private void Update()
+    {
+        cursorPos = mainCam.ScreenToWorldPoint(newCursorPos);
+
+    }
     private void FixedUpdate()
     {
         
@@ -230,9 +235,8 @@ public class Player : MonoBehaviour
 
     public void OnCursor(InputAction.CallbackContext value)
     {
+        newCursorPos = value.ReadValue<Vector2>();
 
-
-        cursorPos = mainCam.ScreenToWorldPoint(value.ReadValue<Vector2>());
 
 
 

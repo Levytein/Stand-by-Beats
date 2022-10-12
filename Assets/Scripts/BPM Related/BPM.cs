@@ -64,29 +64,44 @@ public class BPM : MonoBehaviour
     {
         activeBPM = this;
     }
-    void Start()
+
+    void InitializeBPM()
     {
-
-
         accent = signatureHi;
         double startTick = AudioSettings.dspTime;
         sampleRate = AudioSettings.outputSampleRate;
         nextTick = startTick * sampleRate;
         running = true;
 
-        audioSource = GetComponent<AudioSource>();
+        if(audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+        
         audioSource.clip = currentSong.song;
         bpm = currentSong.songBPM;
 
 
-        noteSpawnTime = 60f / bpm * noteSpawnAhead ;
+        noteSpawnTime = 60f / bpm * noteSpawnAhead;
         audioSource.PlayScheduled(startTick + currentSong.startDelay + noteSpawnTime);
+    }
+    void Start()
+    {
 
-
-  
+        InitializeBPM();
 
     }
 
+    public void PlaySong(MusicData newSong)
+    {
+        if(currentSong == newSong)
+        {
+            return;
+        }
+        currentSong = newSong;
+        InitializeBPM();
+
+    }
     void Update()
     {
        if(AudioSettings.dspTime >= nextNoteTime && BPMImages != null)

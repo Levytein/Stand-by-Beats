@@ -13,7 +13,7 @@ public class MartiniTransition : StateMachineBehaviour
     {
         EnragedPosition = GameObject.FindGameObjectWithTag("MartiniEnraged").transform;
         rb = animator.GetComponent<Rigidbody2D>();
-        BPM.activeBPM.currentSong = Player.ActivePlayer.songs[0];
+        BPM.activeBPM.PlaySong(Player.ActivePlayer.songs[0]);
 
     }
 
