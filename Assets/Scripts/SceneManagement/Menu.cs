@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public Animator transitionAnim;
+    public string sceneName;
     public void PlayGame()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadScene(currentScene);
+        StartCoroutine(LoadScene());
 
 
     }
@@ -29,5 +32,12 @@ public class Menu : MonoBehaviour
     public void Reload()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    IEnumerator LoadScene()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(sceneName);
     }
 }
