@@ -8,9 +8,10 @@ public class Menu : MonoBehaviour
 
     public Animator transitionAnim;
     public string sceneName;
+    int currentScene;
     public void PlayGame()
     {
-        int currentScene = SceneManager.GetActiveScene().buildIndex + 1;
+        currentScene =  SceneManager.GetActiveScene().buildIndex + 1;
         StartCoroutine(LoadScene());
 
 
@@ -38,6 +39,6 @@ public class Menu : MonoBehaviour
     {
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(currentScene);
     }
 }

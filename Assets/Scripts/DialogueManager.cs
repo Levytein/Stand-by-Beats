@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public Image characterTalking;
     public GameObject UIObject;
     private Queue<string> sentences;
+    public TutorialChecker  tutChecker;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,12 +39,19 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0 )
+        if(sentences.Count == 0 && SceneManager.GetActiveScene().buildIndex != 1 )
         {
             EndDialogue();
             return;
         }
-        string sentence = sentences.Dequeue();
+        else if(sentences.Count == 0 && SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            Debug.Log("Im reaching the dialogue manager");
+            tutChecker.isDialogueOver = true;
+            EndDialogue();
+            return;
+        }
+            string sentence = sentences.Dequeue();
         sentenceText.text = sentence;
     }
 
