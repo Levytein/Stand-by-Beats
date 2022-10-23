@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1787956349
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 9073369597957706833, guid: 89a1724643e9607458fb8f6bbb348f9c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -147,12 +147,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 1
-  maxHealth: 100
+  speed: 4
+  maxHealth: 30
   countDown: 2
   damageText: {fileID: 0}
   damageDone: 1
-  healthController: {fileID: 0}
+  enemyManagement: {fileID: 0}
 --- !u!95 &6371003574251799494
 Animator:
   serializedVersion: 3
