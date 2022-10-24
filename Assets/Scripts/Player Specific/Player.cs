@@ -360,6 +360,7 @@ public class Player : MonoBehaviour
                 pauseIcon.SetActive(false);
                 menuScript.menuOpen = false;
 
+                Time.timeScale = 1;
                 isMenuOpen = false;
             }
            
