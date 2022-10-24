@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class Player : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
     public float judgeFadetime = .3f;
     public Text judgeText;
 
+    public GameObject pauseIcon;
 
     public float BeatTimerMargin = .1f;
     public float rollSpeed = 5f;
@@ -108,7 +110,9 @@ public class Player : MonoBehaviour
 
     //Sound Related
     public MusicData[] songs;
+    public AudioSource speaker;
 
+    public Menu menuScript;
 
 
     public void Awake()
@@ -124,6 +128,7 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         HCControl = GameObject.FindGameObjectWithTag("GameManager").GetComponent<HealthController>();
         EddyMaterial = GetComponent<SpriteRenderer>().material;
+        menuScript = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Menu>();
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             attackDamage = 20;
@@ -214,7 +219,7 @@ public class Player : MonoBehaviour
     
     public void OnRoll(InputAction.CallbackContext value)
     {
-        AudioSource speaker = this.gameObject.GetComponent<AudioSource>();
+       
         if (value.performed && RollTimer <= 0)
         {
             rigidBody.AddForce(lastDirection * rollSpeed, ForceMode2D.Impulse);
@@ -344,11 +349,17 @@ public class Player : MonoBehaviour
             if(isMenuOpen == false)
             {
                 MainMenu.gameObject.SetActive(true);
+                Time.timeScale = 0;
+                pauseIcon.SetActive(true);
+                menuScript.menuOpen = true;
                 isMenuOpen = true;
             }
             else
             {
                 MainMenu.gameObject.SetActive(false);
+                pauseIcon.SetActive(false);
+                menuScript.menuOpen = false;
+
                 isMenuOpen = false;
             }
            
@@ -362,7 +373,7 @@ public class Player : MonoBehaviour
     void FootSteps()
     {
         AudioClip clip = eddySounds[Random.Range(3, 6)];
-        AudioSource speaker = this.gameObject.GetComponent<AudioSource>();
+        
         speaker.PlayOneShot(clip);
     }
     void Attack()
@@ -370,8 +381,12 @@ public class Player : MonoBehaviour
         //Play an attack animation
         //controller.SetTrigger("IsAttacking");
         //Detect enemies in range
-        AudioSource speaker = this.gameObject.GetComponent<AudioSource>();
-        speaker.PlayOneShot(eddySounds[9]);
+       
+       if(menuScript.menuOpen == false)
+        {
+            speaker.PlayOneShot(eddySounds[9]);
+
+        }
 
         if (punchRoutine != null)
         {

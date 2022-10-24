@@ -17712,6 +17712,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1266955768858660932, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266955768858660932, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266955768858660932, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644683987673229363, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1983645205341402802, guid: 59f707992ed535144893983ada34e7e7, type: 3}
       propertyPath: m_fontSize
       value: 24
@@ -17728,9 +17744,41 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 3200549908687017763, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3200549908687017763, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201299373756845304, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201299373756845304, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201299373756845304, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811903875356963586, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 6682675285155593947, guid: 59f707992ed535144893983ada34e7e7, type: 3}
       propertyPath: m_Name
       value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351551953764598795, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351551953764598795, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8246335678061317457, guid: 59f707992ed535144893983ada34e7e7, type: 3}
       propertyPath: m_IsActive
@@ -24354,6 +24402,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &1571959795 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7500791108865908911, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+  m_PrefabInstance: {fileID: 2007297675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1583717926
 GameObject:
   m_ObjectHideFlags: 0
@@ -31769,6 +31822,10 @@ PrefabInstance:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 1744590067}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: speaker
+      value: 
+      objectReference: {fileID: 1571959795}
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: MainMenu
       value: 
