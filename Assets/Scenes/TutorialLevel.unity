@@ -17790,6 +17790,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+--- !u!114 &1129921573 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 944786670710737777, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+  m_PrefabInstance: {fileID: 1129921572}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1b9c99eb2eae54ea199679898f5673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1129921574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4404069427814471609, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+  m_PrefabInstance: {fileID: 1129921572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1133254487
 GameObject:
   m_ObjectHideFlags: 0
@@ -31839,6 +31855,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1293738318}
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: pauseIcon
+      value: 
+      objectReference: {fileID: 1129921574}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: punchTime
       value: 0.3
       objectReference: {fileID: 0}
@@ -31854,6 +31874,10 @@ PrefabInstance:
       propertyPath: judgeGroup
       value: 
       objectReference: {fileID: 63150575}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: menuScript
+      value: 
+      objectReference: {fileID: 1129921573}
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: InventoryMenu
       value: 
