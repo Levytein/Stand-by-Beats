@@ -71,6 +71,9 @@ TextureImporter:
   - first:
       213: 1291989854418397957
     second: BUTTONS_ALL_22
+  - first:
+      213: -2805104007870187338
+    second: BUTTONS_ALL_23
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -457,9 +460,9 @@ TextureImporter:
       name: BUTTONS_ALL_14
       rect:
         serializedVersion: 2
-        x: 274
-        y: 78
-        width: 64
+        x: 19
+        y: 79
+        width: 35
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -478,10 +481,10 @@ TextureImporter:
       name: BUTTONS_ALL_15
       rect:
         serializedVersion: 2
-        x: 10
-        y: 39
-        width: 22
-        height: 21
+        x: 274
+        y: 78
+        width: 64
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,10 +502,10 @@ TextureImporter:
       name: BUTTONS_ALL_16
       rect:
         serializedVersion: 2
-        x: 97
-        y: 38
-        width: 20
-        height: 19
+        x: 10
+        y: 39
+        width: 22
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -520,7 +523,7 @@ TextureImporter:
       name: BUTTONS_ALL_17
       rect:
         serializedVersion: 2
-        x: 137
+        x: 97
         y: 38
         width: 20
         height: 19
@@ -541,7 +544,7 @@ TextureImporter:
       name: BUTTONS_ALL_18
       rect:
         serializedVersion: 2
-        x: 178
+        x: 137
         y: 38
         width: 20
         height: 19
@@ -562,10 +565,10 @@ TextureImporter:
       name: BUTTONS_ALL_19
       rect:
         serializedVersion: 2
-        x: 274
-        y: 46
-        width: 64
-        height: 26
+        x: 178
+        y: 38
+        width: 20
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -583,10 +586,10 @@ TextureImporter:
       name: BUTTONS_ALL_20
       rect:
         serializedVersion: 2
-        x: 9
-        y: 9
-        width: 24
-        height: 22
+        x: 274
+        y: 46
+        width: 64
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -604,10 +607,10 @@ TextureImporter:
       name: BUTTONS_ALL_21
       rect:
         serializedVersion: 2
-        x: 84
-        y: 7
-        width: 8
-        height: 24
+        x: 9
+        y: 9
+        width: 24
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -625,6 +628,27 @@ TextureImporter:
       name: BUTTONS_ALL_22
       rect:
         serializedVersion: 2
+        x: 84
+        y: 7
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b64066de11ee110800000000000000
+      internalID: 1291989854418397957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BUTTONS_ALL_23
+      rect:
+        serializedVersion: 2
         x: 95
         y: 12
         width: 200
@@ -636,8 +660,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50b64066de11ee110800000000000000
-      internalID: 1291989854418397957
+      spriteID: 6b87fd454c44219d0800000000000000
+      internalID: -2805104007870187338
       vertices: []
       indices: 
       edges: []

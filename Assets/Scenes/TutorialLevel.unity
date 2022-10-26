@@ -7831,14 +7831,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Imposter
+    name: Radio Host
     sentences:
     - Hi, welcome to the world of Stand by Beats. Use WASD to move.
     - Left click to use your basic attack and right click to use to dodge. Bring
       up the menu with the P key.
     - Make sure to time your attacks along with the beat or else your attacks will
       be weakened! Head to the right when you're ready!
-  characterSprite: {fileID: 21300000, guid: c412a357e2e64be4a9ab6372983a97e8, type: 3}
+  characterSprite: {fileID: -6232722065677405450, guid: 88dd5b7463deec5488d97d15c93d84e4, type: 3}
 --- !u!61 &424968442
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32921,7 +32921,7 @@ MonoBehaviour:
     - Nice! Next let's try out the combat!
     - Left Click to attack BUT make sure it's on beat or your stats will take a blow.
       Right Click to dodge enemy attacks.
-  characterSprite: {fileID: 21300000, guid: c412a357e2e64be4a9ab6372983a97e8, type: 3}
+  characterSprite: {fileID: -6232722065677405450, guid: 88dd5b7463deec5488d97d15c93d84e4, type: 3}
   tutChecker: {fileID: 2034461672}
 --- !u!1 &2046638715
 GameObject:
