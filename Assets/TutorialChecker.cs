@@ -11,24 +11,39 @@ public class TutorialChecker : MonoBehaviour
     private bool sKey = false;
     private bool aKey = false;
     private bool dKey = false;
+
+    private bool attacked = false;
+    private bool rolled = false;
+
     public GameObject TutorialCheckerObject;
+    public GameObject SecondTutObject;
     public GameObject goodFlashText;
+    public GameObject goodFlashText2;
+
     public bool isDialogueOver;
+    public bool isMovementOver;
 
     public TextMeshProUGUI WText;
     public TextMeshProUGUI AText;
     public TextMeshProUGUI DText;
     public TextMeshProUGUI SText;
-   
+
+    public TextMeshProUGUI AttackText;
+    public TextMeshProUGUI RollText;
+
 
     void Start()
     {
-        Player.ActivePlayer.OnPlayerMov += GetMovement; 
+        Player.ActivePlayer.OnPlayerMov += GetMovement;
+        Player.ActivePlayer.OnPlayeRol += GetRoll;
+        Player.ActivePlayer.OnATKCheck += GetAttack;
     }
 
     private void OnDestroy()
     {
         Player.ActivePlayer.OnPlayerMov -= GetMovement;
+        Player.ActivePlayer.OnPlayeRol -= GetRoll;
+        Player.ActivePlayer.OnATKCheck -= GetAttack;
     }
 
     private void Update()
@@ -41,10 +56,26 @@ public class TutorialChecker : MonoBehaviour
         {
             TutorialCheckerObject.SetActive(false);
             goodFlashText.SetActive(true);
+            isMovementOver = true;
+            SecondTutObject.SetActive(true);
+        }
+        if(attacked && rolled == true)
+        {
+            SecondTutObject.SetActive(false);
         }
     }
 
 
+    void GetAttack()
+    {
+        AttackText.SetText("Attack: 1 / 1");
+        attacked = true;
+    }
+    void GetRoll()
+    {
+        RollText.SetText("Dodge: 1 / 1");
+        rolled = true;
+    }
     // Update is called once per frame
     void GetMovement(Vector2 mov)
     {

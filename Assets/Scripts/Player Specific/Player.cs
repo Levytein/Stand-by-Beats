@@ -95,6 +95,12 @@ public class Player : MonoBehaviour
     public delegate void PlayerMovement(Vector2 mov);
     public event PlayerMovement OnPlayerMov;
 
+    public delegate void OnRollCheck();
+    public event OnRollCheck OnPlayeRol;
+
+    public delegate void OnAttackCheck();
+    public event OnAttackCheck OnATKCheck;
+
     //Flashing
     [SerializeField] private int amountOfFlashes = 10;
     [SerializeField] private float intervalFlashes = .3f;
@@ -246,8 +252,9 @@ public class Player : MonoBehaviour
 
             RollTimer += 30f;
         }
-     
-      
+        OnRollCheck handler = OnPlayeRol;
+        handler?.Invoke();
+
     }
 
     public void OnCursor(InputAction.CallbackContext value)
@@ -283,7 +290,8 @@ public class Player : MonoBehaviour
             }
 
         }
-        
+        OnAttackCheck handler = OnATKCheck;
+        handler?.Invoke();
     }
 
     public void OnOpenInventory(InputAction.CallbackContext value)
