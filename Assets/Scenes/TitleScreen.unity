@@ -250,6 +250,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionAnim: {fileID: 73489685}
   sceneName: EDM World
+  audioMixer: {fileID: 0}
+  PauseMenu: {fileID: 0}
+  GraphicMenu: {fileID: 0}
+  SoundMenu: {fileID: 0}
+  OptionsMenu: {fileID: 0}
+  menuOpen: 0
+  isSettingsopen: 0
+  resolutionDropDown: {fileID: 0}
 --- !u!1 &749446038
 GameObject:
   m_ObjectHideFlags: 0
