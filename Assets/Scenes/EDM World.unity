@@ -657,8 +657,7 @@ MonoBehaviour:
   closedRoom: {fileID: 0}
   rooms: []
   waitTime: 6
-  boss: {fileID: 594089611590552533, guid: abdf0a7081372214ca725d355390ce40, type: 3}
-  ventSus: {fileID: 7732759998006423661, guid: 2fc3699dc7012954e929d2a142856db1, type: 3}
+  boss: {fileID: 1166432537531418681, guid: d500429689567f64b86b994c8285b67c, type: 3}
 --- !u!4 &507699703
 Transform:
   m_ObjectHideFlags: 0
@@ -785,7 +784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6496018, y: 0.093333244, z: -10}
+  m_LocalPosition: {x: 0.56019735, y: 0.093333244, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -851,7 +850,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618625601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6496018, y: 0.093333244, z: -10}
+  m_LocalPosition: {x: 0.56019735, y: 0.093333244, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2141740253}
@@ -872,6 +871,10 @@ PrefabInstance:
     - target: {fileID: 2539300073550837434, guid: 8f84e0b1ba790cf42b6a3a351a7eac14, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771088030042393036, guid: 8f84e0b1ba790cf42b6a3a351a7eac14, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -32.71
       objectReference: {fileID: 0}
     - target: {fileID: 6840165092766884567, guid: 8f84e0b1ba790cf42b6a3a351a7eac14, type: 3}
       propertyPath: m_RootOrder
@@ -1587,6 +1590,10 @@ PrefabInstance:
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: punchDistance
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: attackDamageItem
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2846557131659931579, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: m_Materials.Array.data[0]

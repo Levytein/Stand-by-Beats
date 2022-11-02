@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
     public static int attackDamage = 20;
     public static float knockBack = 50;
     private float RollTimer;
-    public int attackDamageItem;
+    public static int attackDamageItem = 20;
 
     public float knockBacktime;
 
@@ -135,9 +135,9 @@ public class Player : MonoBehaviour
         HCControl = GameObject.FindGameObjectWithTag("GameManager").GetComponent<HealthController>();
         EddyMaterial = GetComponent<SpriteRenderer>().material;
         menuScript = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Menu>();
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+        if (SceneManager.GetActiveScene().buildIndex <= 2)
         {
-            attackDamage = 20;
+            attackDamageItem = 20;
 
         }
         if (SceneManager.GetActiveScene().buildIndex >= 2)
@@ -150,7 +150,8 @@ public class Player : MonoBehaviour
     private void Update()
     {
         cursorPos = mainCam.ScreenToWorldPoint(newCursorPos);
-
+        Debug.Log("Attack Damage Item: " + attackDamageItem);
+        Debug.Log("Current Attack:" + attackDamage);
     }
     private void FixedUpdate()
     {
@@ -285,7 +286,7 @@ public class Player : MonoBehaviour
                 judgeText.text = Miss;
                 judgeText.color = badHit;
                 judgeGroup.alpha = 1;
-                attackDamage = attackDamageItem-10;
+                attackDamage = attackDamageItem - 10;
                 comboCounter = 0;
             }
 
