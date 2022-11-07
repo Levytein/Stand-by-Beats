@@ -228,7 +228,7 @@ public class Player : MonoBehaviour
                 judgeText.text = Great;
                 judgeText.color = goodHit;
                 judgeGroup.alpha = 1;
-                attackDamage = attackDamageItem + 10;
+                attackModifier = 10;
                 comboCounter++;
                 
                 speaker.PlayOneShot(eddySounds[8]);
@@ -238,7 +238,7 @@ public class Player : MonoBehaviour
                 judgeText.text = Miss;
                 judgeText.color = badHit;
                 judgeGroup.alpha = 1;
-                attackDamage = attackDamageItem - 10;
+                attackModifier = -10;
                 comboCounter = 0;
 
                 speaker.PlayOneShot(eddySounds[7]);
