@@ -42,12 +42,9 @@ public class Enemy : MonoBehaviour
       
     }
 
-    void Update()
+    public virtual void Update()
     {
-        if(EM == null)
-        {
-            Debug.Log("Null");
-        }
+       
         if(countDown > 0 )
         {
             countDown = countDown - Time.deltaTime;
@@ -65,7 +62,7 @@ public class Enemy : MonoBehaviour
 
 
 
-    public void FollowPlayer()
+    public virtual void FollowPlayer()
     {
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
@@ -89,7 +86,7 @@ public class Enemy : MonoBehaviour
     }
 
    
-    private void OnTriggerStay2D(Collider2D collision)
+    protected virtual void OnTriggerStay2D(Collider2D collision)
     {
         if(coolDown <= 0 )
         {

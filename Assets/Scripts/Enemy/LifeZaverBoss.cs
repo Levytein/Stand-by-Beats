@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LifeZaverBoss : MonoBehaviour
 {
-    public Vector2 teleportRange = new Vector2(28,18);
+    public Vector2 teleportRange = new Vector2(28, 18);
     public LayerMask obstructionMask;
 
     public float teleportCD = 3.0f;
@@ -19,6 +19,9 @@ public class LifeZaverBoss : MonoBehaviour
     public string animationName;
     public string exitAnimation;
 
+    public float betweenShots = .7f;
+    public int numberShots = 5;
+
 
     public bool isReady = false;
 
@@ -30,13 +33,13 @@ public class LifeZaverBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        if(teleportCoroutine == null)
+        if (teleportCoroutine == null)
         {
             teleportCoroutine = StartCoroutine(Teleport());
         }
@@ -50,7 +53,21 @@ public class LifeZaverBoss : MonoBehaviour
     {
         isReady = false;
     }
+    /*
+    IEnumerator Shooting()
+    {
+       for(int i = 0; i < numberShots; i++)
+        {
+            Instantiate()
+        }
 
+
+
+
+
+
+    }
+       */
     IEnumerator Teleport()
     {
         isReady = false;

@@ -78,10 +78,12 @@ public class Player : MonoBehaviour
     //Attack Parameters
     public Transform attackPoint;
     public float attackRadius;
-    public static int attackDamage = 20;
+    public static int attackDamage = 40;
     public static float knockBack = 50;
     private float RollTimer;
-    public static int attackDamageItem = 20;
+    public int attackDamageItem ;
+
+    public int attackModifier;
 
     public float knockBacktime;
 
@@ -135,16 +137,7 @@ public class Player : MonoBehaviour
         HCControl = GameObject.FindGameObjectWithTag("GameManager").GetComponent<HealthController>();
         EddyMaterial = GetComponent<SpriteRenderer>().material;
         menuScript = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Menu>();
-        if (SceneManager.GetActiveScene().buildIndex <= 2)
-        {
-            attackDamageItem = 20;
-
-        }
-        if (SceneManager.GetActiveScene().buildIndex >= 2)
-        {
-            attackDamageItem = attackDamage;
-
-        }
+       
     }
 
     private void Update()
@@ -179,12 +172,12 @@ public class Player : MonoBehaviour
         //Canvas Stuff
         if(attackDisplay!= null)
         {
-            attackDisplay.text = "ATK: " + attackDamage.ToString();
+            attackDisplay.text = "ATK: " + (attackDamage + attackModifier);
         }
 
         if (ComboCount != null)
         {
-            ComboCount.text = "x" + comboCounter.ToString();
+            ComboCount.text = "x" + comboCounter;
         }
 
         //Make this thing move
@@ -277,7 +270,8 @@ public class Player : MonoBehaviour
                 judgeText.text = Great;
                 judgeText.color = goodHit;
                 judgeGroup.alpha = 1;
-                attackDamage = attackDamageItem + 10;
+                attackModifier = 10;
+
                 comboCounter++;
                 
             }
@@ -286,7 +280,8 @@ public class Player : MonoBehaviour
                 judgeText.text = Miss;
                 judgeText.color = badHit;
                 judgeGroup.alpha = 1;
-                attackDamage = attackDamageItem - 10;
+                attackModifier = -10;
+                
                 comboCounter = 0;
             }
 
@@ -418,11 +413,11 @@ public class Player : MonoBehaviour
 
             if(SceneManager.GetActiveScene().buildIndex != 4)
             {
-                enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+                enemy.GetComponent<Enemy>().TakeDamage(attackDamage + attackModifier + attackDamageItem);
             }
             else
             {
-                enemy.GetComponent<Martini>().TakeDamage(attackDamage);
+                enemy.GetComponent<Martini>().TakeDamage(attackDamage + attackModifier + attackDamageItem);
 
             }
 
