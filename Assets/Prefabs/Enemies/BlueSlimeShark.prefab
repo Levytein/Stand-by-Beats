@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 605c5e95a35a89e4abbc8d7514c2d906, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -198,5 +198,7 @@ MonoBehaviour:
   damageText: {fileID: 0}
   damageDone: 1
   enemyManagement: {fileID: 0}
+  amountFlashes: 10
+  intervalFlashes: 0.2
   slimeTrail: {fileID: 2115430804350692938, guid: 5adf424d6448300469691dff985d2e51, type: 3}
   slimeTrailCD: 0.5

@@ -22,6 +22,12 @@ public class Enemy : MonoBehaviour
     public GameObject enemyManagement;
     EnemySpawner EM;
     private float coolDown = 0f;
+
+    public int amountFlashes = 10;
+    public float intervalFlashes = .2f;
+
+    private Material ShrimpMaterial;
+    private Coroutine flashRoutine;
     [SerializeField] private static float maxCooldown = 100f;
     protected virtual void Start()
     {
@@ -58,6 +64,13 @@ public class Enemy : MonoBehaviour
          
         }
         coolDown -= Time.deltaTime;
+
+        if (currentHealth <= 0)
+        {
+
+            Die();
+
+        }
     }
 
 
@@ -71,8 +84,13 @@ public class Enemy : MonoBehaviour
         currentHealth -= damage;
 
         Debug.Log("Took damage");
+        if (flashRoutine != null)
+        {
+            return;
+        }
 
-        if(currentHealth <= 0)
+        flashRoutine = StartCoroutine("HitFlash");
+        if (currentHealth <= 0)
         {
             
             Die();
@@ -104,6 +122,19 @@ public class Enemy : MonoBehaviour
             Player.ActivePlayer.UpdateHealth(-damageDone);
 
     }
+    private IEnumerator HitFlash()
+    {
+        for (int i = 0; i < amountFlashes; i++)
+        {
+            yield return new WaitForSeconds(intervalFlashes / 2);
+            ShrimpMaterial.SetFloat("_HitBlend", 1f);
+            yield return new WaitForSeconds(intervalFlashes / 2);
+            ShrimpMaterial.SetFloat("_HitBlend", 0f);
+
+        }
+        flashRoutine = null;
+    }
+
     void Die()
     {
         if(EM != null)
