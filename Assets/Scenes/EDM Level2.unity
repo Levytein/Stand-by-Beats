@@ -966,6 +966,22 @@ MonoBehaviour:
   healthCounter: 0
   player: {fileID: 607645528}
   gameOver: {fileID: 1941071224}
+--- !u!114 &1492647879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492647877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e779e8137cd1d034fbb88a44317c01de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotHolder: {fileID: 0}
+  itemToAdd: {fileID: 0}
+  itemToRemove: {fileID: 0}
+  items: []
 --- !u!1 &1941071224 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 944786671207166907, guid: 59f707992ed535144893983ada34e7e7, type: 3}

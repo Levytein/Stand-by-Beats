@@ -6,64 +6,35 @@ using UnityEngine.InputSystem;
 
 public class InventoryManager : MonoBehaviour
 {
-
-    [SerializeField] private GameObject slotHolder;
-    [SerializeField] private ItemClass itemToAdd;
-    [SerializeField] private ItemClass itemToRemove;
-    public List<ItemClass> items = new List<ItemClass>();
-    // Start is called before the first frame update
+    public List<InventoryItem> inventory;
+    private Dictionary<ItemClass, InventoryItem> itemDictionary;
 
 
 
-    private GameObject[] slots;
-
-   
-    public void Start()
+    public void Add(ItemClass itemData)
     {
-        slots = new GameObject[slotHolder.transform.childCount];
-
-        //Set all the slots
-        for (int i = 0; i < slotHolder.transform.childCount; i++)
+        if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
         {
-            slots[i] = slotHolder.transform.GetChild(i).gameObject;
-
+            item.AddToStack();
         }
-        Add(itemToAdd);
-        Remove(itemToRemove);
+        else
+        {
+            InventoryItem newItem = new InventoryItem(itemData);
+            inventory.Add(newItem);
+            itemDictionary.Add(itemData, newItem);
+        }
     }
 
-  
-    public void RefreshUI()
+    public void Remove(ItemClass itemData)
     {
-        for (int i = 0; i < slots.Length; i++)
+        if (itemDictionary.TryGetValue(itemData, out InventoryItem item))
         {
-            try
+            item.RemoveFromStack();
+            if(item.stackSize == 0 )
             {
-                slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
-
-                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = items[i].itemIcon;
-
-            }
-            catch
-            {
-                
-                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
-                slots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
-
+                inventory.Remove(item);
+                itemDictionary.Remove(itemData);
             }
         }
-
-    }
-
-    public void Add(ItemClass item)
-    {
-        items.Add(item);
-        RefreshUI();
-    }
-
-    public void Remove(ItemClass item)
-    {
-        items.Remove(item);
-        RefreshUI();
     }
 }
