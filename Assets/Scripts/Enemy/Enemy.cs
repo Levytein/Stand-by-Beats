@@ -122,6 +122,18 @@ public class Enemy : MonoBehaviour
             Player.ActivePlayer.UpdateHealth(-damageDone);
 
     }
+
+    void ChanceItem()
+    {
+        int dropItemChance = Random.Range(0, 100);
+
+
+        if(dropItemChance >= 95)
+        {
+
+        }
+
+    }
     private IEnumerator HitFlash()
     {
         for (int i = 0; i < amountFlashes; i++)
