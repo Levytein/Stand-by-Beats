@@ -508,11 +508,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc4c45b22e8ca74b88715d1b0e7c633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 5
+  maxHealth: 100
+  countDown: 1
+  damageText: {fileID: 0}
+  damageDone: 0
+  enemyManagement: {fileID: 0}
+  amountFlashes: 10
+  intervalFlashes: 0.2
+  isBoss: 1
   player: {fileID: 731551294}
   isFlipped: 0
-  MaxHealth: 220
   enragedSpot: {fileID: 197629244}
-  speed: 100
 --- !u!114 &5342322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5277,6 +5285,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 944786670710737675, guid: 59f707992ed535144893983ada34e7e7, type: 3}
       propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 944786670710737675, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+      propertyPath: m_TagString
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 944786670710737783, guid: 59f707992ed535144893983ada34e7e7, type: 3}

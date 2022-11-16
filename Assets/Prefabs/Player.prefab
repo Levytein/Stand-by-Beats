@@ -72,11 +72,11 @@ GameObject:
   - component: {fileID: 2846557131659931580}
   - component: {fileID: 2846557131659931579}
   - component: {fileID: 2846557131659931578}
-  - component: {fileID: 2846557131659931577}
   - component: {fileID: 2846557131659931581}
   - component: {fileID: 2846557131659931583}
   - component: {fileID: 2846557131659931582}
   - component: {fileID: 2846557131659931520}
+  - component: {fileID: 4989966667002943961}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -121,7 +121,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 67f68b350c6df304893f248eb5cebdbf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -185,6 +185,7 @@ MonoBehaviour:
   ComboCount: {fileID: 0}
   judgeFadetime: 0.2
   judgeText: {fileID: 0}
+  pauseIcon: {fileID: 0}
   BeatTimerMargin: 0.25
   rollSpeed: 30
   speed: 90
@@ -194,8 +195,8 @@ MonoBehaviour:
   controller: {fileID: 2846557131659931520}
   cursorPos: {x: 0, y: 0}
   mainCam: {fileID: 0}
-  leftHand: {fileID: 0}
-  rightHand: {fileID: 0}
+  leftHand: {fileID: 4355164707990596166}
+  rightHand: {fileID: 711133776315253547}
   punchCurve:
     serializedVersion: 2
     m_Curve:
@@ -253,7 +254,9 @@ MonoBehaviour:
   attackPoint: {fileID: 2846557131279545561}
   attackRadius: 0
   attackDamageItem: 0
+  attackModifier: 0
   knockBacktime: 0.4
+  iFrames: 0.45
   currentHealth: 0
   amountOfFlashes: 10
   intervalFlashes: 0.3
@@ -261,33 +264,8 @@ MonoBehaviour:
   InventoryMenu: {fileID: 0}
   MainMenu: {fileID: 0}
   songs: []
-  sfxMixer: {fileID: 7500791108865908911}
---- !u!61 &2846557131659931577
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2846557131659931576}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1}
-  m_EdgeRadius: 0
+  speaker: {fileID: 7500791108865908911}
+  menuScript: {fileID: 0}
 --- !u!50 &2846557131659931581
 Rigidbody2D:
   serializedVersion: 4
@@ -446,6 +424,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &4989966667002943961
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846557131659931576}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01, y: -0.03}
+  m_Size: {x: 0.2, y: 0.5}
+  m_Direction: 0
 --- !u!1 &3161948560290532472
 GameObject:
   m_ObjectHideFlags: 0

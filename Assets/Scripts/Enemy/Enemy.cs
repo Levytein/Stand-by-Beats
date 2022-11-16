@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public float speed;
     public int maxHealth = 100;
     public float countDown = 1;
-    int currentHealth;
+    protected int currentHealth;
 
     private GameObject GameManager;
 
@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
     private Material ShrimpMaterial;
     private Coroutine flashRoutine;
     [SerializeField] private static float maxCooldown = 100f;
+    public bool isBoss = false;
     protected virtual void Start()
     {
         currentHealth = maxHealth;
@@ -37,12 +38,17 @@ public class Enemy : MonoBehaviour
         GameManager = GameObject.FindGameObjectWithTag("GameManager");
         enemyManagement = GameObject.FindGameObjectWithTag("EnemySpawner");
 
-        
-       
 
-        
-      
-       
+
+        ShrimpMaterial = GetComponentInChildren<SpriteRenderer>().material;
+
+
+
+        if (isBoss)
+        {
+            return;
+        }
+
         EM = enemyManagement.GetComponent<EnemySpawner>();
 
       
@@ -65,12 +71,7 @@ public class Enemy : MonoBehaviour
         }
         coolDown -= Time.deltaTime;
 
-        if (currentHealth <= 0)
-        {
-
-            Die();
-
-        }
+       
     }
 
 
@@ -79,7 +80,7 @@ public class Enemy : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
@@ -147,12 +148,12 @@ public class Enemy : MonoBehaviour
         flashRoutine = null;
     }
 
-    void Die()
+    protected virtual void Die()
     {
         if(EM != null)
         {
             EM.EnemyCount--;
-            Debug.Log("enemy died");
+         
             Destroy(this.gameObject);
         }
        

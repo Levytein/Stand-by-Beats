@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LifeZaverBoss : MonoBehaviour
+public class LifeZaverBoss : Enemy
 {
     public Vector2 teleportRange = new Vector2(28, 18);
     public LayerMask obstructionMask;
@@ -11,38 +11,96 @@ public class LifeZaverBoss : MonoBehaviour
     public int overheatCount;
     public int currentOverheatcount;
     public float pewpewDelay = 2.0f;
-    public Coroutine teleportCoroutine;
+    public Coroutine currentCoroutine;
     public float checkRange = .5f;
     public Transform centerRoom;
+
+    public float misslePhase = .75f;
+    public float postMissleDelay = 1f;
+
+    public GameObject normalBullets;
+    public GameObject Missle;
+
+
+    public float laserPhase = .35f;
+    public int laserChance = 5;
 
     public Animator lifezaverAnim;
     public string animationName;
     public string exitAnimation;
 
-    public float betweenShots = .7f;
+    public float betweenShots = .2f;
     public int numberShots = 5;
 
+    public int directionFace = 1;
 
+    public GameObject laserBeam;
+    public float laserTimer = 1.5f;
+
+
+
+    public enum States
+    {
+        ShootingState,
+        MissleState,
+        TeleportState,
+        LaserState
+    }
+
+    public States currState = States.ShootingState;
+
+
+
+    public bool isFlipped = false;
+
+    Rigidbody2D rb;
     public bool isReady = false;
 
-
+    public bool isGrounded = false;
 
 
 
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-
+        base.Start();
+        currentCoroutine = StartCoroutine(Teleport());
     }
 
-    // Update is called once per frame
-    void LateUpdate()
+    public override void Update()
     {
-        if (teleportCoroutine == null)
+        if(currState == States.ShootingState)
         {
-            teleportCoroutine = StartCoroutine(Teleport());
+            base.Update();
         }
+        LookAtPlayer();
+
+    }
+    // Update is called once per frame
+
+    public void LookAtPlayer()
+    {
+
+        Vector3 flipped = transform.localScale;
+        flipped.z *= -1f;
+
+
+        if (transform.position.x > Player.ActivePlayer.transform.position.x && isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = false;
+            directionFace = 0;
+        }
+        else if (transform.position.x < Player.ActivePlayer.transform.position.x && !isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = true;
+            directionFace = 1;
+        }
+
     }
 
     void TurnReady()
@@ -53,23 +111,67 @@ public class LifeZaverBoss : MonoBehaviour
     {
         isReady = false;
     }
-    /*
-    IEnumerator Shooting()
+    
+
+    IEnumerator Firing()
     {
-       for(int i = 0; i < numberShots; i++)
+        if (((float)currentHealth / maxHealth) <= misslePhase)
         {
-            Instantiate()
+            currState = States.MissleState;
+            lifezaverAnim.Play("MissleShoot", -1, 0f);
+
+            Instantiate(Missle, new Vector3(.9f, .1f, 0) + transform.position, (directionFace == 1 ? Quaternion.identity : Quaternion.Euler(0f, 0f, 180f)));
+
+            yield return new WaitForSeconds(postMissleDelay);
+
         }
 
 
+        currState = States.ShootingState;
+
+        lifezaverAnim.Play("Shooting", -1, 0f);
 
 
+        for (int i = 0; i < numberShots; i++)
+        {
 
+
+            Instantiate(normalBullets, new Vector3(.9f, .1f, 0) + transform.position, Quaternion.Euler(0,0, Vector2.SignedAngle(Vector2.right,(Player.ActivePlayer.transform.position - transform.position).normalized  )));
+
+
+            yield return new WaitForSeconds(betweenShots);
+
+        }
+
+        if (((float)currentHealth / maxHealth) <= laserPhase && Random.Range(0 , laserChance ) == 0)
+        {
+            currState = States.LaserState;
+
+            laserBeam.SetActive(true);
+
+            float progress = 0f;
+
+            while(progress < laserTimer)
+            {
+                
+
+                laserBeam.transform.rotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(90, 270, Mathf.Clamp01(progress / laserTimer)));
+                progress += Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+
+            }
+
+            laserBeam.SetActive(false);
+        }
+        
+        currentCoroutine = StartCoroutine(Teleport());
+       
 
     }
-       */
     IEnumerator Teleport()
     {
+        currState = States.TeleportState;
+
         isReady = false;
 
 
@@ -99,28 +201,20 @@ public class LifeZaverBoss : MonoBehaviour
         lifezaverAnim.Play(animationName , -1 , 0f);
 
 
-
         while(!isReady)
         {
            yield return new WaitForEndOfFrame();
         }
         
-
         transform.position = tempPos;
         lifezaverAnim.Play(exitAnimation, -1, 0f);
 
-
-
-     
         while (!isReady)
         {
             yield return new WaitForEndOfFrame();
         }
-        teleportCoroutine = null;
-
-
+        currentCoroutine = StartCoroutine(Firing());
     
-        
     }
 
 }

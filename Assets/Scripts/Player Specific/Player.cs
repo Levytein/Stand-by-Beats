@@ -89,6 +89,9 @@ public class Player : MonoBehaviour
 
     private bool facingLeft = false;
 
+    public float iFrames = .45f;
+    private float currIFrames;
+
     //Health
     public static int maxHealth = 5;
     public int currentHealth;
@@ -143,8 +146,13 @@ public class Player : MonoBehaviour
     private void Update()
     {
         cursorPos = mainCam.ScreenToWorldPoint(newCursorPos);
-        Debug.Log("Attack Damage Item: " + attackDamageItem);
-        Debug.Log("Current Attack:" + attackDamage);
+     
+
+        if(currIFrames > 0)
+        {
+
+            currIFrames -= Time.deltaTime;
+        }
     }
     private void FixedUpdate()
     {
@@ -230,7 +238,11 @@ public class Player : MonoBehaviour
                 judgeGroup.alpha = 1;
                 attackModifier = 10;
                 comboCounter++;
+
+                currIFrames = iFrames;
                 
+
+
                 speaker.PlayOneShot(eddySounds[8]);
             }
             else
@@ -329,6 +341,11 @@ public class Player : MonoBehaviour
 
     public void UpdateHealth(int damageDone)
     {
+
+        if(currIFrames > 0)
+        {
+            return;
+        }
         if(damageDone > 0)
         {
             currentHealth += damageDone;
@@ -411,15 +428,10 @@ public class Player : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
 
-            if(SceneManager.GetActiveScene().buildIndex != 4)
-            {
+            
                 enemy.GetComponent<Enemy>().TakeDamage(attackDamage + attackModifier + attackDamageItem);
-            }
-            else
-            {
-                enemy.GetComponent<Martini>().TakeDamage(attackDamage + attackModifier + attackDamageItem);
-
-            }
+            
+           
 
             enemy.GetComponent<Rigidbody2D>().isKinematic = false;
             Vector2 difference = enemy.transform.position - transform.position;
@@ -470,9 +482,10 @@ public class Player : MonoBehaviour
 
     private IEnumerator  KnockbackCo(Rigidbody2D enemy)
     {
-        if(enemy !=null)
+        
+        yield return new WaitForSeconds(knockBacktime);
+        if (enemy != null)
         {
-            yield return new WaitForSeconds(knockBacktime);
             enemy.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             enemy.GetComponent<Rigidbody2D>().isKinematic = true;
         }

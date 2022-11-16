@@ -2,6 +2,8 @@ Shader "Sprites/EddyHit"
 {
     Properties
     {
+
+        _Strength("Strength Color", Float) = 1
         [PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
         _Color("Tint", Color) = (1,1,1,1)
         [HDR]_HitColor("Hit Color", Color) = (1,1,1,1)
@@ -42,7 +44,8 @@ Shader "Sprites/EddyHit"
         };
 
         fixed4 _HitColor;
-        float _HitBlend;
+        float _HitBlend, _Strength;
+
         void vert(inout appdata_full v, out Input o)
         {
             v.vertex = UnityFlipSprite(v.vertex, _Flip);
@@ -57,7 +60,7 @@ Shader "Sprites/EddyHit"
 
         void surf(Input IN, inout SurfaceOutput o)
         {
-            fixed4 c = SampleSpriteTexture(IN.uv_MainTex) * IN.color * 2;
+            fixed4 c = SampleSpriteTexture(IN.uv_MainTex) * IN.color * 2 * _Strength;
             c.rgb = lerp(c.rgb, _HitColor.rgb, _HitBlend);
 
             o.Albedo = c.rgb * c.a;

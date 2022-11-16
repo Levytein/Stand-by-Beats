@@ -3,44 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Martini : MonoBehaviour
+public class Martini : Enemy
 {
     public Transform player;
     public bool isFlipped = false;
 
-    public float MaxHealth = 120f;
-    private float currentHealth;
+    
+    
 
     public Transform enragedSpot;
 
     private bool hasTransitioned = false;
-    public float speed = 100f;
+   
 
     Rigidbody2D rb;
    
-    void Start()
+    protected override void Start()
     {
-        currentHealth = MaxHealth;
+        base.Start();
         rb = GetComponent<Rigidbody2D>();
     }
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        base.TakeDamage(damage);
 
-        Debug.Log("Took damage");
-
-        if(currentHealth <= 100)
+        if (currentHealth <= 100)
         {
             GetComponent<Animator>().SetBool("isEnraged", true);
-          
-        }
-        if (currentHealth <= 0)
-        {
-
-            Die();
 
         }
-       
+
     }
     public void LookAtPlayer()
     {
@@ -72,7 +64,7 @@ public class Martini : MonoBehaviour
         rb.mass = 100000;
         hasTransitioned = true;
     }
-    void Die()
+    protected override void Die()
     {
 
         SceneManager.LoadScene(2);
