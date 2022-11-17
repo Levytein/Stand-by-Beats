@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
 
     private Vector3 moveDelta;
     private Rigidbody2D rigidBody;
+    public GameObject bS;
 
 
 
@@ -231,7 +232,8 @@ public class Player : MonoBehaviour
         if (value.performed && RollTimer <= 0)
         {
             rigidBody.AddForce(lastDirection * rollSpeed, ForceMode2D.Impulse);
-            if (Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.NextNoteTime)) <= BeatTimerMargin || Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.LastTick)) <= BeatTimerMargin)
+            bool onBeat = bS.GetComponent<BeatSystem>().BeatCheck();
+            if (onBeat)
             {
                 judgeText.text = Great;
                 judgeText.color = goodHit;
@@ -276,8 +278,8 @@ public class Player : MonoBehaviour
         if(value.started)
         {
             Attack();
-
-            if (Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.NextNoteTime)) <= BeatTimerMargin || Mathf.Abs((float)(AudioSettings.dspTime - BPM.activeBPM.LastTick)) <= BeatTimerMargin)
+            bool onBeat = bS.GetComponent<BeatSystem>().BeatCheck();
+            if (onBeat)
             {
                 judgeText.text = Great;
                 judgeText.color = goodHit;

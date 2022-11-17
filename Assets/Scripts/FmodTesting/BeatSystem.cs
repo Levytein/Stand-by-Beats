@@ -27,16 +27,20 @@ using FMODUnity;
 using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 class BeatSystem : MonoBehaviour
 {
-    [SerializeField, Range(0, 30)] private int roomsCleard = 0;
-    [SerializeField, Range(0, 3)] private int level = 1;
-    [SerializeField, Range(0, 3)] private int bossPhase = 0;
+    [SerializeField, Range(0, 30)] public int roomsCleard = 0;
+    [SerializeField, Range(0, 3)] public int level = 1;
+    [SerializeField, Range(0, 3)] public int bossPhase = 0;
+
+    public static BeatSystem instance;
 
     class TimelineInfo
     {
-        public int currentMusicBar = 0;
+        public int currentBeat = 0;
+        public int currentPosition = 0;
         public FMOD.StringWrapper lastMarker = new FMOD.StringWrapper();
     }
 
@@ -44,12 +48,26 @@ class BeatSystem : MonoBehaviour
     TimelineInfo timelineInfo;
     GCHandle timelineHandle;
 
+    public static int lastBeat = 0;
+    public static string lastMarker = null;
+
+    public delegate void BeatEventDelegate();
+    public static event BeatEventDelegate beatUpdated;
+
+    public delegate void MarkerListenerDelegate();
+    public static event MarkerListenerDelegate markerUpdated;
+
+    public float timeSinceLastBeat = 0;
+    public float GraceTime = 0.5f;
+
     FMOD.Studio.EVENT_CALLBACK beatCallback;
     FMOD.Studio.EventInstance musicInstance;
     public FMODUnity.EventReference fmodEvent;
 
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
+
         timelineInfo = new TimelineInfo();
 
         // Explicitly create the delegate object and assign it to a member so it doesn't get freed
@@ -77,14 +95,40 @@ class BeatSystem : MonoBehaviour
 
     private void Update()
     {
+        Metronome();
+
         musicInstance.setParameterByName("Rooms Cleared", roomsCleard);
         musicInstance.setParameterByName("Flags", level);
         musicInstance.setParameterByName("Boss Phase", bossPhase);
+
+        musicInstance.getTimelinePosition(out timelineInfo.currentPosition);
+    }
+
+    void Metronome()
+    {
+        if (lastBeat != timelineInfo.currentBeat)
+        {
+            lastBeat = timelineInfo.currentBeat;
+            timeSinceLastBeat = 0.0f;
+
+            if (beatUpdated != null)
+            {
+                beatUpdated();
+            }
+        }
+
+        timeSinceLastBeat += 1000.0f * Time.deltaTime;
+    }
+
+    public bool BeatCheck()
+    {
+        if (Mathf.Abs((float)((60000.0f / 120.0f) - timeSinceLastBeat)) <= (GraceTime * 1000.0f) || Mathf.Abs(timeSinceLastBeat) <= (GraceTime * 1000.0f)) return true;
+        else return false;
     }
 
     void OnGUI()
     {
-        GUILayout.Box(String.Format("Current Bar = {0}, Last Marker = {1}", timelineInfo.currentMusicBar, (string)timelineInfo.lastMarker));
+        GUILayout.Box(String.Format("Current Bar = {0}, Last Marker = {1}", timelineInfo.currentBeat, (string)timelineInfo.lastMarker));
     }
 
     [AOT.MonoPInvokeCallback(typeof(FMOD.Studio.EVENT_CALLBACK))]
@@ -110,7 +154,7 @@ class BeatSystem : MonoBehaviour
                 case FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_BEAT:
                     {
                         var parameter = (FMOD.Studio.TIMELINE_BEAT_PROPERTIES)Marshal.PtrToStructure(parameterPtr, typeof(FMOD.Studio.TIMELINE_BEAT_PROPERTIES));
-                        timelineInfo.currentMusicBar = parameter.beat;
+                        timelineInfo.currentBeat = parameter.beat;
                     }
                     break;
                 case FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_MARKER:
