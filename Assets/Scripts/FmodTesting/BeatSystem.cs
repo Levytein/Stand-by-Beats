@@ -22,26 +22,31 @@
 //
 //--------------------------------------------------------------------
 
+using FMOD.Studio;
+using FMODUnity;
 using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
 class BeatSystem : MonoBehaviour
 {
+    [SerializeField, Range(0, 30)] private int roomsCleard = 0;
+    [SerializeField, Range(0, 3)] private int level = 1;
+    [SerializeField, Range(0, 3)] private int bossPhase = 0;
+
     class TimelineInfo
     {
         public int currentMusicBar = 0;
         public FMOD.StringWrapper lastMarker = new FMOD.StringWrapper();
     }
 
+    public static EmitterRef emitter;
     TimelineInfo timelineInfo;
     GCHandle timelineHandle;
 
-    [FMODUnity.EventRef]
-    public string eventName = "event:/Music/Hotel Music (120 bpm)";
-
     FMOD.Studio.EVENT_CALLBACK beatCallback;
     FMOD.Studio.EventInstance musicInstance;
+    public FMODUnity.EventReference fmodEvent;
 
     void Start()
     {
@@ -51,7 +56,7 @@ class BeatSystem : MonoBehaviour
         // by the garbage collected while it's being used
         beatCallback = new FMOD.Studio.EVENT_CALLBACK(BeatEventCallback);
 
-        musicInstance = FMODUnity.RuntimeManager.CreateInstance(eventName);
+        musicInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
 
         // Pin the class that will store the data modified during the callback
         timelineHandle = GCHandle.Alloc(timelineInfo);
@@ -68,6 +73,13 @@ class BeatSystem : MonoBehaviour
         musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         musicInstance.release();
         timelineHandle.Free();
+    }
+
+    private void Update()
+    {
+        musicInstance.setParameterByName("Rooms Cleared", roomsCleard);
+        musicInstance.setParameterByName("Flags", level);
+        musicInstance.setParameterByName("Boss Phase", bossPhase);
     }
 
     void OnGUI()
