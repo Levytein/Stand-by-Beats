@@ -53,6 +53,8 @@ public class DialogueManager : MonoBehaviour
         }
             string sentence = sentences.Dequeue();
         sentenceText.text = sentence;
+
+
     }
 
     void EndDialogue()
