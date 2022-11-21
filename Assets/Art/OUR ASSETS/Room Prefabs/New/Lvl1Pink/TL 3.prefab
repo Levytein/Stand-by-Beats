@@ -6436,7 +6436,7 @@ GameObject:
   - component: {fileID: 226532598916168420}
   - component: {fileID: 3910860441432712114}
   m_Layer: 0
-  m_Name: EDMlvl1TS_6 (129)
+  m_Name: TopDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6496,7 +6496,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 8340604596007096944, guid: d4cc3ee760c4f594e8503238ccbde997, type: 3}
+  m_Sprite: {fileID: 7218288692023850884, guid: d4cc3ee760c4f594e8503238ccbde997, type: 3}
   m_Color: {r: 1, g: 0.98742133, b: 0.98742133, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9989,7 +9989,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 7218288692023850884, guid: d4cc3ee760c4f594e8503238ccbde997, type: 3}
+  m_Sprite: {fileID: 1522550454367837758, guid: d4cc3ee760c4f594e8503238ccbde997, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11201,8 +11201,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6905028401807007559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.49, y: 4.49, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_LocalPosition: {x: 10.25, y: 4.09, z: 0}
+  m_LocalScale: {x: 9.8984, y: 8.7336, z: 1}
   m_Children: []
   m_Father: {fileID: 6380848697287539029}
   m_RootOrder: 6
@@ -14245,7 +14245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8904248124137315867}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: -14.61, y: -12.49, z: 0}
+  m_LocalPosition: {x: -15.04, y: -14.06, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 1}
   m_Children: []
   m_Father: {fileID: 6380848697287539029}
