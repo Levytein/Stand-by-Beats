@@ -337,6 +337,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25d01f09bdc732f4eb1c54a39d87f763, type: 3}
+--- !u!1 &163468844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7513703065682182479, guid: 25d01f09bdc732f4eb1c54a39d87f763, type: 3}
+  m_PrefabInstance: {fileID: 163468843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &163468845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163468844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &208061136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,6 +1803,7 @@ GameObject:
   - component: {fileID: 1162576859}
   - component: {fileID: 1162576862}
   - component: {fileID: 1162576863}
+  - component: {fileID: 1162576864}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Event
@@ -1875,6 +1894,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: []
+--- !u!114 &1162576864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162576858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -855234825
+      Data2: 1328201033
+      Data3: 1772907698
+      Data4: -1206429800
+    Path: event:/Music/The Overture (100 bpm)
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1167803087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,6 +2973,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 24300002, guid: fd89de576e0b871438c135cf8e1b46e4, type: 2}
+    - target: {fileID: 2846557131659931583, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6698980999515106668, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: m_SortingLayer
       value: 2
