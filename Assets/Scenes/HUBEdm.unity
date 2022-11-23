@@ -355,6 +355,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
+--- !u!20 &163468849 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7513703065682182473, guid: 25d01f09bdc732f4eb1c54a39d87f763, type: 3}
+  m_PrefabInstance: {fileID: 163468843}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &208061136
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,7 +2899,7 @@ PrefabInstance:
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: mainCam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 163468849}
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: speaker
       value: 

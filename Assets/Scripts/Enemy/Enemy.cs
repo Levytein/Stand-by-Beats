@@ -26,6 +26,11 @@ public class Enemy : MonoBehaviour
     public int amountFlashes = 10;
     public float intervalFlashes = .2f;
 
+    public GameObject looterTable;
+    public LootTable loots;
+
+  
+
     private Material ShrimpMaterial;
     private Coroutine flashRoutine;
     [SerializeField] private static float maxCooldown = 100f;
@@ -37,7 +42,7 @@ public class Enemy : MonoBehaviour
         target = Player.ActivePlayer.gameObject;
         GameManager = GameObject.FindGameObjectWithTag("GameManager");
         enemyManagement = GameObject.FindGameObjectWithTag("EnemySpawner");
-
+        looterTable = GameObject.FindGameObjectWithTag("LootManager");
 
 
         ShrimpMaterial = GetComponentInChildren<SpriteRenderer>().material;
@@ -50,7 +55,7 @@ public class Enemy : MonoBehaviour
         }
 
         EM = enemyManagement.GetComponent<EnemySpawner>();
-
+        loots = looterTable.GetComponent<LootTable>();
       
     }
 
@@ -93,7 +98,7 @@ public class Enemy : MonoBehaviour
         flashRoutine = StartCoroutine("HitFlash");
         if (currentHealth <= 0)
         {
-            
+            ChanceItem();
             Die();
             
         }
@@ -129,9 +134,11 @@ public class Enemy : MonoBehaviour
         int dropItemChance = Random.Range(0, 100);
 
 
-        if(dropItemChance >= 95)
+        if(dropItemChance >= 0)
         {
-
+            Debug.Log("Dropping Item");
+            int rngjesus = Random.Range(0, loots.lootCommon.Count);
+            Instantiate(loots.lootCommon[rngjesus], transform.position, Quaternion.identity);
         }
 
     }

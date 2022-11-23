@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &876530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4606346962671676334, guid: 717755341db461243b49d7427bb1b850, type: 3}
+  m_PrefabInstance: {fileID: 2076282429852009687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &30825455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,8 +285,7 @@ MonoBehaviour:
   - {fileID: 4211829889726464189, guid: aa1e41ec7aa03654d9ee94a9686faf29, type: 3}
   - {fileID: 5859219683821714669, guid: 3af7177f91c418a41819795490c74aff, type: 3}
   - {fileID: 126718644827090719, guid: 7dd54eebef336244884e5b9c2fdcb170, type: 3}
-  startingRoom: {fileID: 2539300073550837434, guid: 36b4bb240b91efb4caeb33dcdc19d0a6, type: 3}
-  closedRoom: {fileID: 0}
+  startingRoom: {fileID: 876530}
   rooms: []
   waitTime: 6
   boss: {fileID: 1166432537531418681, guid: d500429689567f64b86b994c8285b67c, type: 3}
@@ -359,13 +363,59 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618625601}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.559995, y: 0.093333244, z: -10}
+  m_LocalPosition: {x: 0.5597472, y: 0.093333244, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2141740253}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &973050132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 973050133}
+  - component: {fileID: 973050134}
+  m_Layer: 0
+  m_Name: LootManager
+  m_TagString: LootManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &973050133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973050132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.811159, y: 9.85659, z: -35.316143}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &973050134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973050132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929003b803533334782da42f08180f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootCommon:
+  - {fileID: 3899184722486547199, guid: aa2dde767e4380b428e479b37b728d56, type: 3}
+  - {fileID: 1881204805344035845, guid: 7305d2215461c014ca8236378d240df0, type: 3}
 --- !u!1001 &1048995763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -379,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7513703065682182472, guid: 25d01f09bdc732f4eb1c54a39d87f763, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.559995
+      value: 0.5597472
       objectReference: {fileID: 0}
     - target: {fileID: 7513703065682182472, guid: 25d01f09bdc732f4eb1c54a39d87f763, type: 3}
       propertyPath: m_LocalPosition.y
@@ -744,6 +794,7 @@ MonoBehaviour:
   roomsCleard: 0
   level: 0
   bossPhase: 0
+  paused: 0
   doDestroy: 1
   timeSinceLastBeat: 0
   GraceTime: 0.125
