@@ -15534,6 +15534,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &922909304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 922909306}
+  - component: {fileID: 922909305}
+  m_Layer: 0
+  m_Name: BPM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &922909305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922909304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c450cec62a913d54ea3de4b825e252ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomsCleard: 2
+  level: 0
+  bossPhase: 0
+  doDestroy: 1
+  timeSinceLastBeat: 0
+  GraceTime: 0.125
+  fmodEvent:
+    Guid:
+      Data1: -1343136135
+      Data2: 1113276543
+      Data3: 1736070073
+      Data4: -10178700
+    Path: event:/Music/Sunset Mall Music (130 bpm)
+--- !u!4 &922909306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922909304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &926323449 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1983645205341402802, guid: 59f707992ed535144893983ada34e7e7, type: 3}
@@ -27824,6 +27880,7 @@ GameObject:
   - component: {fileID: 1744590067}
   - component: {fileID: 1744590066}
   - component: {fileID: 1744590069}
+  - component: {fileID: 1744590070}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -27930,6 +27987,19 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1744590070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744590065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &1757467505
 GameObject:
   m_ObjectHideFlags: 0
@@ -32321,6 +32391,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: bS
+      value: 
+      objectReference: {fileID: 922909304}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 1744590067}
@@ -32508,7 +32582,8 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1508660991
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2846557131659931583, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
 --- !u!1 &2018455196
 GameObject:

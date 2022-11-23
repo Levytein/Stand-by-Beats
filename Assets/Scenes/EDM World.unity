@@ -359,7 +359,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618625601}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.41999626, y: 0.093333244, z: -10}
+  m_LocalPosition: {x: 0.559995, y: 0.093333244, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2141740253}
@@ -379,7 +379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7513703065682182472, guid: 25d01f09bdc732f4eb1c54a39d87f763, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.41999626
+      value: 0.559995
       objectReference: {fileID: 0}
     - target: {fileID: 7513703065682182472, guid: 25d01f09bdc732f4eb1c54a39d87f763, type: 3}
       propertyPath: m_LocalPosition.y
@@ -744,8 +744,9 @@ MonoBehaviour:
   roomsCleard: 0
   level: 0
   bossPhase: 0
+  doDestroy: 1
   timeSinceLastBeat: 0
-  GraceTime: 0.1
+  GraceTime: 0.125
   fmodEvent:
     Guid:
       Data1: -1558779081
@@ -782,6 +783,29 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8839498382930536202, guid: 59f707992ed535144893983ada34e7e7, type: 3}
   m_PrefabInstance: {fileID: 944786670136868404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1865928141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7513703065682182479, guid: 25d01f09bdc732f4eb1c54a39d87f763, type: 3}
+  m_PrefabInstance: {fileID: 1048995763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1865928142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865928141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+--- !u!20 &1865928145 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7513703065682182473, guid: 25d01f09bdc732f4eb1c54a39d87f763, type: 3}
+  m_PrefabInstance: {fileID: 1048995763}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1913759991 stripped
 MonoBehaviour:
@@ -1207,7 +1231,7 @@ PrefabInstance:
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: mainCam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1865928145}
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: speaker
       value: 
@@ -1318,7 +1342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2846557131659931582, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2846557131659931583, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: BPMImages
@@ -1332,7 +1356,8 @@ PrefabInstance:
       propertyPath: currentSong
       value: 
       objectReference: {fileID: 11400000, guid: 03a73e55299683848a50e7888f82120e, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2846557131659931583, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
 --- !u!82 &2846557132935365025 stripped
 AudioSource:
