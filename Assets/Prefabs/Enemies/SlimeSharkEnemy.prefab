@@ -148,13 +148,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 4
-  maxHealth: 30
+  maxHealth: 50
   countDown: 2
   damageText: {fileID: 0}
   damageDone: 1
   enemyManagement: {fileID: 0}
   amountFlashes: 10
   intervalFlashes: 0.2
+  looterTable: {fileID: 0}
+  loots: {fileID: 0}
+  isBoss: 0
 --- !u!95 &6371003574251799494
 Animator:
   serializedVersion: 3

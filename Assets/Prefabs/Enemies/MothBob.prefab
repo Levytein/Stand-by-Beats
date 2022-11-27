@@ -149,19 +149,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 4
-  maxHealth: 50
+  speed: 5
+  maxHealth: 20
   countDown: 1
   damageText: {fileID: 0}
   damageDone: 0
   enemyManagement: {fileID: 0}
   amountFlashes: 10
   intervalFlashes: 0.2
+  looterTable: {fileID: 0}
+  loots: {fileID: 0}
+  isBoss: 0
   currState: 0
   delayCharge: 0.7
   chargeSpeed: 10
-  stunDuration: 2
-  chargeCooldown: 3
+  stunDuration: 3
+  chargeCooldown: 4
   currCD: 0
 --- !u!58 &7952622424735457056
 CircleCollider2D:

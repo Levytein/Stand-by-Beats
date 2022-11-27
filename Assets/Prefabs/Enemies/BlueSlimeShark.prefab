@@ -200,5 +200,8 @@ MonoBehaviour:
   enemyManagement: {fileID: 0}
   amountFlashes: 10
   intervalFlashes: 0.2
+  looterTable: {fileID: 0}
+  loots: {fileID: 0}
+  isBoss: 0
   slimeTrail: {fileID: 2115430804350692938, guid: 5adf424d6448300469691dff985d2e51, type: 3}
   slimeTrailCD: 0.5

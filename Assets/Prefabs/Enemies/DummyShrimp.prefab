@@ -64,6 +64,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6371003574251799493, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
+      propertyPath: maxHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371003574251799493, guid: dbc1b6dac68d68d428b7a171830f40a2, type: 3}
       propertyPath: maxCooldown
       value: 1
       objectReference: {fileID: 0}
