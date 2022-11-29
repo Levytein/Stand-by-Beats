@@ -14,6 +14,8 @@ class BeatSystem : MonoBehaviour
     [SerializeField] private bool doDestroy = false;
 
     public static BeatSystem instance;
+    public GameObject noteMarker;
+    public Transform BPMImages;
 
     class TimelineInfo
     {
@@ -36,7 +38,7 @@ class BeatSystem : MonoBehaviour
     public float GraceTime = 0.5f;
 
     FMOD.Studio.EVENT_CALLBACK beatCallback;
-    FMOD.Studio.EventInstance musicInstance;
+    public FMOD.Studio.EventInstance musicInstance;
     public FMODUnity.EventReference fmodEvent;
 
     void Start()
@@ -71,6 +73,7 @@ class BeatSystem : MonoBehaviour
     private void Update()
     {
         Metronome();
+        //JudgmentBar();
 
         musicInstance.setParameterByName("Rooms Cleared", roomsCleard);
         musicInstance.setParameterByName("Flags", level);
@@ -96,10 +99,32 @@ class BeatSystem : MonoBehaviour
         timeSinceLastBeat += 1000.0f * Time.deltaTime;
     }
 
+    void JudgmentBar()
+    {
+        NoteMarker temp = Instantiate(noteMarker, BPMImages.transform).GetComponent<NoteMarker>();
+        temp.leftNut = true;
+        temp.timeOffset = Mathf.Abs((float)((60000.0f / 120.0f) - timeSinceLastBeat));
+        temp.timeStart = Mathf.Abs(timeSinceLastBeat);
+
+
+        temp = Instantiate(noteMarker, BPMImages.transform).GetComponent<NoteMarker>();
+        temp.leftNut = false;
+        temp.timeOffset = Mathf.Abs((float)((60000.0f / 120.0f) - timeSinceLastBeat));
+        temp.timeStart = Mathf.Abs(timeSinceLastBeat);
+    }
+
     public bool BeatCheck()
     {
         if (Mathf.Abs((float)((60000.0f / 120.0f) - timeSinceLastBeat)) <= (GraceTime * 1000.0f) || Mathf.Abs(timeSinceLastBeat) <= (GraceTime * 1000.0f)) return true;
         else return false;
+    }
+
+    public float CurrentPosition()
+    {
+        int currentPos = 0;
+        musicInstance.getTimelinePosition(out currentPos);
+        Debug.Log("called");
+        return (float) currentPos;
     }
 
     void OnGUI()
