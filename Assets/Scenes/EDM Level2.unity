@@ -166,7 +166,12 @@ MonoBehaviour:
   roomsCleard: 5
   level: 1
   bossPhase: 0
+  paused: 0
   doDestroy: 1
+  noteMarker: {fileID: 8452922815705596668, guid: 47a021d7aae39d442af07aecc113d51a, type: 3}
+  BPMImages: {fileID: 1382395978}
+  noteSpacing: 500
+  calibration: 0
   timeSinceLastBeat: 0
   GraceTime: 0.125
   fmodEvent:
@@ -388,7 +393,6 @@ MonoBehaviour:
   - {fileID: 4211829889726464189, guid: af2f3ff9d3364a543abeb64e287c7ccd, type: 3}
   - {fileID: 5688905629310770179, guid: 33a869c6e0ad71a47a058c76ebec9811, type: 3}
   startingRoom: {fileID: 0}
-  closedRoom: {fileID: 0}
   rooms: []
   waitTime: 6
   boss: {fileID: 1166432537531418681, guid: d500429689567f64b86b994c8285b67c, type: 3}

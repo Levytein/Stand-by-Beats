@@ -13,11 +13,13 @@ class BeatSystem : MonoBehaviour
     [SerializeField, Range(0, 3)] public int paused = 0;
     [SerializeField] private bool doDestroy = false;
 
-    public static BeatSystem instance;
+    //public static BeatSystem instance;
     public GameObject noteMarker;
     public Transform BPMImages;
+    public float noteSpacing = 500.0f;
+    public float calibration;
 
-    class TimelineInfo
+    public class TimelineInfo
     {
         public int currentBeat = 0;
         public int currentPosition = 0;
@@ -44,6 +46,8 @@ class BeatSystem : MonoBehaviour
     void Start()
     {
         if(!doDestroy) DontDestroyOnLoad(this.gameObject);
+
+        calibration = 0.0f; // ToDo: Connect with the options menu script to recieve player's calibration settings (Keep between -10.0f and 10.0f)
 
         timelineInfo = new TimelineInfo();
 
@@ -73,7 +77,6 @@ class BeatSystem : MonoBehaviour
     private void Update()
     {
         Metronome();
-        //JudgmentBar();
 
         musicInstance.setParameterByName("Rooms Cleared", roomsCleard);
         musicInstance.setParameterByName("Flags", level);
@@ -89,13 +92,14 @@ class BeatSystem : MonoBehaviour
         {
             lastBeat = timelineInfo.currentBeat;
             timeSinceLastBeat = 0.0f;
+            JudgmentBar();
 
             if (beatUpdated != null)
             {
                 beatUpdated();
             }
         }
-
+        
         timeSinceLastBeat += 1000.0f * Time.deltaTime;
     }
 
@@ -103,28 +107,26 @@ class BeatSystem : MonoBehaviour
     {
         NoteMarker temp = Instantiate(noteMarker, BPMImages.transform).GetComponent<NoteMarker>();
         temp.leftNut = true;
-        temp.timeOffset = Mathf.Abs((float)((60000.0f / 120.0f) - timeSinceLastBeat));
-        temp.timeStart = Mathf.Abs(timeSinceLastBeat);
+        temp.timeOffset = Mathf.Abs((int)((60000.0f / 120.0f) - timeSinceLastBeat));
+        musicInstance.getTimelinePosition(out temp.timeStart);
 
 
         temp = Instantiate(noteMarker, BPMImages.transform).GetComponent<NoteMarker>();
         temp.leftNut = false;
-        temp.timeOffset = Mathf.Abs((float)((60000.0f / 120.0f) - timeSinceLastBeat));
-        temp.timeStart = Mathf.Abs(timeSinceLastBeat);
+        temp.timeOffset = Mathf.Abs((int)((60000.0f / 120.0f) - timeSinceLastBeat));
+        musicInstance.getTimelinePosition(out temp.timeStart);
     }
 
     public bool BeatCheck()
     {
-        if (Mathf.Abs((float)((60000.0f / 120.0f) - timeSinceLastBeat)) <= (GraceTime * 1000.0f) || Mathf.Abs(timeSinceLastBeat) <= (GraceTime * 1000.0f)) return true;
+        if (Mathf.Abs((float)((60000.0f / 120.0f) - timeSinceLastBeat)) <= (GraceTime * 1000.0f + calibration) || Mathf.Abs(timeSinceLastBeat) <= (GraceTime * 1000.0f + calibration)) return true;
         else return false;
     }
 
     public float CurrentPosition()
     {
-        int currentPos = 0;
-        musicInstance.getTimelinePosition(out currentPos);
         Debug.Log("called");
-        return (float) currentPos;
+        return (float)timelineInfo.currentPosition;
     }
 
     void OnGUI()

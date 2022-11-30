@@ -517,6 +517,8 @@ MonoBehaviour:
   enemyManagement: {fileID: 0}
   amountFlashes: 10
   intervalFlashes: 0.2
+  looterTable: {fileID: 0}
+  loots: {fileID: 0}
   isBoss: 1
   player: {fileID: 731551294}
   isFlipped: 0
@@ -14059,9 +14061,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsCleard: 0
-  level: 2
+  level: 3
   bossPhase: 0
+  paused: 0
   doDestroy: 1
+  noteMarker: {fileID: 8452922815705596668, guid: 47a021d7aae39d442af07aecc113d51a, type: 3}
+  BPMImages: {fileID: 590535781}
+  noteSpacing: 500
+  calibration: 0
   timeSinceLastBeat: 0
   GraceTime: 0.125
   fmodEvent:

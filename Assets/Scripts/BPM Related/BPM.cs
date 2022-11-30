@@ -106,16 +106,16 @@ public class BPM : MonoBehaviour
     {
        if(AudioSettings.dspTime >= nextNoteTime && BPMImages != null)
         {
-            NoteMarker temp = Instantiate(noteMarker, BPMImages.transform ).GetComponent<NoteMarker>();
-            temp.leftNut = true;
-            temp.timeOffset = (lastTick / sampleRate + noteSpawnTime ) ;
-            temp.timeStart = (lastTick / sampleRate - 60f / bpm) ;
+            //NoteMarker temp = Instantiate(noteMarker, BPMImages.transform ).GetComponent<NoteMarker>();
+            //temp.leftNut = true;
+            //temp.timeOffset = (lastTick / sampleRate + noteSpawnTime ) ;
+            //temp.timeStart = (lastTick / sampleRate - 60f / bpm) ;
 
 
-            temp = Instantiate(noteMarker, BPMImages.transform).GetComponent<NoteMarker>();
-            temp.timeOffset = (lastTick / sampleRate + noteSpawnTime) ;
-            temp.leftNut = false;
-            temp.timeStart = (lastTick / sampleRate - 60f / bpm);
+            //temp = Instantiate(noteMarker, BPMImages.transform).GetComponent<NoteMarker>();
+            //temp.timeOffset = (lastTick / sampleRate + noteSpawnTime) ;
+            //temp.leftNut = false;
+            //temp.timeStart = (lastTick / sampleRate - 60f / bpm);
 
 
             lastTick = nextTick - (60d / bpm * sampleRate);

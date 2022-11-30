@@ -15566,7 +15566,12 @@ MonoBehaviour:
   roomsCleard: 2
   level: 0
   bossPhase: 0
+  paused: 0
   doDestroy: 1
+  noteMarker: {fileID: 8452922815705596668, guid: 47a021d7aae39d442af07aecc113d51a, type: 3}
+  BPMImages: {fileID: 1560477257}
+  noteSpacing: 500
+  calibration: 0
   timeSinceLastBeat: 0
   GraceTime: 0.125
   fmodEvent:

@@ -680,7 +680,7 @@ Transform:
   m_Children:
   - {fileID: 595022098}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &49620723
 GameObject:
@@ -6063,6 +6063,66 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &688584774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 688584776}
+  - component: {fileID: 688584775}
+  m_Layer: 0
+  m_Name: BPM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &688584775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688584774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c450cec62a913d54ea3de4b825e252ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomsCleard: 0
+  level: 3
+  bossPhase: 0
+  paused: 0
+  doDestroy: 1
+  noteMarker: {fileID: 8452922815705596668, guid: 47a021d7aae39d442af07aecc113d51a, type: 3}
+  BPMImages: {fileID: 212760569}
+  noteSpacing: 800
+  timeSinceLastBeat: 0
+  GraceTime: 0.125
+  fmodEvent:
+    Guid:
+      Data1: -1343136135
+      Data2: 1113276543
+      Data3: 1736070073
+      Data4: -10178700
+    Path: event:/Music/Sunset Mall Music (130 bpm)
+--- !u!4 &688584776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688584774}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &693482843
 GameObject:
   m_ObjectHideFlags: 0
@@ -9451,6 +9511,8 @@ MonoBehaviour:
   enemyManagement: {fileID: 0}
   amountFlashes: 10
   intervalFlashes: 0.2
+  looterTable: {fileID: 0}
+  loots: {fileID: 0}
   isBoss: 1
   teleportRange: {x: 28, y: 18}
   obstructionMask:
@@ -11123,6 +11185,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
+      propertyPath: bS
+      value: 
+      objectReference: {fileID: 688584774}
+    - target: {fileID: 2846557131659931578, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 1684961012}
@@ -11202,7 +11268,8 @@ PrefabInstance:
       propertyPath: BPMImages
       value: 
       objectReference: {fileID: 212760569}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2846557131659931583, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
 --- !u!1 &1337440448
 GameObject:

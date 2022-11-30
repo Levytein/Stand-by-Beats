@@ -966,6 +966,8 @@ MonoBehaviour:
   enemyManagement: {fileID: 0}
   amountFlashes: 10
   intervalFlashes: 0.2
+  looterTable: {fileID: 0}
+  loots: {fileID: 0}
   isBoss: 0
 --- !u!50 &583840148
 Rigidbody2D:
@@ -1650,6 +1652,10 @@ MonoBehaviour:
   bossPhase: 0
   paused: 0
   doDestroy: 1
+  noteMarker: {fileID: 8452922815705596668, guid: 47a021d7aae39d442af07aecc113d51a, type: 3}
+  BPMImages: {fileID: 1839790645}
+  noteSpacing: 500
+  calibration: 0
   timeSinceLastBeat: 0
   GraceTime: 0.1
   fmodEvent:
@@ -3640,6 +3646,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+--- !u!224 &1839790645 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 944786670560406611, guid: 59f707992ed535144893983ada34e7e7, type: 3}
+  m_PrefabInstance: {fileID: 1839790644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1842708037
 GameObject:
   m_ObjectHideFlags: 0
