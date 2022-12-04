@@ -38,6 +38,9 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI attackDisplay;
     public TextMeshProUGUI ComboCount;
 
+    public GameObject bpmBar;
+    private Animator playerAnimator;
+
     private int comboCounter;
 
 
@@ -141,7 +144,10 @@ public class Player : MonoBehaviour
         HCControl = GameObject.FindGameObjectWithTag("GameManager").GetComponent<HealthController>();
         EddyMaterial = GetComponent<SpriteRenderer>().material;
         menuScript = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Menu>();
-       
+        bpmBar = GameObject.Find("BPM Bar");
+        playerAnimator = bpmBar.GetComponent<Animator>();
+
+
     }
 
     private void Update()
@@ -235,6 +241,7 @@ public class Player : MonoBehaviour
             bool onBeat = bS.GetComponent<BeatSystem>().BeatCheck();
             if (onBeat)
             {
+                playerAnimator.SetTrigger("OnBeat");
                 judgeText.text = Great;
                 judgeText.color = goodHit;
                 judgeGroup.alpha = 1;
@@ -249,6 +256,7 @@ public class Player : MonoBehaviour
             }
             else
             {
+                playerAnimator.SetTrigger("OffBeat");
                 judgeText.text = Miss;
                 judgeText.color = badHit;
                 judgeGroup.alpha = 1;
@@ -281,6 +289,7 @@ public class Player : MonoBehaviour
             bool onBeat = bS.GetComponent<BeatSystem>().BeatCheck();
             if (onBeat)
             {
+                playerAnimator.SetTrigger("OnBeat");
                 judgeText.text = Great;
                 judgeText.color = goodHit;
                 judgeGroup.alpha = 1;
@@ -291,6 +300,7 @@ public class Player : MonoBehaviour
             }
             else
             {
+                playerAnimator.SetTrigger("OffBeat");
                 judgeText.text = Miss;
                 judgeText.color = badHit;
                 judgeGroup.alpha = 1;

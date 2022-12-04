@@ -107,13 +107,13 @@ class BeatSystem : MonoBehaviour
     {
         NoteMarker temp = Instantiate(noteMarker, BPMImages.transform).GetComponent<NoteMarker>();
         temp.leftNut = true;
-        temp.timeOffset = Mathf.Abs((int)((60000.0f / 120.0f) - timeSinceLastBeat));
+        temp.timeOffset = Mathf.Abs((int)((60000.0f / 120.0f) - timeSinceLastBeat) * 3);
         musicInstance.getTimelinePosition(out temp.timeStart);
 
 
         temp = Instantiate(noteMarker, BPMImages.transform).GetComponent<NoteMarker>();
         temp.leftNut = false;
-        temp.timeOffset = Mathf.Abs((int)((60000.0f / 120.0f) - timeSinceLastBeat));
+        temp.timeOffset = Mathf.Abs((int)((60000.0f / 120.0f) - timeSinceLastBeat) * 3);
         musicInstance.getTimelinePosition(out temp.timeStart);
     }
 

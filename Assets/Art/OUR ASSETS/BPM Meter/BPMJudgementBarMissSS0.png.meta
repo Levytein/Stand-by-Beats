@@ -1,7 +1,43 @@
 fileFormatVersion: 2
 guid: 544e4f82344afbe409180a4257db801e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7310283764761125398
+    second: BPMJudgementBarMissSS0_0
+  - first:
+      213: -7686622414740873453
+    second: BPMJudgementBarMissSS0_1
+  - first:
+      213: 4357831014078777211
+    second: BPMJudgementBarMissSS0_2
+  - first:
+      213: 4969078668000398079
+    second: BPMJudgementBarMissSS0_3
+  - first:
+      213: -6896816596569491592
+    second: BPMJudgementBarMissSS0_4
+  - first:
+      213: -332505985017597570
+    second: BPMJudgementBarMissSS0_5
+  - first:
+      213: 561256403804366136
+    second: BPMJudgementBarMissSS0_6
+  - first:
+      213: 2035145015644707482
+    second: BPMJudgementBarMissSS0_7
+  - first:
+      213: -8680850071840226180
+    second: BPMJudgementBarMissSS0_8
+  - first:
+      213: 3048876842472109809
+    second: BPMJudgementBarMissSS0_9
+  - first:
+      213: 1983297400131388207
+    second: BPMJudgementBarMissSS0_10
+  - first:
+      213: -7230780661268861368
+    second: BPMJudgementBarMissSS0_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +137,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BPMJudgementBarMissSS0_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 320
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61264ed3a58537560800000000000000
+      internalID: 7310283764761125398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPMJudgementBarMissSS0_1
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 0
+        width: 303
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f90d6a3a1a35590800000000000000
+      internalID: -7686622414740873453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPMJudgementBarMissSS0_2
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 0
+        width: 303
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b778851f7302a7c30800000000000000
+      internalID: 4357831014078777211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPMJudgementBarMissSS0_3
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 0
+        width: 303
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa8223a8b6b5f440800000000000000
+      internalID: 4969078668000398079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPMJudgementBarMissSS0_4
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 0
+        width: 303
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 877f478a8d59940a0800000000000000
+      internalID: -6896816596569491592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPMJudgementBarMissSS0_5
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 0
+        width: 303
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e71b55d7193b26bf0800000000000000
+      internalID: -332505985017597570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPMJudgementBarMissSS0_6
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 0
+        width: 303
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8352ca0c9bbf9c700800000000000000
+      internalID: 561256403804366136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPMJudgementBarMissSS0_7
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 0
+        width: 303
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ad8ebeb994e3c10800000000000000
+      internalID: 2035145015644707482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPMJudgementBarMissSS0_8
+      rect:
+        serializedVersion: 2
+        x: 2571
+        y: 0
+        width: 303
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c740a8f4adc678780800000000000000
+      internalID: -8680850071840226180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPMJudgementBarMissSS0_9
+      rect:
+        serializedVersion: 2
+        x: 2891
+        y: 0
+        width: 303
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f6f677a559cf4a20800000000000000
+      internalID: 3048876842472109809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPMJudgementBarMissSS0_10
+      rect:
+        serializedVersion: 2
+        x: 3210
+        y: 0
+        width: 303
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2389ca3a76168b10800000000000000
+      internalID: 1983297400131388207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BPMJudgementBarMissSS0_11
+      rect:
+        serializedVersion: 2
+        x: 3531
+        y: 0
+        width: 303
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e2e448c4b17ab90800000000000000
+      internalID: -7230780661268861368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

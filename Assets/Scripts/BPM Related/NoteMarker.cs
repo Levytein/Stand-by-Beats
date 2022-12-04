@@ -9,15 +9,15 @@ public class NoteMarker : MonoBehaviour
     public int timeStart;
     public int timeOffset;
     public int currentPos;
-    public int beatOffset;
+    public float startTime;
     public float noteOffset;
     public GameObject bs;
 
     private void Start()
     {
         bs = GameObject.Find("BPM");
-        beatOffset = timeOffset / 10;
         noteOffset = bs.GetComponent<BeatSystem>().noteSpacing;
+        startTime = Time.time;
     }
 
     private void LateUpdate()
@@ -25,10 +25,15 @@ public class NoteMarker : MonoBehaviour
         bs.GetComponent<BeatSystem>().musicInstance.getTimelinePosition(out currentPos);
 
         transform.localPosition = Vector3.Lerp((leftNut ? Vector3.left : Vector3.right) * noteOffset, Vector3.zero, (float) (currentPos - timeStart) / (timeOffset) );
-        if(currentPos >= (timeStart + timeOffset - beatOffset))
+        if(currentPos >= (timeStart + timeOffset))
         {
             Destroy(gameObject);
         }
-     
+
+        if(startTime - timeStart >= 2.0f)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
