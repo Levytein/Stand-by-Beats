@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class Loot : MonoBehaviour
 {
@@ -11,10 +13,30 @@ public class Loot : MonoBehaviour
     public string itemName;
     [TextArea(3, 10)]
     public string itemDescription;
+
+    public GameObject ItemPopUp;
+    public GameObject itemUIName;
+    public GameObject itemUIName1;
+    public GameObject itemUIImage;
+    public Image itemImage;
+    
+    public TextMeshProUGUI ItemName;
+    public TextMeshProUGUI EffectOne;
+  
     void Start()
     {
         spritePic = GetComponent<SpriteRenderer>();
         spritePic.sprite = item.itemIcon;
+        ItemPopUp = GameObject.Find("Canvas/ItemPopUp");
+        itemUIImage = GameObject.Find("Canvas/ItemPopUp/ItemDescription/Item Image");
+        itemUIName = GameObject.Find("Canvas/ItemPopUp/ItemDescription/Item Name");
+
+        itemUIName1 = GameObject.Find("Canvas/ItemPopUp/ItemDescription/Effect One Text");
+        
+        ItemName = itemUIName.GetComponent<TextMeshProUGUI>();
+        EffectOne = itemUIName1.GetComponent<TextMeshProUGUI>();
+        itemImage = itemUIImage.GetComponent<Image>();
+        
     }
 
     // Update is called once per frame
@@ -24,6 +46,10 @@ public class Loot : MonoBehaviour
         {
             Player.ActivePlayer.attackModifier += (int)item.Damage;
             Player.ActivePlayer.currentHealth += (int)item.permHealth;
+
+            ItemName.text = itemName;
+            EffectOne.text = itemDescription;
+            itemImage.sprite = spritePic.sprite;
             Destroy(gameObject);
         }
         

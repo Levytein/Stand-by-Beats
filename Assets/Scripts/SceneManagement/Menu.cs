@@ -19,6 +19,8 @@ public class Menu : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject GraphicMenu;
     public GameObject SoundMenu;
+    public GameObject itemPanel;
+
    
     const string MIXER_SFX = "SFXVolume";
     const string MIXER_SONG = "BGVolume";
@@ -29,6 +31,7 @@ public class Menu : MonoBehaviour
     public bool menuOpen = false;
 
     public bool isSettingsopen = false;
+    public bool isItemPanelOpen = false;
     public TMP_Dropdown resolutionDropDown;
 
     Resolution[] resolutions;
@@ -100,6 +103,14 @@ public class Menu : MonoBehaviour
         {
 
         }
+    }
+    public void CloseItemPanel()
+    {
+
+       
+            itemPanel.SetActive(false);
+        
+        
     }
     public void OpenSoundSettings()
     {

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NoteMarker : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class NoteMarker : MonoBehaviour
     public float startTime;
     public float noteOffset;
     public GameObject bs;
+    public TextMeshProUGUI ItemName;
+    public TextMeshProUGUI EffectOne;
+    public TextMeshProUGUI EffectTwo;
+   
+
 
     private void Start()
     {

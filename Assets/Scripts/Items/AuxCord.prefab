@@ -98,7 +98,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 66f887d97798f8245912f9fefffe4675, type: 2}
   itemName: Aux Cord
-  itemDescription: 
+  itemDescription: Boosts your damage by 10.
+  ItemPopUp: {fileID: 0}
+  itemUIName: {fileID: 0}
+  itemUIName1: {fileID: 0}
+  ItemName: {fileID: 0}
+  EffectOne: {fileID: 0}
 --- !u!61 &4988968287069080493
 BoxCollider2D:
   m_ObjectHideFlags: 0
