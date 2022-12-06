@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 5710014681367754055}
   m_Layer: 0
   m_Name: Seat2 (6)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3018,7 +3018,7 @@ GameObject:
   - component: {fileID: 9082975297216948545}
   m_Layer: 0
   m_Name: Seat (5)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3184,7 +3184,7 @@ GameObject:
   - component: {fileID: 2181001238122929351}
   m_Layer: 0
   m_Name: Seat2 (5)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3320,7 +3320,7 @@ GameObject:
   - component: {fileID: 6424582567654900950}
   m_Layer: 0
   m_Name: Seat (9)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4274,7 +4274,7 @@ GameObject:
   - component: {fileID: 1167760580362828799}
   m_Layer: 0
   m_Name: Seat (3)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4356,7 +4356,7 @@ GameObject:
   - component: {fileID: 7111662869736163545}
   m_Layer: 0
   m_Name: Seat (2)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4440,7 +4440,7 @@ GameObject:
   - component: {fileID: 6818253996077417934}
   m_Layer: 0
   m_Name: Seat (7)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4915,7 +4915,7 @@ GameObject:
   - component: {fileID: 5262677502597916453}
   m_Layer: 0
   m_Name: Seat2 (1)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5459,7 +5459,7 @@ GameObject:
   - component: {fileID: 1615599206156331571}
   m_Layer: 0
   m_Name: BarSeats (1)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5705,7 +5705,7 @@ GameObject:
   - component: {fileID: 3761989260870134903}
   m_Layer: 0
   m_Name: Seat2 (2)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6149,7 +6149,7 @@ GameObject:
   - component: {fileID: 3634033933328124334}
   m_Layer: 0
   m_Name: Seat
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6612,7 +6612,7 @@ GameObject:
   - component: {fileID: 7930110548379989969}
   m_Layer: 0
   m_Name: EDMLvl2Props0_3
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7788,7 +7788,7 @@ GameObject:
   - component: {fileID: 1216899610900874270}
   m_Layer: 0
   m_Name: Seat (10)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8851,7 +8851,7 @@ GameObject:
   - component: {fileID: 489237891804645091}
   m_Layer: 0
   m_Name: EDMLvl2Props0_3 (1)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9015,7 +9015,7 @@ GameObject:
   - component: {fileID: 1205605865764507805}
   m_Layer: 0
   m_Name: Seat (4)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9176,6 +9176,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6923668249477204794}
+  - component: {fileID: 7110821765066314732}
+  - component: {fileID: 7838223559385667475}
+  - component: {fileID: 497351436422389969}
   m_Layer: 0
   m_Name: Left 4
   m_TagString: Rooms
@@ -9198,6 +9201,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7110821765066314732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689607043861846342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433ec529fde59544281475d6b84cdca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7838223559385667475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689607043861846342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3832a9f6088c324bb58e755b6f4af4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bs: {fileID: 0}
+  doorTile:
+  - {fileID: 4484657001532602307}
+  enemyManagement: {fileID: 3295265853325860056}
+  enemySpawner: {fileID: 7280464103370983458}
+--- !u!61 &497351436422389969
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689607043861846342}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -15.28, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 2.5}
+  m_EdgeRadius: 0
 --- !u!1 &4761216686725337242
 GameObject:
   m_ObjectHideFlags: 0
@@ -9376,7 +9434,7 @@ GameObject:
   - component: {fileID: 2688372515729246616}
   m_Layer: 0
   m_Name: Seat (6)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11210,7 +11268,7 @@ GameObject:
   - component: {fileID: 124784963385622464}
   m_Layer: 0
   m_Name: Sign
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11574,7 +11632,7 @@ GameObject:
   - component: {fileID: 5480441021796753374}
   m_Layer: 0
   m_Name: Colliders (1)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12713,7 +12771,7 @@ GameObject:
   - component: {fileID: 8111324152134018668}
   m_Layer: 0
   m_Name: BarSeats
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12879,7 +12937,7 @@ GameObject:
   - component: {fileID: 544138687103493610}
   m_Layer: 0
   m_Name: Seat (8)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13506,7 +13564,7 @@ GameObject:
   - component: {fileID: 582597845562140578}
   m_Layer: 0
   m_Name: EDMLvl2Props0_1
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13698,7 +13756,7 @@ GameObject:
   - component: {fileID: 5095451531542023663}
   m_Layer: 0
   m_Name: Seat
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14571,7 +14629,7 @@ GameObject:
   - component: {fileID: 2561030970775929228}
   m_Layer: 0
   m_Name: EDMLvl2Props0_1 (1)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15006,7 +15064,7 @@ GameObject:
   - component: {fileID: 7908917441050978864}
   m_Layer: 0
   m_Name: Bar
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15449,7 +15507,7 @@ GameObject:
   - component: {fileID: 8799532110208909871}
   m_Layer: 0
   m_Name: Seat2 (3)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16433,7 +16491,7 @@ GameObject:
   - component: {fileID: 4156207444042778180}
   m_Layer: 0
   m_Name: Seat2
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16517,7 +16575,7 @@ GameObject:
   - component: {fileID: 6235216885652366335}
   m_Layer: 0
   m_Name: Seat2 (4)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16815,7 +16873,7 @@ GameObject:
   - component: {fileID: 4382386326830178287}
   m_Layer: 0
   m_Name: Seat (1)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17461,8 +17519,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
+--- !u!1 &7280464103370983458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7085766791910985892, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
+  m_PrefabInstance: {fileID: 530532904870353030}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1723912311107619794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1202537796930769748, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
   m_PrefabInstance: {fileID: 530532904870353030}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3295265853325860056 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3091710183894828126, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
+  m_PrefabInstance: {fileID: 530532904870353030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7280464103370983458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdda4c2d26de1af4c9b61dfe9193324c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 4598476849785144682}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (15)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 7241255316200554628}
   m_Layer: 0
   m_Name: EDMLvl1Props1_25
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2386,6 +2386,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4580767303734707271}
+  - component: {fileID: 4057846802091038978}
+  - component: {fileID: 4690939652071751525}
+  - component: {fileID: 6998512976282709316}
+  - component: {fileID: 2616532195477328320}
   m_Layer: 0
   m_Name: LR 4
   m_TagString: Rooms
@@ -2408,6 +2412,88 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4057846802091038978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418774692720389656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433ec529fde59544281475d6b84cdca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4690939652071751525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418774692720389656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3832a9f6088c324bb58e755b6f4af4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bs: {fileID: 0}
+  doorTile:
+  - {fileID: 3002760931305549716}
+  - {fileID: 2364084613761148635}
+  enemyManagement: {fileID: 6805608418756130992}
+  enemySpawner: {fileID: 1639351626823281738}
+--- !u!61 &6998512976282709316
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418774692720389656}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -15.17, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 3.69}
+  m_EdgeRadius: 0
+--- !u!61 &2616532195477328320
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418774692720389656}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 15.31, y: -0.32}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 3.2}
+  m_EdgeRadius: 0
 --- !u!1 &1440439639609051440
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,7 +2671,7 @@ GameObject:
   - component: {fileID: 406845292470369219}
   m_Layer: 0
   m_Name: EDMLvl1Props1_29
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3103,7 +3189,7 @@ GameObject:
   - component: {fileID: 7683730669477702417}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (1)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3188,7 +3274,7 @@ GameObject:
   - component: {fileID: 6403969565126660937}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (14)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3511,7 +3597,7 @@ GameObject:
   - component: {fileID: 7585659735849082639}
   m_Layer: 0
   m_Name: Trashbags
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4446,7 +4532,7 @@ GameObject:
   - component: {fileID: 1744500206962220609}
   m_Layer: 0
   m_Name: Table
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5237,7 +5323,7 @@ GameObject:
   - component: {fileID: 4349938299272877661}
   m_Layer: 0
   m_Name: EDMLvl1Props1_25 (1)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6547,7 +6633,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7389566339796297898}
   - component: {fileID: 4888164598686223150}
-  - component: {fileID: 3400848146281795915}
   m_Layer: 0
   m_Name: EDMlvl1TS_6 (54)
   m_TagString: Untagged
@@ -6620,32 +6705,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3400848146281795915
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4137047595099711545}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 2.56, y: 2.56}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
-  m_EdgeRadius: 0
 --- !u!1 &4226733238768296974
 GameObject:
   m_ObjectHideFlags: 0
@@ -9457,7 +9516,7 @@ GameObject:
   - component: {fileID: 477009815579056202}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9786,7 +9845,7 @@ GameObject:
   - component: {fileID: 7974379407267235453}
   m_Layer: 0
   m_Name: EDMLvl2Props0_4
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9897,7 +9956,7 @@ GameObject:
   - component: {fileID: 7951967638353001861}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (16)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11416,7 +11475,7 @@ GameObject:
   - component: {fileID: 1961841422896973301}
   m_Layer: 0
   m_Name: EDMLvl1Props1_27
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12181,7 +12240,7 @@ GameObject:
   - component: {fileID: 5076740343460625383}
   m_Layer: 0
   m_Name: EDMLvl2Props0_4 (1)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14749,7 +14808,7 @@ GameObject:
   - component: {fileID: 2205948232313429015}
   m_Layer: 0
   m_Name: Trash (1)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15323,7 +15382,7 @@ GameObject:
   - component: {fileID: 1992051704892460628}
   m_Layer: 0
   m_Name: Trash
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16388,7 +16447,7 @@ GameObject:
   - component: {fileID: 4402802277541128344}
   m_Layer: 0
   m_Name: Trashbags (1)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16781,7 +16840,7 @@ GameObject:
   - component: {fileID: 6825283043195867795}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (13)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16986,8 +17045,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
+--- !u!1 &1639351626823281738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7085766791910985892, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
+  m_PrefabInstance: {fileID: 8400786450699762926}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7216405999661723578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1202537796930769748, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
   m_PrefabInstance: {fileID: 8400786450699762926}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6805608418756130992 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3091710183894828126, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
+  m_PrefabInstance: {fileID: 8400786450699762926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639351626823281738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdda4c2d26de1af4c9b61dfe9193324c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

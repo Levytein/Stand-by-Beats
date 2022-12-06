@@ -173,6 +173,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8161040057267105140}
+  - component: {fileID: 5512611081064151322}
+  - component: {fileID: 5614749670816507428}
+  - component: {fileID: 63689156641436668}
+  - component: {fileID: 1759316661149715861}
   m_Layer: 0
   m_Name: BL 4
   m_TagString: Rooms
@@ -195,6 +199,88 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5512611081064151322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126194135418008043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433ec529fde59544281475d6b84cdca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5614749670816507428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126194135418008043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3832a9f6088c324bb58e755b6f4af4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bs: {fileID: 0}
+  doorTile:
+  - {fileID: 2709529471407425993}
+  - {fileID: 173234652847681467}
+  enemyManagement: {fileID: 1699753176339667246}
+  enemySpawner: {fileID: 6855879208591035860}
+--- !u!61 &63689156641436668
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126194135418008043}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -10.22}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 2.5}
+  m_EdgeRadius: 0
+--- !u!61 &1759316661149715861
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126194135418008043}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -15.17, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 2.5}
+  m_EdgeRadius: 0
 --- !u!1 &160127943389345839
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +649,7 @@ GameObject:
   - component: {fileID: 3682492086884288938}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (1)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -674,7 +760,7 @@ GameObject:
   - component: {fileID: 5212330610576480469}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (16)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -837,7 +923,7 @@ GameObject:
   - component: {fileID: 8176033996550321019}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (13)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1735,7 +1821,7 @@ GameObject:
   - component: {fileID: 8287511993584504796}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (6)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3677,7 +3763,7 @@ GameObject:
   - component: {fileID: 8081926061453041162}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (4)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3867,7 +3953,7 @@ GameObject:
   - component: {fileID: 4852902514547232271}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (9)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5510,7 +5596,7 @@ GameObject:
   - component: {fileID: 1544479851583620784}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (18)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6108,7 +6194,7 @@ GameObject:
   - component: {fileID: 9041143786720899817}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (10)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6790,7 +6876,7 @@ GameObject:
   - component: {fileID: 8510243060841669055}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (3)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8105,7 +8191,7 @@ GameObject:
   - component: {fileID: 2095736754189337297}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8678,7 +8764,7 @@ GameObject:
   - component: {fileID: 8236255451332249427}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (17)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9934,7 +10020,7 @@ GameObject:
   - component: {fileID: 8903003680145992890}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (5)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11096,7 +11182,7 @@ GameObject:
   - component: {fileID: 860998137447949066}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (14)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11667,7 +11753,7 @@ GameObject:
   - component: {fileID: 9128944744798236189}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (7)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12595,7 +12681,7 @@ GameObject:
   - component: {fileID: 242704417639364307}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (2)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12759,7 +12845,7 @@ GameObject:
   - component: {fileID: 4186203294974806763}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (8)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13828,7 +13914,7 @@ GameObject:
   - component: {fileID: 8518306215716543856}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (15)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15393,7 +15479,7 @@ GameObject:
   - component: {fileID: 6637416254871872016}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (11)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16052,7 +16138,7 @@ GameObject:
   - component: {fileID: 6035038166224105277}
   m_Layer: 0
   m_Name: EDMLvl1Props1_24 (12)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16457,7 +16543,7 @@ GameObject:
   - component: {fileID: 3997052540805350093}
   m_Layer: 0
   m_Name: Plants
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17028,8 +17114,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
+--- !u!1 &6855879208591035860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7085766791910985892, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
+  m_PrefabInstance: {fileID: 4427401865282657648}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3296933218168147492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1202537796930769748, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
   m_PrefabInstance: {fileID: 4427401865282657648}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1699753176339667246 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3091710183894828126, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
+  m_PrefabInstance: {fileID: 4427401865282657648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6855879208591035860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdda4c2d26de1af4c9b61dfe9193324c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

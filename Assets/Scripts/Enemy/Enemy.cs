@@ -134,7 +134,7 @@ public class Enemy : MonoBehaviour
         int dropItemChance = Random.Range(0, 100);
 
 
-        if(dropItemChance >= 0)
+        if(dropItemChance >= 87)
         {
             Debug.Log("Dropping Item");
             int rngjesus = Random.Range(0, loots.lootCommon.Count);

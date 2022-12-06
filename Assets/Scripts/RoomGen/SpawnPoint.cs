@@ -55,7 +55,7 @@ public class SpawnPoint : MonoBehaviour
         {
             if(other.GetComponent<SpawnPoint>().spawned == false && spawned == false)
             {
-               
+                Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
                 Debug.Log("I spawned a closed room");
             }
             spawned = true;
