@@ -483,7 +483,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 944786670710737777}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: MainMenu
+        m_MethodName: BackHub
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -730,7 +730,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 944786670710737777}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: Reload
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 944786670710737777}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1011,7 +1011,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 944786670710737777}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: MainMenu
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1223,7 +1223,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 944786670710737777}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: BackHub
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2191,7 +2191,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 944786670710737777}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: Reload
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2387,7 +2387,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back to Title
+  m_Text: Back to Hub
 --- !u!1 &944786672104475108
 GameObject:
   m_ObjectHideFlags: 0
@@ -3452,6 +3452,8 @@ GameObject:
   - component: {fileID: 7664542328013987224}
   - component: {fileID: 6602394382588464601}
   - component: {fileID: 4901492723000445036}
+  - component: {fileID: 3467293687357231569}
+  - component: {fileID: 4783102660985861358}
   m_Layer: 5
   m_Name: ItemPopUp
   m_TagString: Untagged
@@ -3517,6 +3519,33 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &3467293687357231569
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3224452970925493926}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!114 &4783102660985861358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3224452970925493926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6904fa388810913468f8a1213731b6c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refitemImage: {fileID: 4185355343527331246}
+  refItemName: {fileID: 5010208455256637332}
+  refEffectOne: {fileID: 384602394694504032}
 --- !u!1 &3266025053502946750
 GameObject:
   m_ObjectHideFlags: 0
@@ -3638,8 +3667,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 944786670710737777}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+      - m_Target: {fileID: 4783102660985861358}
+        m_TargetAssemblyTypeName: itemDisplay, Assembly-CSharp
         m_MethodName: CloseItemPanel
         m_Mode: 1
         m_Arguments:
@@ -5828,7 +5857,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -172}
+  m_AnchoredPosition: {x: -1.5, y: -186.3}
   m_SizeDelta: {x: 320, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4996217450498702389

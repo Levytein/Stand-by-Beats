@@ -392,9 +392,9 @@ MonoBehaviour:
   - {fileID: 5859219683821714669, guid: 406369268db37dc4b9608a9de5dad7b7, type: 3}
   - {fileID: 4211829889726464189, guid: af2f3ff9d3364a543abeb64e287c7ccd, type: 3}
   - {fileID: 5688905629310770179, guid: 33a869c6e0ad71a47a058c76ebec9811, type: 3}
-  startingRoom: {fileID: 0}
+  startingRoom: {fileID: 886740125}
   rooms: []
-  waitTime: 6
+  waitTime: 10
   boss: {fileID: 1166432537531418681, guid: d500429689567f64b86b994c8285b67c, type: 3}
 --- !u!1 &607645528 stripped
 GameObject:
@@ -488,6 +488,11 @@ Transform:
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 7500791108865908911, guid: 5abc06eaec98df641a1b7220c7c99975, type: 3}
   m_PrefabInstance: {fileID: 2078805437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &886740125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4606346962671676334, guid: 717755341db461243b49d7427bb1b850, type: 3}
+  m_PrefabInstance: {fileID: 1954407442}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &964924555
 PrefabInstance:

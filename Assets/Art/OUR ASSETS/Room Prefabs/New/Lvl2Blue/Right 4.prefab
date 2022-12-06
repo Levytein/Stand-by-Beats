@@ -276,7 +276,7 @@ Transform:
   m_LocalPosition: {x: -39.436607, y: -13.463631, z: 57.61479}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3623414590087903024}
+  m_Father: {fileID: 6295435954874889768}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3468168435797666286
@@ -1417,7 +1417,7 @@ GameObject:
   - component: {fileID: 6437492483646638997}
   m_Layer: 0
   m_Name: Trash (1)
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1429,12 +1429,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920641712062739282}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: -73.3, y: -16.26, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
-  m_Father: {fileID: 3623414590087903024}
-  m_RootOrder: 6
+  m_Father: {fileID: 6295435954874889768}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &6437492483646638997
 SpriteRenderer:
@@ -1897,6 +1897,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1367657609220804547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6295435954874889768}
+  m_Layer: 0
+  m_Name: Props
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6295435954874889768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367657609220804547}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 77.8366, y: 13.463631, z: -57.61479}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2256928083602709839}
+  - {fileID: 4913777702733863174}
+  - {fileID: 3250806621058492087}
+  - {fileID: 3807099003130140714}
+  - {fileID: 3467702217909310122}
+  - {fileID: 1441918519051332409}
+  - {fileID: 6161068916046122175}
+  m_Father: {fileID: 3455997859897057781}
+  m_RootOrder: 165
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1388702866553252922
 GameObject:
   m_ObjectHideFlags: 0
@@ -4042,7 +4079,7 @@ GameObject:
   - component: {fileID: 8446484130767724761}
   m_Layer: 0
   m_Name: RightDoor
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4058,8 +4095,8 @@ Transform:
   m_LocalPosition: {x: -59.91662, y: -13.463631, z: 57.61479}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3623414590087903024}
-  m_RootOrder: 2
+  m_Father: {fileID: 6295435954874889768}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4438849918991160888
 SpriteRenderer:
@@ -5724,8 +5761,8 @@ Transform:
   m_LocalPosition: {x: -77.8366, y: -13.463631, z: 57.61479}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3623414590087903024}
-  m_RootOrder: 3
+  m_Father: {fileID: 6295435954874889768}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2239094537525202989
 MonoBehaviour:
@@ -8218,7 +8255,7 @@ GameObject:
   - component: {fileID: 5840551115575542620}
   m_Layer: 0
   m_Name: plant
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8234,8 +8271,8 @@ Transform:
   m_LocalPosition: {x: -77.71, y: -13.5, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children: []
-  m_Father: {fileID: 3623414590087903024}
-  m_RootOrder: 4
+  m_Father: {fileID: 6295435954874889768}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &646205417689443700
 SpriteRenderer:
@@ -8325,7 +8362,7 @@ GameObject:
   - component: {fileID: 3623414590087903024}
   m_Layer: 0
   m_Name: Right 4
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8341,14 +8378,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2256928083602709839}
   - {fileID: 3455997859897057781}
-  - {fileID: 4913777702733863174}
-  - {fileID: 3250806621058492087}
-  - {fileID: 3807099003130140714}
-  - {fileID: 3467702217909310122}
-  - {fileID: 1441918519051332409}
-  - {fileID: 6161068916046122175}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10578,7 +10608,7 @@ GameObject:
   - component: {fileID: 1094831071539310251}
   m_Layer: 0
   m_Name: Trash
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10594,8 +10624,8 @@ Transform:
   m_LocalPosition: {x: -82.07, y: -16.26, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
-  m_Father: {fileID: 3623414590087903024}
-  m_RootOrder: 5
+  m_Father: {fileID: 6295435954874889768}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1094831071539310251
 SpriteRenderer:
@@ -12638,7 +12668,7 @@ GameObject:
   - component: {fileID: 5788993118978291504}
   m_Layer: 0
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12654,8 +12684,8 @@ Transform:
   m_LocalPosition: {x: -82.84, y: -10.71, z: 33.64862}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3623414590087903024}
-  m_RootOrder: 7
+  m_Father: {fileID: 6295435954874889768}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &4022086661587861553
 BoxCollider2D:
@@ -12967,7 +12997,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8098821301875226059}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -77.8366, y: -13.463631, z: 57.61479}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8605905046670406938}
@@ -13135,8 +13165,9 @@ Transform:
   - {fileID: 6115715367574449829}
   - {fileID: 7146453230124014332}
   - {fileID: 5316179573165692897}
+  - {fileID: 6295435954874889768}
   m_Father: {fileID: 3623414590087903024}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8108984225379112967
 GameObject:
