@@ -347,6 +347,7 @@ public class Player : MonoBehaviour
         if(value.started)
         {
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
+         
         }
 
     }
