@@ -16,7 +16,11 @@ public class DialogueTrigger : MonoBehaviour
         {
             TriggerDialogue();
         }*/
-        if(SceneManager.GetActiveScene().buildIndex == 2)
+        if (collision.CompareTag("Player") && SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            StartCoroutine(WaitforDialogue());
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             if (collision.CompareTag("Player") && hubCompleted == false)
             {
@@ -34,9 +38,10 @@ public class DialogueTrigger : MonoBehaviour
         }
         
 
-        else if(collision.CompareTag("Player"))
+        
+        else
         {
-            StartCoroutine(WaitforDialogue());
+            TriggerDialogue();
         }
     }
     public void TriggerDialogue()

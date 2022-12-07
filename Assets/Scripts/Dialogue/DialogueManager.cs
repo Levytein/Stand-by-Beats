@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI sentenceText;
     public Image characterTalking;
     public GameObject UIObject;
+    public GameObject bpmBar;
     private Queue<string> sentences;
     public TutorialChecker  tutChecker;
     // Start is called before the first frame update
@@ -23,6 +24,11 @@ public class DialogueManager : MonoBehaviour
     {
         Time.timeScale = 0;
         UIObject.SetActive(true);
+        if(bpmBar != null)
+        {
+            bpmBar.SetActive(false);
+        }
+
         characterTalking.sprite = character;
         nameText.text = dialogue.name;
         sentences.Clear();
@@ -39,6 +45,11 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        if(sentences.Count == 0 && SceneManager.GetActiveScene().buildIndex == 5 && Martini.martiniDead == true)
+        {
+            EndDialogue();
+            SceneManager.LoadScene(6);
+        }
         if(sentences.Count == 0 && SceneManager.GetActiveScene().buildIndex != 1 )
         {
             EndDialogue();
@@ -61,6 +72,12 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("End conversation");
         Time.timeScale = 1;
+
+        if (bpmBar != null)
+        {
+            bpmBar.SetActive(true);
+        }
+      
         UIObject.SetActive(false);
     }
 }

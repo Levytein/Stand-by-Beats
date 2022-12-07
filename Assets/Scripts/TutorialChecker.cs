@@ -15,6 +15,7 @@ public class TutorialChecker : MonoBehaviour
     private bool attacked = false;
     private bool rolled = false;
 
+    private int counter = 0;
     public GameObject TutorialCheckerObject;
     public GameObject SecondTutObject;
     public GameObject goodFlashText;
@@ -22,6 +23,7 @@ public class TutorialChecker : MonoBehaviour
 
     public bool isDialogueOver;
     public bool isMovementOver;
+    public bool isAttackingOver;
 
     public TextMeshProUGUI WText;
     public TextMeshProUGUI AText;
@@ -58,10 +60,17 @@ public class TutorialChecker : MonoBehaviour
             goodFlashText.SetActive(true);
             isMovementOver = true;
             SecondTutObject.SetActive(true);
+        
         }
-        if(attacked && rolled == true)
+        if(attacked && rolled == true )
         {
+            
             SecondTutObject.SetActive(false);
+            isAttackingOver = true;
+            goodFlashText2.SetActive(true);
+          
+            
+            
         }
     }
 
@@ -100,5 +109,12 @@ public class TutorialChecker : MonoBehaviour
             SText.SetText("Move Down: 1 / 1");
         }
 
+    }
+
+    IEnumerator WaitforGood()
+    {
+
+        yield return new WaitForSeconds(2.0f);
+        goodFlashText.SetActive(false);
     }
 }

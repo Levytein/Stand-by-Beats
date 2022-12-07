@@ -17,7 +17,11 @@ public class Martini : Enemy
    
 
     Rigidbody2D rb;
-   
+
+    public Dialogue dialogue;
+    public Sprite characterSprite;
+
+    public static bool martiniDead = false;
     protected override void Start()
     {
         base.Start();
@@ -66,10 +70,17 @@ public class Martini : Enemy
         hasTransitioned = true;
         
     }
+
+    public void TriggerDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, characterSprite);
+        Destroy(this.gameObject);
+    }
     protected override void Die()
     {
 
-        SceneManager.LoadScene(2);
+        martiniDead = true;
+        TriggerDialogue();
         //Destroy(this.gameObject);
 
 
