@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Martini : Enemy
 {
     public Transform player;
+    public GameObject bs;
     public bool isFlipped = false;
 
     
@@ -26,6 +27,7 @@ public class Martini : Enemy
     {
         base.Start();
         rb = GetComponent<Rigidbody2D>();
+        bs = GameObject.Find("BPM");
     }
     public override void TakeDamage(int damage)
     {
@@ -33,6 +35,10 @@ public class Martini : Enemy
 
         if (currentHealth <= 100)
         {
+            if (bs.GetComponent<BeatSystem>().bossPhase == 1)
+            {
+                bs.GetComponent<BeatSystem>().bossPhase++;
+            }
             GetComponent<Animator>().SetBool("isEnraged", true);
             
             speed = 0;

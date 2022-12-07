@@ -6,6 +6,7 @@ public class LifeZaverBoss : Enemy
 {
     public Vector2 teleportRange = new Vector2(28, 18);
     public LayerMask obstructionMask;
+    public GameObject bs;
 
     public float teleportCD = 3.0f;
     public int overheatCount;
@@ -71,6 +72,7 @@ public class LifeZaverBoss : Enemy
     {
         base.Start();
         currentCoroutine = StartCoroutine(Teleport());
+        bs = GameObject.Find("BPM");
     }
 
     public override void Update()
@@ -138,6 +140,11 @@ public class LifeZaverBoss : Enemy
 
             Instantiate(Missle, new Vector3(.9f, .1f, 0) + transform.position, (directionFace == 1 ? Quaternion.identity : Quaternion.Euler(0f, 0f, 180f)));
 
+            if (bs.GetComponent<BeatSystem>().bossPhase == 1)
+            {
+                bs.GetComponent<BeatSystem>().bossPhase++;
+            }
+
             yield return new WaitForSeconds(postMissleDelay);
 
         }
@@ -167,7 +174,12 @@ public class LifeZaverBoss : Enemy
 
             float progress = 0f;
 
-            while(progress < laserTimer)
+            if (bs.GetComponent<BeatSystem>().bossPhase == 2)
+            {
+                bs.GetComponent<BeatSystem>().bossPhase++;
+            }
+
+            while (progress < laserTimer)
             {
                 
 

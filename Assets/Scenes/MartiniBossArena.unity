@@ -521,6 +521,7 @@ MonoBehaviour:
   loots: {fileID: 0}
   isBoss: 1
   player: {fileID: 731551294}
+  bs: {fileID: 0}
   isFlipped: 0
   enragedSpot: {fileID: 197629244}
   dialogue:
@@ -14005,7 +14006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomsCleard: 0
   level: 3
-  bossPhase: 0
+  bossPhase: 1
   paused: 0
   doDestroy: 1
   noteMarker: {fileID: 8452922815705596668, guid: 47a021d7aae39d442af07aecc113d51a, type: 3}
