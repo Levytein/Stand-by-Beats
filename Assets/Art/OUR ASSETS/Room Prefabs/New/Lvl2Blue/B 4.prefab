@@ -13941,7 +13941,7 @@ MonoBehaviour:
   doorTile:
   - {fileID: 1482033828476282980}
   enemyManagement: {fileID: 5549704704048760259}
-  enemySpawner: {fileID: 6852474435770080518}
+  enemySpawner: {fileID: 411734483247255865}
 --- !u!61 &4070041780786260434
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15933,9 +15933,14 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3091710183894828126, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
   m_PrefabInstance: {fileID: 7485955709929406877}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 411734483247255865}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdda4c2d26de1af4c9b61dfe9193324c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &411734483247255865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7085766791910985892, guid: ca0e3530894c4db4fa3f03adab4573b1, type: 3}
+  m_PrefabInstance: {fileID: 7485955709929406877}
+  m_PrefabAsset: {fileID: 0}

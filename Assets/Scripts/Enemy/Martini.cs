@@ -30,7 +30,8 @@ public class Martini : Enemy
         if (currentHealth <= 100)
         {
             GetComponent<Animator>().SetBool("isEnraged", true);
-
+            rb.mass = 100000;
+            speed = 0;
         }
 
     }
@@ -61,8 +62,9 @@ public class Martini : Enemy
     {
 
         gameObject.transform.position = enragedSpot.position;
-        rb.mass = 100000;
+       
         hasTransitioned = true;
+        
     }
     protected override void Die()
     {

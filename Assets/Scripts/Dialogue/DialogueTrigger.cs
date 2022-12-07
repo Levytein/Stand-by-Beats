@@ -7,13 +7,33 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     public Sprite characterSprite;
+    public static bool hubCompleted = false;
+    public static bool firstEDM = false;
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") && SceneManager.GetActiveScene().buildIndex != 1)
+        /*if(collision.CompareTag("Player") && SceneManager.GetActiveScene().buildIndex != 1)
         {
             TriggerDialogue();
+        }*/
+        if(SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            if (collision.CompareTag("Player") && hubCompleted == false)
+            {
+                TriggerDialogue();
+                hubCompleted = true;
+            }
         }
+       if(SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            if (collision.CompareTag("Player") && firstEDM == false)
+            {
+                TriggerDialogue();
+                firstEDM = true;
+            }
+        }
+        
+
         else if(collision.CompareTag("Player"))
         {
             StartCoroutine(WaitforDialogue());

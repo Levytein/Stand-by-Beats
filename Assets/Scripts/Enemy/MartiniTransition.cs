@@ -7,6 +7,7 @@ public class MartiniTransition : StateMachineBehaviour
     public float speed = 5f;
     Rigidbody2D rb;
     Transform EnragedPosition;
+    public static bool isEnraged = false;
     Martini boss;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -14,7 +15,7 @@ public class MartiniTransition : StateMachineBehaviour
         EnragedPosition = GameObject.FindGameObjectWithTag("MartiniEnraged").transform;
         rb = animator.GetComponent<Rigidbody2D>();
         BPM.activeBPM.PlaySong(Player.ActivePlayer.songs[0]);
-
+       
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -22,8 +23,7 @@ public class MartiniTransition : StateMachineBehaviour
     {
         rb.transform.position = EnragedPosition.position;
         rb.mass = 100000;
-
-
+        speed = 0;
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

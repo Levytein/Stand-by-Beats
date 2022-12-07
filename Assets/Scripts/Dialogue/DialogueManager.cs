@@ -44,7 +44,7 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-        else if(sentences.Count == 0 && SceneManager.GetActiveScene().buildIndex == 1)
+        else if(sentences.Count == 0 && SceneManager.GetActiveScene().buildIndex == 1 && tutChecker != null)
         {
             Debug.Log("Im reaching the dialogue manager");
             tutChecker.isDialogueOver = true;
