@@ -277,9 +277,6 @@ public class Player : MonoBehaviour
     {
         newCursorPos = value.ReadValue<Vector2>();
 
-
-
-
     }
     public void OnMelee(InputAction.CallbackContext value)
     {

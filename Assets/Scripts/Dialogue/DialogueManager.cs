@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
+
     }
     
     public void StartDialogue (Dialogue dialogue, Sprite character)
@@ -45,7 +46,12 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0 && SceneManager.GetActiveScene().buildIndex == 5 && Martini.martiniDead == true)
+        if (sentences.Count == 0 && SceneManager.GetActiveScene().buildIndex == 8 && LifeZaverBoss.boss2Dead == true)
+        {
+            EndDialogue();
+            SceneManager.LoadScene(0);
+        }
+        if (sentences.Count == 0 && SceneManager.GetActiveScene().buildIndex == 5 && Martini.martiniDead == true)
         {
             EndDialogue();
             SceneManager.LoadScene(6);

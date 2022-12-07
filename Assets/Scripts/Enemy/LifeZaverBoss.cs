@@ -22,6 +22,7 @@ public class LifeZaverBoss : Enemy
     public GameObject Missle;
 
 
+
     public float laserPhase = .35f;
     public int laserChance = 5;
 
@@ -40,6 +41,8 @@ public class LifeZaverBoss : Enemy
 
     public Dialogue dialogue;
     public Sprite characterSprite;
+
+    public static bool boss2Dead = false;
 
     public enum States
     {
@@ -81,7 +84,7 @@ public class LifeZaverBoss : Enemy
         {
             TriggerDialogue();
 
-
+            boss2Dead = true;
 
         }
 
