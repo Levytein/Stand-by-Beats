@@ -38,6 +38,8 @@ public class LifeZaverBoss : Enemy
     public float laserTimer = 1.5f;
 
 
+    public Dialogue dialogue;
+    public Sprite characterSprite;
 
     public enum States
     {
@@ -75,6 +77,13 @@ public class LifeZaverBoss : Enemy
             base.Update();
         }
         LookAtPlayer();
+        if(currentHealth <= 0)
+        {
+            TriggerDialogue();
+
+
+
+        }
 
     }
     // Update is called once per frame
@@ -111,8 +120,12 @@ public class LifeZaverBoss : Enemy
     {
         isReady = false;
     }
-    
 
+    public void TriggerDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, characterSprite);
+        Destroy(this.gameObject);
+    }
     IEnumerator Firing()
     {
         if (((float)currentHealth / maxHealth) <= misslePhase)
