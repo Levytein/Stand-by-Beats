@@ -10807,6 +10807,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1115903326
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4798544031348944568, guid: 301459b1e20177f44b6c70afa92d186d, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798544031348944568, guid: 301459b1e20177f44b6c70afa92d186d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.811159
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798544031348944568, guid: 301459b1e20177f44b6c70afa92d186d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.85659
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798544031348944568, guid: 301459b1e20177f44b6c70afa92d186d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -35.316143
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798544031348944568, guid: 301459b1e20177f44b6c70afa92d186d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798544031348944568, guid: 301459b1e20177f44b6c70afa92d186d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798544031348944568, guid: 301459b1e20177f44b6c70afa92d186d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798544031348944568, guid: 301459b1e20177f44b6c70afa92d186d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798544031348944568, guid: 301459b1e20177f44b6c70afa92d186d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798544031348944568, guid: 301459b1e20177f44b6c70afa92d186d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798544031348944568, guid: 301459b1e20177f44b6c70afa92d186d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798544031348944569, guid: 301459b1e20177f44b6c70afa92d186d, type: 3}
+      propertyPath: m_Name
+      value: LootManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 301459b1e20177f44b6c70afa92d186d, type: 3}
 --- !u!1 &1118095501
 GameObject:
   m_ObjectHideFlags: 0
@@ -14006,7 +14063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomsCleard: 0
   level: 3
-  bossPhase: 1
+  bossPhase: 2
   paused: 0
   doDestroy: 1
   noteMarker: {fileID: 8452922815705596668, guid: 47a021d7aae39d442af07aecc113d51a, type: 3}

@@ -35,7 +35,7 @@ public class Martini : Enemy
 
         if (currentHealth <= 100)
         {
-            if (bs.GetComponent<BeatSystem>().bossPhase == 1)
+            if (bs.GetComponent<BeatSystem>().bossPhase == 2)
             {
                 bs.GetComponent<BeatSystem>().bossPhase++;
             }
