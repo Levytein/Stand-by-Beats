@@ -9800,7 +9800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2063020520}
   speed: 0
-  maxHealth: 200
+  maxHealth: 400
   countDown: 1
   damageText: {fileID: 0}
   damageDone: 0
@@ -9814,7 +9814,7 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 0
-  teleportCD: 3
+  teleportCD: 4.5
   overheatCount: 0
   currentOverheatcount: 0
   pewpewDelay: 2
@@ -9829,7 +9829,7 @@ MonoBehaviour:
   lifezaverAnim: {fileID: 1082228572}
   animationName: TeleportStart
   exitAnimation: TeleportEnd
-  betweenShots: 0.7
+  betweenShots: 1.125
   numberShots: 5
   directionFace: 1
   laserBeam: {fileID: 607154553}
