@@ -9800,7 +9800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2063020520}
   speed: 0
-  maxHealth: 400
+  maxHealth: 600
   countDown: 1
   damageText: {fileID: 0}
   damageDone: 0
@@ -9814,6 +9814,7 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 0
+  bs: {fileID: 0}
   teleportCD: 4.5
   overheatCount: 0
   currentOverheatcount: 0

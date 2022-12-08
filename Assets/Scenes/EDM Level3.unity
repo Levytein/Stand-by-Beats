@@ -1210,6 +1210,10 @@ PrefabInstance:
       propertyPath: BPMImages
       value: 
       objectReference: {fileID: 1176017611}
+    - target: {fileID: 858770666299502896, guid: c23260d4c280ecb44a741df0c0e4eb4d, type: 3}
+      propertyPath: GraceTime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 858770666299502897, guid: c23260d4c280ecb44a741df0c0e4eb4d, type: 3}
       propertyPath: m_RootOrder
       value: 10
