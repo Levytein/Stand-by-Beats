@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
     private float RollTimer;
     public int attackDamageItem ;
 
-    public int attackModifier;
+    public static int attackModifier;
 
     public float knockBacktime;
 

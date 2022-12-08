@@ -31,8 +31,8 @@ public class Loot : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            Player.ActivePlayer.attackModifier += (int)item.Damage;
-            Player.ActivePlayer.currentHealth += (int)item.permHealth;
+            Player.attackDamage += (int)item.Damage;
+            Player.maxHealth += (int)item.permHealth;
 
             itemDisplay.OpenItemPanel();
             itemDisplay.ItemName.text = itemName;
